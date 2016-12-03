@@ -8,6 +8,7 @@ before_script:
   - travis_retry composer install --no-interaction --prefer-source --dev
 
 script:
+ - php vendor/sensiolabs/security-checker/security-checker security:check composer.lock
  - vendor/bin/phpcs --standard=psr2 src
  - vendor/bin/phpunit --debug
  - vendor/bin/phpmd src text codesize,unusedcode,naming
