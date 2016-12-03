@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<ruleset name="MyStandard">
+  <description>My custom coding standard.</description>
+
+  <!-- Dock Blocks -->
+  <rule ref="Squiz.Commenting.FunctionComment" />
+  <rule ref="Squiz.Commenting.FunctionCommentThrowTag" />
+  <rule ref="Squiz.Commenting.VariableComment" />
+
+<!-- Forbid some functions -->
+<rule ref="Generic.PHP.ForbiddenFunctions">
+  <properties>
+    <property name="forbiddenFunctions" type="array" value="mysql_fetch_assoc=>null,mysql_query=>null,mysql_connect=>null,dd=>null,die=>null,var_dump=>null,sizeof=>count,delete=>unset,create_function=>null"/>
+  </properties>
+</rule>
+
+</ruleset>
