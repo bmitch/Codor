@@ -11,3 +11,5 @@ script:
  - vendor/bin/phpcs --standard=psr2 src
  - vendor/bin/phpunit --debug
  - vendor/bin/phpmd src text codesize,unusedcode,naming
+ - vendor/bin/phploc src --progress
+ - vendor/bin/phpcpd src
