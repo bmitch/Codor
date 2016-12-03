@@ -10,14 +10,23 @@ use PHP_CodeSniffer_File;
  */
 class NoElseSniff implements PHP_CodeSniffer_Sniff
 {
+
+    /**
+     * Returns the token types that this sniff is interested in.
+     * @return array
+     */
     public function register()
     {
         return [T_ELSE, T_ELSEIF];
     }
 
     /**
-     * @param PHP_CodeSniffer_File $phpcsFile
-     * @param int                  $stackPtr
+     * Processes the tokens that this sniff is interested in.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file where the token was found.
+     * @param integer              $stackPtr  The position in the stack where
+     *                                    the token was found.
+     * @return void
      */
     public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
     {
