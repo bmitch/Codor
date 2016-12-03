@@ -37,13 +37,13 @@ Where `src` is the location of the source code you want to check.
 ### Omitting Sniffs ###
 You may not want to run all the sniffs provided so you can specify which sniffs you want to exclude with the `--exclude` flag like:
 ```
-vendor/bin/phpcs --standard=codor.xml --exclude=Codor.ControlStructures.NoElse
+vendor/bin/phpcs --standard=codor.xml --exclude=Codor.ControlStructures.NoElse src
 ```
 (if you want to exclude multiple just separate them with a comma)
 
 Or you can also specify which sniffs to specifically run:
 ```
-vendor/bin/phpcs --standard=codor.xml --sniffs=Codor.ControlStructures.NoElse
+vendor/bin/phpcs --standard=codor.xml --sniffs=Codor.ControlStructures.NoElse src
 ```
 
 ## Sniffs Included ##
