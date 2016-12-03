@@ -21,6 +21,11 @@ class CodeSnifferRunner
         return $this->processCodeSniffer($testedFile, $sniffName)->getErrorCount();
     }
 
+    public function detectWarningCountInFileForSniff($testedFile, $sniffName)
+    {
+        return $this->processCodeSniffer($testedFile, $sniffName)->getWarningCount();
+    }
+
     private function processCodeSniffer($testedFile, $sniffName)
     {
         $this->codeSniffer->initStandard(__DIR__.'/../src/Codor', [$sniffName]);
