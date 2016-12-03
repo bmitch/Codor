@@ -10,3 +10,4 @@ before_script:
 script:
  - vendor/bin/phpcs --standard=psr2 src
  - vendor/bin/phpunit --debug
+ - vendor/bin/phpmd src text codesize,unusedcode,naming
