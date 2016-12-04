@@ -36,4 +36,18 @@ class FunctionParameterSniffTest extends BaseTestCase
         $this->assertEquals(0, $results->getWarningCount());
         $this->assertEquals(0, $results->getErrorCount());
     }
+
+    /** @test */
+    public function it_produces_errors_on_interfaces()
+    {
+        $results = $this->runner->sniff('Interfaces.inc');
+        $this->assertEquals(2, $results->getErrorCount());
+    }
+
+    /** @test */
+    public function it_produces_warnings_on_interfaces()
+    {
+        $results = $this->runner->sniff('Interfaces.inc');
+        $this->assertEquals(1, $results->getWarningCount());
+    }
 }
