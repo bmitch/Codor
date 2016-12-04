@@ -2,52 +2,38 @@
 
 namespace Codor\Tests\Sniffs\ControlStructures;
 
-use Codor\Tests\CodeSnifferRunner;
-use PHPUnit\Framework\TestCase;
+use Codor\Tests\BaseTestCase;
 
 /** @group Files */
-class FunctionParameterSniffTest extends TestCase
+class FunctionParameterSniffTest extends BaseTestCase
 {
+
+    public function setup()
+    {
+        parent::setup();
+
+        $this->runner->setSniff('Codor.Files.FunctionParameter')->setFolder(__DIR__.'/Assets/FunctionParameterSniff/');
+    }
+
 	/** @test */
     public function it_produces_an_error_when_a_function_has_4_or_more_parameters()
     {
-        $codeSnifferRunner = new CodeSnifferRunner();
-        $errorCount = $codeSnifferRunner->detectErrorCountInFileForSniff(
-            __DIR__.'/Assets/FunctionParameterSniff/FunctionsWithFourOrMoreParameters.inc',
-            'Codor.Files.FunctionParameter'
-        );
-
-        $this->assertSame(4, $errorCount);
+        $results = $this->runner->sniff('FunctionsWithFourOrMoreParameters.inc');
+        $this->assertEquals(4, $results->getErrorCount());
     }
 
     /** @test */
     public function it_produces_a_warning_when_a_function_has_3_parameters()
     {
-        $codeSnifferRunner = new CodeSnifferRunner();
-        $warningCount = $codeSnifferRunner->detectWarningCountInFileForSniff(
-            __DIR__.'/Assets/FunctionParameterSniff/FunctionWithThreeParameters.inc',
-            'Codor.Files.FunctionParameter'
-        );
-
-        $this->assertSame(2, $warningCount);
+        $results = $this->runner->sniff('FunctionWithThreeParameters.inc');
+        $this->assertEquals(2, $results->getWarningCount());
     }
 
     /** @test */
     public function it_produces_no_warnings_or_errors_with_functions_with_2_or_fewer_parameters()
     {
-        $codeSnifferRunner = new CodeSnifferRunner();
-
-        $errorCount = $codeSnifferRunner->detectErrorCountInFileForSniff(
-            __DIR__.'/Assets/FunctionParameterSniff/FunctionWithTwoOrFewerParameters.inc',
-            'Codor.Files.FunctionParameter'
-        );
-
-        $warningCount = $codeSnifferRunner->detectWarningCountInFileForSniff(
-            __DIR__.'/Assets/FunctionParameterSniff/FunctionWithTwoOrFewerParameters.inc',
-            'Codor.Files.FunctionParameter'
-        );
-
-        $this->assertSame(0, $errorCount);
-        $this->assertSame(0, $warningCount);
+        $results = $this->runner->sniff('FunctionWithTwoOrFewerParameters.inc');
+        $this->assertEquals(0, $results->getWarningCount());
+        $this->assertEquals(0, $results->getErrorCount());
     }
 }

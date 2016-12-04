@@ -2,20 +2,22 @@
 
 namespace Codor\Tests\Sniffs\ControlStructures;
 
-use Codor\Tests\CodeSnifferRunner;
-use PHPUnit\Framework\TestCase;
+use Codor\Tests\BaseTestCase;
 
-
-class NoElseSniffTest extends TestCase
+/** @group ControlStructures */
+class NoElseSniffTest extends BaseTestCase
 {
+
+	public function setup()
+	{
+		parent::setup();
+
+		$this->runner->setSniff('Codor.ControlStructures.NoElse')->setFolder(__DIR__.'/');
+	}
+
     public function testSniff()
     {
-        $codeSnifferRunner = new CodeSnifferRunner();
-        $errorCount = $codeSnifferRunner->detectErrorCountInFileForSniff(
-            __DIR__.'/NoElseSniffTest.inc',
-            'Codor.ControlStructures.NoElse'
-        );
-
-        $this->assertSame(5, $errorCount);
+ 		$results = $this->runner->sniff('NoElseSniffTest.inc');
+        $this->assertSame(5, $results->getErrorCount());
     }
 }

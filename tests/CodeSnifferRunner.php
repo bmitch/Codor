@@ -9,27 +9,78 @@ class CodeSnifferRunner
     /**
      * @var PHP_CodeSniffer
      */
-    private $codeSniffer;
+    protected $codeSniffer;
 
+    /**
+     * The current sniff rule being tested.
+     * @var string
+     */
+    protected $sniff;
+
+    /**
+     * Path of the folder that will contain the file
+     * to test against.
+     * @var string
+     */
+    protected $path;
+
+    /**
+     * The file path to the file to test against.
+     * @var string
+     */
+    protected $filePath;
+
+    /**
+     * Class Constructor.
+     */
     public function __construct()
     {
         $this->codeSniffer = new PHP_CodeSniffer();
     }
 
-    public function detectErrorCountInFileForSniff($testedFile, $sniffName)
+    /**
+     * Sets the sniff we will test.
+     * @param string $sniff The sniff to test.
+     * @return this
+     */
+    public function setSniff($sniff)
     {
-        return $this->processCodeSniffer($testedFile, $sniffName)->getErrorCount();
+        $this->sniff = $sniff;
+
+        return $this;
     }
 
-    public function detectWarningCountInFileForSniff($testedFile, $sniffName)
+    /**
+     * Sets the folder the sample files live in.
+     * @param string $path Path to sample files.
+     * @return void
+     */
+    public function setFolder($path)
     {
-        return $this->processCodeSniffer($testedFile, $sniffName)->getWarningCount();
+        $this->path = $path;
     }
 
-    private function processCodeSniffer($testedFile, $sniffName)
+    /**
+     * Sets the file to run the sniffer on then
+     * calls the run method to run the sniffer.
+     * @param  string $file Filename.
+     * @return PHP_CodeSniffer_File Sniffer Results.
+     */
+    public function sniff($file)
     {
-        $this->codeSniffer->initStandard(__DIR__.'/../src/Codor', [$sniffName]);
+        $this->filePath = $this->path . $file;
 
-        return $this->codeSniffer->processFile($testedFile);
+        return $this->run();
+    }
+
+    /**
+     * Runs the actual sniffer on the file.
+     * @return PHP_CodeSniffer_File Sniffer Results.
+     */
+    protected function run()
+    {
+        $this->codeSniffer->initStandard(__DIR__.'/../src/Codor', [$this->sniff]);
+
+        return $this->codeSniffer->processFile($this->filePath);
     }
 }
