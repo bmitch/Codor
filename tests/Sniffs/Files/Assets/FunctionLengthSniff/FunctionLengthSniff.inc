@@ -29,6 +29,8 @@ function someFunctionLessThan21Lines()
 
 }
 
+function someFunctionWithoutABody();
+
 class SomeClass
 {
     public function someMethodLongerThan21Lines()

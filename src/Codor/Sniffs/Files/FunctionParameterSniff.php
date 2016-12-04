@@ -36,11 +36,6 @@ class FunctionParameterSniff implements PHP_CodeSniffer_Sniff
         $tokens = $phpcsFile->getTokens();
         $token = $tokens[$stackPtr];
 
-        // Skip function without body.
-        if (isset($token['scope_opener']) === false) {
-            return;
-        }
-
         $openParenIndex = $token['parenthesis_opener'];
         $closedParenIndex = $token['parenthesis_closer'];
 
