@@ -33,10 +33,9 @@ class FunctionParameterSniff implements PHP_CodeSniffer_Sniff
      */
     public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
     {
-        $tokens = $phpcsFile->getTokens();
-        $token = $tokens[$stackPtr];
-
-        $openParenIndex = $token['parenthesis_opener'];
+        $tokens           = $phpcsFile->getTokens();
+        $token            = $tokens[$stackPtr];
+        $openParenIndex   = $token['parenthesis_opener'];
         $closedParenIndex = $token['parenthesis_closer'];
 
         $numberOfParameters = 0;
@@ -47,13 +46,11 @@ class FunctionParameterSniff implements PHP_CodeSniffer_Sniff
         }
 
         if ($numberOfParameters > $this->maxParameters) {
-            $error = "Function has more than {$this->maxParameters} parameters. Please reduce.";
-            $phpcsFile->addError($error, $stackPtr);
+            $phpcsFile->addError("Function has more than {$this->maxParameters} parameters. Please reduce.", $stackPtr);
         }
 
         if ($numberOfParameters == $this->maxParameters) {
-            $warning = "Function has {$this->maxParameters} parameters. Please reduce if possible.";
-            $phpcsFile->addWarning($warning, $stackPtr);
+            $phpcsFile->addWarning("Function has {$this->maxParameters} parameters.", $stackPtr);
         }
     }
 }
