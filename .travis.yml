@@ -12,6 +12,7 @@ script:
  - vendor/bin/phpcs --standard=psr2 src
  - vendor/bin/phpcs --standard=phpcs.xml src
  - vendor/bin/phpcs --standard=phpcs.xml tests --ignore=tests/Sniffs
+ - vendor/bin/phpcs --standard=src/Codor/ruleset.xml src
  - vendor/bin/phpunit --debug --coverage-clover=coverage.xml
  - vendor/bin/phpmd src text codesize,unusedcode,naming
  - vendor/bin/phploc src --progress
