@@ -58,3 +58,6 @@ Functions/methods must have no more than 3 parameters.
 
 ### Codor.Files.ReturnNull ###
 Functions/methods must not return `null`.
+
+### Codor.Classes.ClassLength ###
+Classes must be 200 lines of code or fewer.
