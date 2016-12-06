@@ -31,15 +31,13 @@ class ReturnNullSniff implements PHP_CodeSniffer_Sniff
         $returnTokenIndex = $stackPtr;
 
         $returnValueToken = '';
-        for ($index = $returnTokenIndex; $index < count($tokens); $index++) {
+        $numberOfTokens = count($tokens);
+
+        for ($index = $returnTokenIndex; $index < $numberOfTokens; $index++) {
             if ($tokens[$index]['type'] === 'T_SEMICOLON') {
                 $returnValueToken = $tokens[$index - 1];
                 break;
             }
-        }
-
-        if ($returnValueToken == '') {
-            return;
         }
 
         if ($returnValueToken['type'] === 'T_NULL') {
