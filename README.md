@@ -61,3 +61,10 @@ Functions/methods must not return `null`.
 
 ### Codor.Classes.ClassLength ###
 Classes must be 200 lines of code or fewer.
+
+## Contributing ##
+Please see [CONTRIBUTING.md](CONTRIBUTING.md)
+
+## License ##
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
