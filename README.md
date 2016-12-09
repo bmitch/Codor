@@ -62,6 +62,9 @@ Functions/methods must not return `null`.
 ### Codor.Classes.ClassLength ###
 Classes must be 200 lines of code or fewer.
 
+### Codor.Files.FunctionNameContainsAndOr ###
+Functions/methods cannot contain "And" or "Or". This could be a sign of a function that does more than one thing.
+
 ## Contributing ##
 Please see [CONTRIBUTING.md](CONTRIBUTING.md)
 
