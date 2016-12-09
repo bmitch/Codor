@@ -1,8 +1,7 @@
 # Code Odor Sniffer
 Custom PHP Code Sniffer sniffs to help find Code Smells (Odor).
 
-[![Build Status](https://travis-ci.org/bmitch/Codor.svg?branch=master)](https://travis-ci.org/bmitch/Codor) [![codecov](https://codecov.io/gh/bmitch/Codor/branch/master/graph/badge.svg)](https://codecov.io/gh/bmitch/Codor) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bmitch/Codor/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/bmitch/Codor/?branch=master) [![Code Climate](https://codeclimate.com/github/bmitch/Codor/badges/gpa.svg)](https://codeclimate.com/github/bmitch/Codor)
-
+[![Build Status](https://travis-ci.org/bmitch/Codor.svg?branch=master)](https://travis-ci.org/bmitch/Codor) [![codecov](https://codecov.io/gh/bmitch/Codor/branch/master/graph/badge.svg)](https://codecov.io/gh/bmitch/Codor) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bmitch/Codor/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/bmitch/Codor/?branch=master) [![Code Climate](https://codeclimate.com/github/bmitch/Codor/badges/gpa.svg)](https://codeclimate.com/github/bmitch/Codor) [![Packagist](https://img.shields.io/packagist/v/bmitch/codor.svg)]() [![Packagist](https://img.shields.io/packagist/l/bmitch/codor.svg)]()
 ----------
 _Inspired by: https://github.com/object-calisthenics/phpcs-calisthenics-rules_
 
@@ -51,7 +50,7 @@ vendor/bin/phpcs --standard=codor.xml --sniffs=Codor.ControlStructures.NoElse sr
 Does not allow for any `else` or `elseif` statements.
 
 ### Codor.Files.FunctionLength ###
-Functions/methods must be 20 lines of code or fewer.
+Functions/methods must be no more than 20 lines.
 
 ### Codor.Files.FunctionParameter ###
 Functions/methods must have no more than 3 parameters.
@@ -60,7 +59,7 @@ Functions/methods must have no more than 3 parameters.
 Functions/methods must not return `null`.
 
 ### Codor.Classes.ClassLength ###
-Classes must be 200 lines of code or fewer.
+Classes must be no more than 200 lines.
 
 ### Codor.Files.FunctionNameContainsAndOr ###
 Functions/methods cannot contain "And" or "Or". This could be a sign of a function that does more than one thing.
