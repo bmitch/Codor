@@ -1,5 +1,16 @@
 # Change Log
 
+## [0.0.4](https://github.com/bmitch/Codor/tree/0.0.4) (2016-12-10)
+[Full Changelog](https://github.com/bmitch/Codor/compare/0.0.3...0.0.4)
+
+**Closed issues:**
+
+- Make rules configurable? [\#26](https://github.com/bmitch/Codor/issues/26)
+
+**Merged pull requests:**
+
+- Fixes \#26 [\#36](https://github.com/bmitch/Codor/pull/36) ([bmitch](https://github.com/bmitch))
+
 ## [0.0.3](https://github.com/bmitch/Codor/tree/0.0.3) (2016-12-10)
 [Full Changelog](https://github.com/bmitch/Codor/compare/0.0.2...0.0.3)
 
