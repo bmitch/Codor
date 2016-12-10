@@ -3,6 +3,7 @@
 namespace Codor\Tests;
 
 use PHP_CodeSniffer;
+use Codor\Tests\Wrappers\Results as ResultsWrapper;
 
 class CodeSnifferRunner
 {
@@ -36,6 +37,7 @@ class CodeSnifferRunner
     public function __construct()
     {
         $this->codeSniffer = new PHP_CodeSniffer();
+        $this->codeSniffer->setConfigData('report_format', 'full');
     }
 
     /**
@@ -80,7 +82,6 @@ class CodeSnifferRunner
     protected function run()
     {
         $this->codeSniffer->initStandard(__DIR__.'/../src/Codor', [$this->sniff]);
-
-        return $this->codeSniffer->processFile($this->filePath);
+        return new ResultsWrapper($this->codeSniffer->processFile($this->filePath));
     }
 }

@@ -25,5 +25,11 @@ class ReturnNullSniffTest extends BaseTestCase
         $results = $this->runner->sniff('FunctionThatReturnsNull.inc');
         $this->assertEquals(2, $results->getErrorCount());
         $this->assertEquals(0, $results->getWarningCount());
+
+        $errorMessages = $results->getAllErrorMessages();
+        $this->assertCount(2, $errorMessages);
+        $this->assertAllEqual('Return null value found.', $errorMessages);
     }
+
+
 }

@@ -24,5 +24,14 @@ class FunctionNameContainsAndOrSniffTest extends BaseTestCase
     {
         $results = $this->runner->sniff('FunctionNameContainsAndOrSniff.inc');
         $this->assertSame(6, $results->getErrorCount());
+        $this->assertSame(0, $results->getWarningCOunt());
+
+        $errorMessages = $results->getAllErrorMessages();
+        $this->assertCount(6, $errorMessages);
+        $this->assertAllEqual(
+            "Your function contains 'and' or 'or' which indicates it might be doing more than one thing.",
+            $errorMessages
+        );
+
     }
 }

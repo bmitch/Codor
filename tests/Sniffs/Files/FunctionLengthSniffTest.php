@@ -24,5 +24,10 @@ class FunctionLengthSniffTest extends BaseTestCase
     {
  		$results = $this->runner->sniff('FunctionLengthSniff.inc');
         $this->assertSame(2, $results->getErrorCount());
+        $this->assertSame(0, $results->getWarningCount());
+
+        $errorMessages = $results->getAllErrorMessages();
+        $this->assertCount(2, $errorMessages);
+        $this->assertAllEqual('Function is 21 lines. Must be 20 lines or fewer.', $errorMessages);
     }
 }

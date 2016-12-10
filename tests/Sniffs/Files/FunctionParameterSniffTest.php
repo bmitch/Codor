@@ -20,13 +20,24 @@ class FunctionParameterSniffTest extends BaseTestCase
     {
         $results = $this->runner->sniff('FunctionsWithFourOrMoreParameters.inc');
         $this->assertEquals(4, $results->getErrorCount());
+        $this->assertEquals(0, $results->getWarningCount());
+
+        $errorMessages = $results->getAllErrorMessages();
+        $this->assertCount(4, $errorMessages);
+        $this->assertAllEqual('Function has more than 3 parameters. Please reduce.', $errorMessages);
     }
 
     /** @test */
     public function it_produces_a_warning_when_a_function_has_3_parameters()
     {
         $results = $this->runner->sniff('FunctionWithThreeParameters.inc');
+        $this->assertEquals(0, $results->getErrorCount());
         $this->assertEquals(2, $results->getWarningCount());
+
+        $warningMessages = $results->getAllWarningMessages();
+        $this->assertCount(2, $warningMessages);
+        $this->assertAllEqual('Function has 3 parameters.', $warningMessages);
+
     }
 
     /** @test */
@@ -42,6 +53,9 @@ class FunctionParameterSniffTest extends BaseTestCase
     {
         $results = $this->runner->sniff('Interfaces.inc');
         $this->assertEquals(2, $results->getErrorCount());
+        $errorMessages = $results->getAllErrorMessages();
+        $this->assertCount(2, $errorMessages);
+        $this->assertAllEqual('Function has more than 3 parameters. Please reduce.', $errorMessages);
     }
 
     /** @test */
@@ -49,5 +63,10 @@ class FunctionParameterSniffTest extends BaseTestCase
     {
         $results = $this->runner->sniff('Interfaces.inc');
         $this->assertEquals(1, $results->getWarningCount());
+
+        $warningMessages = $results->getAllWarningMessages();
+        $this->assertCount(1, $warningMessages);
+        $this->assertAllEqual('Function has 3 parameters.', $warningMessages);
+
     }
 }
