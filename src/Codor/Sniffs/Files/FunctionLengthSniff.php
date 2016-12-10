@@ -13,7 +13,7 @@ class FunctionLengthSniff implements PHP_CodeSniffer_Sniff
      * should have.
      * @var integer
      */
-    protected $maxLength = 20;
+    public $maxLength = 20;
 
     /**
      * Returns the token types that this sniff is interested in.

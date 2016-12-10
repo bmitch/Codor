@@ -12,7 +12,7 @@ class FunctionParameterSniff implements PHP_CodeSniffer_Sniff
      * The maximum number of parameters a function can have.
      * @var integer
      */
-    protected $maxParameters = 3;
+    public $maxParameters = 3;
 
     /**
      * Returns the token types that this sniff is interested in.
