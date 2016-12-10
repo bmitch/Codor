@@ -20,5 +20,10 @@ class ClassLengthSniffTest extends BaseTestCase
         $results = $this->runner->sniff('ClassLengthSniff.inc');
         $this->assertSame(1, $results->getErrorCount());
         $this->assertSame(0, $results->getWarningCount());
+
+        $errorMessages = $results->getAllErrorMessages();
+        $this->assertCount(1, $errorMessages);
+        $this->assertAllEqual('Class is 202 lines. Must be 200 lines or fewer.', $errorMessages);
+
     }
 }
