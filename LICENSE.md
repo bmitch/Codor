@@ -1,4 +1,4 @@
-Copyright (c) 2014 Doctrine Project
+Copyright (c) 2014 Doctrine Project  
 Modifications Copyright (c) 2016 Bill Mitchell <wkmitch@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
