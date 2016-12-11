@@ -1,5 +1,16 @@
 # Change Log
 
+## [0.0.5](https://github.com/bmitch/Codor/tree/0.0.5) (2016-12-11)
+[Full Changelog](https://github.com/bmitch/Codor/compare/0.0.4...0.0.5)
+
+**Closed issues:**
+
+- Sniff for only 1 level of indentation. [\#23](https://github.com/bmitch/Codor/issues/23)
+
+**Merged pull requests:**
+
+- Fixes \#23 [\#39](https://github.com/bmitch/Codor/pull/39) ([bmitch](https://github.com/bmitch))
+
 ## [0.0.4](https://github.com/bmitch/Codor/tree/0.0.4) (2016-12-10)
 [Full Changelog](https://github.com/bmitch/Codor/compare/0.0.3...0.0.4)
 
