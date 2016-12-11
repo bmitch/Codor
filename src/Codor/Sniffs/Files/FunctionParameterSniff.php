@@ -40,9 +40,7 @@ class FunctionParameterSniff implements PHP_CodeSniffer_Sniff
 
         $numberOfParameters = 0;
         for ($index=$openParenIndex+1; $index <= $closedParenIndex; $index++) {
-            if ($tokens[$index]['type'] == 'T_VARIABLE') {
-                $numberOfParameters++;
-            }
+            $tokens[$index]['type'] == 'T_VARIABLE' ? $numberOfParameters++ : null;
         }
 
         if ($numberOfParameters > $this->maxParameters) {

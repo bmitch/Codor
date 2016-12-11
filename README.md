@@ -76,6 +76,10 @@ Classes must be no more than 200 lines.
 ### Codor.Files.FunctionNameContainsAndOr ###
 Functions/methods cannot contain "And" or "Or". This could be a sign of a function that does more than one thing.
 
+### Codor.Files.IndentationLevel ###
+Functions/methods cannot have more than 1 level of indentation.
+
+
 ## Customizing Sniffs ##
 Some of the sniff rules can be customized to your liking. For example, if you'd want the `Codor.Files.FunctionLength` to make sure your functions are no more than 30 lines instead of 20, you can do that. Here's an example of a `codor.xml` file with that customization:
 ```
@@ -94,11 +98,13 @@ Some of the sniff rules can be customized to your liking. For example, if you'd 
 
 ### Customizations Available
 * `Codor.Files.FunctionLength`
- * `maxLength`: The maximum number of lines a function/method can be.
+ * `maxLength`: The maximum number of lines a function/method can be (default = 200).
 * `Codor.Files.FunctionParameter`
- * `maxParameters`: The maximum number of parameters a function/method can have.
+ * `maxParameters`: The maximum number of parameters a function/method can have (default = 3).
 * `Codor.Classes.ClassLength`
- * `maxLength`: The maximum number of lines a Class can be.
+ * `maxLength`: The maximum number of lines a Class can be (default = 20).
+* `Codor.Files.IndentationLevel`
+ * `indentationLimit`: Cannot have more than or equal to this number of indentations (default = 2).
 
 ## Contributing ##
 Please see [CONTRIBUTING.md](CONTRIBUTING.md)

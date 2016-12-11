@@ -52,13 +52,12 @@ class FunctionNameContainsAndOrSniff implements PHP_CodeSniffer_Sniff
      */
     protected function containsKeywords($string)
     {
+        $contains = false;
         foreach ($this->keywords as $keyword) {
-            if ($this->contains($keyword, $string)) {
-                return true;
-            }
+            $this->contains($keyword, $string) ? $contains = true : null;
         }
 
-        return false;
+        return $contains;
     }
 
     /**
