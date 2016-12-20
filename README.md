@@ -79,6 +79,8 @@ Functions/methods cannot contain "And" or "Or". This could be a sign of a functi
 ### Codor.Files.IndentationLevel ###
 Functions/methods cannot have more than 1 level of indentation.
 
+### Codor.ControlStructures.NestedIf ###
+Nested if statements are not allowed.
 
 ## Customizing Sniffs ##
 Some of the sniff rules can be customized to your liking. For example, if you'd want the `Codor.Files.FunctionLength` to make sure your functions are no more than 30 lines instead of 20, you can do that. Here's an example of a `codor.xml` file with that customization:
