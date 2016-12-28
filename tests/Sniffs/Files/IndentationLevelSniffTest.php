@@ -241,4 +241,20 @@ class IndentationLevelSniffTest extends BaseTestCase
         $errorMessages = $results->getAllErrorMessages();
         $this->assertAllEqual('2 indenation levels found. Maximum of 1 indenation levels allowed.', $errorMessages);
     }
+
+    /** @test */
+    public function a_try_catch_with_an_if_in_try_does_not_produce_an_error()
+    {
+        $results = $this->runner->sniff('TryCatchWithIfInTry.inc');
+        $this->assertEquals(0, $results->getErrorCount());
+        $this->assertEquals(0, $results->getWarningCount());
+    }
+
+    /** @test */
+    public function a_try_catch_with_an_if_in_catch_does_not_produce_an_error()
+    {
+        $results = $this->runner->sniff('TryCatchWithIfInCatch.inc');
+        $this->assertEquals(0, $results->getErrorCount());
+        $this->assertEquals(0, $results->getWarningCount());
+    }
 }
