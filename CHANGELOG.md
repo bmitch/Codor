@@ -1,5 +1,22 @@
 # Change Log
 
+## [0.0.6](https://github.com/bmitch/Codor/tree/0.0.6) (2016-12-28)
+[Full Changelog](https://github.com/bmitch/Codor/compare/0.0.5...0.0.6)
+
+**Implemented enhancements:**
+
+- ignore try-catch block as indentation [\#45](https://github.com/bmitch/Codor/issues/45)
+
+**Closed issues:**
+
+- Sniff for nested if statements. [\#38](https://github.com/bmitch/Codor/issues/38)
+
+**Merged pull requests:**
+
+- Include PHP 7 in tests [\#50](https://github.com/bmitch/Codor/pull/50) ([bmitch](https://github.com/bmitch))
+- Realted to \#45 [\#49](https://github.com/bmitch/Codor/pull/49) ([bmitch](https://github.com/bmitch))
+- Fixes \#38 [\#47](https://github.com/bmitch/Codor/pull/47) ([bmitch](https://github.com/bmitch))
+
 ## [0.0.5](https://github.com/bmitch/Codor/tree/0.0.5) (2016-12-11)
 [Full Changelog](https://github.com/bmitch/Codor/compare/0.0.4...0.0.5)
 
