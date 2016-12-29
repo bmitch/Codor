@@ -67,11 +67,11 @@ class IndentationLevelSniffTest extends BaseTestCase
         $this->assertEquals(0, $results->getWarningCount());
 
         $errorMessages = $results->getAllErrorMessages();
-        $this->assertAllEqual('2 indenation levels found. Maximum of 1 indenation levels allowed.', $errorMessages);
+        $this->assertAllEqual('2 indentation levels found. Maximum of 1 indentation levels allowed.', $errorMessages);
     }
 
     /** @test */
-    public function a_method_with_no_code_produces_no_erorrs_or_warnings()
+    public function a_method_with_no_code_produces_no_errors_or_warnings()
     {
         $results = $this->runner->sniff('MethodWithNoCode.inc');
         $this->assertEquals(0, $results->getErrorCount());
@@ -79,7 +79,7 @@ class IndentationLevelSniffTest extends BaseTestCase
     }
 
     /** @test */
-    public function a_method_with_no_indentation_produces_no_erorrs_or_warnings()
+    public function a_method_with_no_indentation_produces_no_errors_or_warnings()
     {
         $results = $this->runner->sniff('MethodWithNoIndentation.inc');
         $this->assertEquals(0, $results->getErrorCount());
@@ -87,7 +87,7 @@ class IndentationLevelSniffTest extends BaseTestCase
     }
 
     /** @test */
-    public function a_method_with_one_level_of_indentation_produces_no_erorrs_or_warnings()
+    public function a_method_with_one_level_of_indentation_produces_no_errors_or_warnings()
     {
         $results = $this->runner->sniff('MethodWithOneIndentation.inc');
         $this->assertEquals(0, $results->getErrorCount());
@@ -102,11 +102,11 @@ class IndentationLevelSniffTest extends BaseTestCase
         $this->assertEquals(0, $results->getWarningCount());
 
         $errorMessages = $results->getAllErrorMessages();
-        $this->assertAllEqual('2 indenation levels found. Maximum of 1 indenation levels allowed.', $errorMessages);
+        $this->assertAllEqual('2 indentation levels found. Maximum of 1 indentation levels allowed.', $errorMessages);
     }
 
     /** @test */
-    public function a_closure_with_code_produces_no_erorrs_or_warnings()
+    public function a_closure_with_code_produces_no_errors_or_warnings()
     {
         $results = $this->runner->sniff('ClosureWithNoCode.inc');
         $this->assertEquals(0, $results->getErrorCount());
@@ -114,7 +114,7 @@ class IndentationLevelSniffTest extends BaseTestCase
     }
 
     /** @test */
-    public function a_closure_with_no_indentation_produces_no_erorrs_or_warnings()
+    public function a_closure_with_no_indentation_produces_no_errors_or_warnings()
     {
         $results = $this->runner->sniff('ClosureWithNoIndentation.inc');
         $this->assertEquals(0, $results->getErrorCount());
@@ -122,7 +122,7 @@ class IndentationLevelSniffTest extends BaseTestCase
     }
 
     /** @test */
-    public function a_closure_with_one_level_of_indentation_produces_no_erorrs_or_warnings()
+    public function a_closure_with_one_level_of_indentation_produces_no_errors_or_warnings()
     {
         $results = $this->runner->sniff('ClosureWithOneIndentation.inc');
         $this->assertEquals(0, $results->getErrorCount());
@@ -137,11 +137,11 @@ class IndentationLevelSniffTest extends BaseTestCase
         $this->assertEquals(0, $results->getWarningCount());
 
         $errorMessages = $results->getAllErrorMessages();
-        $this->assertAllEqual('2 indenation levels found. Maximum of 1 indenation levels allowed.', $errorMessages);
+        $this->assertAllEqual('2 indentation levels found. Maximum of 1 indentation levels allowed.', $errorMessages);
     }
 
     /** @test */
-    public function a_switch_with_no_code_produces_no_erorrs_or_warnings()
+    public function a_switch_with_no_code_produces_no_errors_or_warnings()
     {
         $results = $this->runner->sniff('SwitchStatementWithNoCode.inc');
         $this->assertEquals(0, $results->getErrorCount());
@@ -149,7 +149,7 @@ class IndentationLevelSniffTest extends BaseTestCase
     }
 
     /** @test */
-    public function a_switch_with_no_indentation_produces_no_erorrs_or_warnings()
+    public function a_switch_with_no_indentation_produces_no_errors_or_warnings()
     {
         $results = $this->runner->sniff('SwitchStatementWithNoIndentation.inc');
         $this->assertEquals(0, $results->getErrorCount());
@@ -157,7 +157,7 @@ class IndentationLevelSniffTest extends BaseTestCase
     }
 
     /** @test */
-    public function a_switch_with_one_level_of_indentation_produces_no_erorrs_or_warnings()
+    public function a_switch_with_one_level_of_indentation_produces_no_errors_or_warnings()
     {
         $results = $this->runner->sniff('SwitchStatementWithOneIndentation.inc');
         $this->assertEquals(0, $results->getErrorCount());
@@ -165,17 +165,17 @@ class IndentationLevelSniffTest extends BaseTestCase
     }
 
     /** @test */
-    public function a_switch_with_two_levels_of_indentation_produces_no_erorrs_or_warnings()
+    public function a_switch_with_two_levels_of_indentation_produces_no_errors_or_warnings()
     {
         $results = $this->runner->sniff('SwitchStatementWithTwoIndentation.inc');
         $this->assertEquals(1, $results->getErrorCount());
         $this->assertEquals(0, $results->getWarningCount());
         $errorMessages = $results->getAllErrorMessages();
-        $this->assertAllEqual('2 indenation levels found. Maximum of 1 indenation levels allowed.', $errorMessages);
+        $this->assertAllEqual('2 indentation levels found. Maximum of 1 indentation levels allowed.', $errorMessages);
     }
 
     /** @test */
-    public function a_switch_in_a_function_with_no_code_produces_no_erorrs_or_warnings()
+    public function a_switch_in_a_function_with_no_code_produces_no_errors_or_warnings()
     {
         $results = $this->runner->sniff('SwitchStatementInFunctionWithNoCode.inc');
         $this->assertEquals(0, $results->getErrorCount());
@@ -183,7 +183,7 @@ class IndentationLevelSniffTest extends BaseTestCase
     }
 
     /** @test */
-    public function a_switch_in_a_function_with_no_indentation_produces_no_erorrs_or_warnings()
+    public function a_switch_in_a_function_with_no_indentation_produces_no_errors_or_warnings()
     {
         $results = $this->runner->sniff('SwitchStatementInFunctionWithNoIndentation.inc');
         $this->assertEquals(0, $results->getErrorCount());
@@ -191,7 +191,7 @@ class IndentationLevelSniffTest extends BaseTestCase
     }
 
     /** @test */
-    public function a_switch_in_a_function_with_one_level_of_indentation_produces_no_erorrs_or_warnings()
+    public function a_switch_in_a_function_with_one_level_of_indentation_produces_no_errors_or_warnings()
     {
         $results = $this->runner->sniff('SwitchStatementInFunctionWithOneIndentation.inc');
         $this->assertEquals(0, $results->getErrorCount());
@@ -205,11 +205,11 @@ class IndentationLevelSniffTest extends BaseTestCase
         $this->assertEquals(1, $results->getErrorCount());
         $this->assertEquals(0, $results->getWarningCount());
         $errorMessages = $results->getAllErrorMessages();
-        $this->assertAllEqual('2 indenation levels found. Maximum of 1 indenation levels allowed.', $errorMessages);
+        $this->assertAllEqual('2 indentation levels found. Maximum of 1 indentation levels allowed.', $errorMessages);
     }
 
     /** @test */
-    public function a_switch_in_a_method_with_no_code_produces_no_erorrs_or_warnings()
+    public function a_switch_in_a_method_with_no_code_produces_no_errors_or_warnings()
     {
         $results = $this->runner->sniff('SwitchStatementInMethodWithNoCode.inc');
         $this->assertEquals(0, $results->getErrorCount());
@@ -217,7 +217,7 @@ class IndentationLevelSniffTest extends BaseTestCase
     }
 
     /** @test */
-    public function a_switch_in_a_method_with_no_indentation_produces_no_erorrs_or_warnings()
+    public function a_switch_in_a_method_with_no_indentation_produces_no_errors_or_warnings()
     {
         $results = $this->runner->sniff('SwitchStatementInMethodWithNoIndentation.inc');
         $this->assertEquals(0, $results->getErrorCount());
@@ -225,7 +225,7 @@ class IndentationLevelSniffTest extends BaseTestCase
     }
 
     /** @test */
-    public function a_switch_in_a_method_with_one_level_of_indentation_produces_no_erorrs_or_warnings()
+    public function a_switch_in_a_method_with_one_level_of_indentation_produces_no_errors_or_warnings()
     {
         $results = $this->runner->sniff('SwitchStatementInMethodWithOneIndentation.inc');
         $this->assertEquals(0, $results->getErrorCount());
@@ -238,8 +238,9 @@ class IndentationLevelSniffTest extends BaseTestCase
         $results = $this->runner->sniff('SwitchStatementInMethodWithTwoIndentation.inc');
         $this->assertEquals(1, $results->getErrorCount());
         $this->assertEquals(0, $results->getWarningCount());
+
         $errorMessages = $results->getAllErrorMessages();
-        $this->assertAllEqual('2 indenation levels found. Maximum of 1 indenation levels allowed.', $errorMessages);
+        $this->assertAllEqual('2 indentation levels found. Maximum of 1 indentation levels allowed.', $errorMessages);
     }
 
     /** @test */
