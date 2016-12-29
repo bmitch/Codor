@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.0.7](https://github.com/bmitch/Codor/tree/0.0.7) (2016-12-29)
+[Full Changelog](https://github.com/bmitch/Codor/compare/0.0.6...0.0.7)
+
+**Merged pull requests:**
+
+- :art: Clean up and refactor to remove @codingStandardsIgnore annotation [\#52](https://github.com/bmitch/Codor/pull/52) ([winkbrace](https://github.com/winkbrace))
+- Updated changelog [\#51](https://github.com/bmitch/Codor/pull/51) ([bmitch](https://github.com/bmitch))
+
 ## [0.0.6](https://github.com/bmitch/Codor/tree/0.0.6) (2016-12-28)
 [Full Changelog](https://github.com/bmitch/Codor/compare/0.0.5...0.0.6)
 
