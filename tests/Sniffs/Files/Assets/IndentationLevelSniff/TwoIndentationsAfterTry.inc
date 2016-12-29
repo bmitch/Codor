@@ -1,6 +1,6 @@
 <?php
 
-class TryCatchWithIfInTry
+class TwoIndentationsAfterTry
 {
     public function doSomething($event)
     {
@@ -12,6 +12,12 @@ class TryCatchWithIfInTry
             $this->fire($event);
         } catch (\Exception $e) {
             $this->log($e);
+        }
+
+        foreach (range(1, 5) as $id) {
+            if ($id > 2) {
+                $this->fireTheAlarms($event);
+            }
         }
     }
 }

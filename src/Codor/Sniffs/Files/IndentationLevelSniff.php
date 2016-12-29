@@ -17,7 +17,14 @@ class IndentationLevelSniff implements PHP_CodeSniffer_Sniff
      * The highest indentation level found.
      * @var integer
      */
-    protected $maxIndentationFound;
+    protected $maxIndentFound = 0;
+
+    /**
+     * This array contains the relative scope level per token.
+     * It is increased inside try-catch blocks.
+     * @var array
+     */
+    protected $relativeScopeLevels = [];
 
     /**
      * Returns the token types that this sniff is interested in.
@@ -40,7 +47,7 @@ class IndentationLevelSniff implements PHP_CodeSniffer_Sniff
     {
         $tokens = $phpcsFile->getTokens();
         $token = $tokens[$stackPtr];
-        $this->maxIndentationFound = 0;
+        $this->maxIndentFound = 0;
 
         // Ignore functions with no body
         if (isset($token['scope_opener']) === false) {
@@ -49,7 +56,7 @@ class IndentationLevelSniff implements PHP_CodeSniffer_Sniff
 
         $this->inspectScope($token, $tokens);
 
-        if ($this->maxIndentationFound <= $this->indentationLimit) {
+        if ($this->maxIndentFound <= $this->indentationLimit) {
             return;
         }
 
@@ -66,15 +73,39 @@ class IndentationLevelSniff implements PHP_CodeSniffer_Sniff
     {
         $start = $token['scope_opener'];
         $length = $token['scope_closer'] - $start + 1;
-        $relativeScopeLevel = $tokens[$start]['level'];
 
         $scope = array_slice($tokens, $start, $length, true);
         $scope = $this->removeTokenScopes($scope, 'T_SWITCH');
 
-        $this->maxIndentationFound = array_reduce($scope, function ($max, $nestedToken) use ($relativeScopeLevel) {
-            $max = max($max, $nestedToken['level'] - $relativeScopeLevel);
-            return $max;
-        });
+        $this->setRelativeScopeLevels($scope, $scope[$start]['level']);
+
+        foreach ($scope as $i => $token) {
+            $this->maxIndentFound = max($this->maxIndentFound, $token['level'] - $this->relativeScopeLevels[$i]);
+        }
+    }
+
+    /**
+     * Set the relative scope level per token.
+     * In a try-catch block the relative scope is one higher.
+     * @param  array   $scope The tokens in a scope.
+     * @param  integer $level The base level of the relative scopes.
+     * @return void
+     */
+    protected function setRelativeScopeLevels(array $scope, $level)
+    {
+        // first set the base level for all tokens
+        foreach (array_keys($scope) as $i) {
+            $this->relativeScopeLevels[$i] = $level;
+        }
+
+        // then increase the base level by one for all the tokens in a try-catch block
+        foreach (array_keys($this->findNestedTokens($scope, 'T_TRY')) as $i) {
+            $this->relativeScopeLevels[$i] += 1;
+        }
+
+        foreach (array_keys($this->findNestedTokens($scope, 'T_CATCH')) as $i) {
+            $this->relativeScopeLevels[$i] += 1;
+        }
     }
 
     /**
@@ -85,16 +116,28 @@ class IndentationLevelSniff implements PHP_CodeSniffer_Sniff
      */
     protected function removeTokenScopes(array $scope, $type)
     {
+        return array_diff_key($scope, $this->findNestedTokens($scope, $type));
+    }
+
+    /**
+     * Find the tokens nested in the scope of given token type.
+     * @param  array  $scope The tokens in a scope.
+     * @param  string $type  The type of token to find in the scope.
+     * @return array  $scope The nested tokens.
+     */
+    protected function findNestedTokens(array $scope, $type)
+    {
         $typeTokens = array_filter($scope, function ($token) use ($type) {
             return $token['type'] == $type;
         });
 
+        $nestedTokens = [];
         foreach ($typeTokens as $token) {
             $range = array_flip(range($token['scope_opener'], $token['scope_closer']));
-            $scope = array_diff_key($scope, $range);
+            $nestedTokens += array_intersect_key($scope, $range);
         }
 
-        return $scope;
+        return $nestedTokens;
     }
 
     /**
@@ -106,7 +149,7 @@ class IndentationLevelSniff implements PHP_CodeSniffer_Sniff
         // Hack to fix the output numbers for the
         // indentation levels found and the
         // indentation limit.
-        $indentationFound = $this->maxIndentationFound - 1;
+        $indentationFound = $this->maxIndentFound - 1;
         $indentationLimit = $this->indentationLimit - 1;
         return "{$indentationFound} indentation levels found. " .
         "Maximum of {$indentationLimit} indentation levels allowed.";
