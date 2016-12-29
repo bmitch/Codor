@@ -79,9 +79,9 @@ class IndentationLevelSniff implements PHP_CodeSniffer_Sniff
 
     /**
      * Remove the bodies of given token type from the scope.
-     * @param  array  $scope The tokens in a scope
-     * @param  string $type  The type of token to remove from the scope
-     * @return array  $scope The tokens scope without the removed tokens
+     * @param  array  $scope The tokens in a scope.
+     * @param  string $type  The type of token to remove from the scope.
+     * @return array  $scope The tokens scope without the removed tokens.
      */
     protected function removeTokenScopes(array $scope, $type)
     {
