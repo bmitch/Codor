@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.0.8](https://github.com/bmitch/Codor/tree/0.0.8) (2016-12-29)
+[Full Changelog](https://github.com/bmitch/Codor/compare/0.0.7...0.0.8)
+
+**Merged pull requests:**
+
+- Try catch [\#54](https://github.com/bmitch/Codor/pull/54) ([winkbrace](https://github.com/winkbrace))
+- Updated changelog [\#53](https://github.com/bmitch/Codor/pull/53) ([bmitch](https://github.com/bmitch))
+
 ## [0.0.7](https://github.com/bmitch/Codor/tree/0.0.7) (2016-12-29)
 [Full Changelog](https://github.com/bmitch/Codor/compare/0.0.6...0.0.7)
 
