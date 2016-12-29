@@ -58,7 +58,6 @@ class IndentationLevelSniff implements PHP_CodeSniffer_Sniff
 
     /**
      * Inspect the tokens in the scope of the provided $token.
-     * @codingStandardsIgnoreStart
      * @param  array $token  Token Data.
      * @param  array $tokens Tokens.
      * @return void
@@ -66,28 +65,36 @@ class IndentationLevelSniff implements PHP_CodeSniffer_Sniff
     protected function inspectScope(array $token, array $tokens)
     {
         $start = $token['scope_opener'];
-        $end = $token['scope_closer'];
-        $this->relativeScopeLevel = $tokens[$start]['level'];
-        for ($index=$start; $index <= $end; $index++) {
-            $nestedToken = $tokens[$index];
-            if ($nestedToken['type'] === "T_SWITCH") {
-                return;
-            }
-            $this->adjustMaxIndentationFound($nestedToken);
-        }
+        $length = $token['scope_closer'] - $start + 1;
+        $relativeScopeLevel = $tokens[$start]['level'];
+
+        $scope = array_slice($tokens, $start, $length, true);
+        $scope = $this->removeTokenScopes($scope, 'T_SWITCH');
+
+        $this->maxIndentationFound = array_reduce($scope, function ($max, $nestedToken) use ($relativeScopeLevel) {
+            $max = max($max, $nestedToken['level'] - $relativeScopeLevel);
+            return $max;
+        });
     }
-    // @codingStandardsIgnoreEnd
 
     /**
-     * Adjust the maximum indentation level found value.
-     * @param  array $nestedToken Token data.
-     * @return void
+     * Remove the bodies of given token type from the scope.
+     * @param array $scope
+     * @param string $type
+     * @return array $scope
      */
-    protected function adjustMaxIndentationFound(array $nestedToken)
+    protected function removeTokenScopes(array $scope, $type)
     {
-        $tokenNestedLevel = $nestedToken['level'];
-        $nestedLevel = $tokenNestedLevel - $this->relativeScopeLevel;
-        $nestedLevel > $this->maxIndentationFound ? $this->maxIndentationFound = $nestedLevel : null;
+        $typeTokens = array_filter($scope, function ($token) use ($type) {
+            return $token['type'] == $type;
+        });
+
+        foreach ($typeTokens as $token) {
+            $range = array_flip(range($token['scope_opener'], $token['scope_closer']));
+            $scope = array_diff_key($scope, $range);
+        }
+
+        return $scope;
     }
 
     /**
@@ -101,7 +108,7 @@ class IndentationLevelSniff implements PHP_CodeSniffer_Sniff
         // indentation limit.
         $indentationFound = $this->maxIndentationFound - 1;
         $indentationLimit = $this->indentationLimit - 1;
-        return "{$indentationFound} indenation levels found. " .
-        "Maximum of {$indentationLimit} indenation levels allowed.";
+        return "{$indentationFound} indentation levels found. " .
+        "Maximum of {$indentationLimit} indentation levels allowed.";
     }
 }

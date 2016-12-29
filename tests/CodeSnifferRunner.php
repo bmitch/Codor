@@ -2,8 +2,8 @@
 
 namespace Codor\Tests;
 
-use PHP_CodeSniffer;
 use Codor\Tests\Wrappers\Results as ResultsWrapper;
+use PHP_CodeSniffer;
 
 class CodeSnifferRunner
 {
@@ -43,7 +43,7 @@ class CodeSnifferRunner
     /**
      * Sets the sniff we will test.
      * @param string $sniff The sniff to test.
-     * @return this
+     * @return CodeSnifferRunner
      */
     public function setSniff($sniff)
     {
@@ -66,7 +66,7 @@ class CodeSnifferRunner
      * Sets the file to run the sniffer on then
      * calls the run method to run the sniffer.
      * @param  string $file Filename.
-     * @return PHP_CodeSniffer_File Sniffer Results.
+     * @return ResultsWrapper Sniffer Results.
      */
     public function sniff($file)
     {
@@ -77,11 +77,12 @@ class CodeSnifferRunner
 
     /**
      * Runs the actual sniffer on the file.
-     * @return PHP_CodeSniffer_File Sniffer Results.
+     * @return ResultsWrapper Sniffer Results.
      */
     protected function run()
     {
         $this->codeSniffer->initStandard(__DIR__.'/../src/Codor', [$this->sniff]);
+
         return new ResultsWrapper($this->codeSniffer->processFile($this->filePath));
     }
 }
