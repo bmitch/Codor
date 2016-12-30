@@ -29,16 +29,16 @@ class ReturnNullSniff implements PHP_CodeSniffer_Sniff
         $tokens = $phpcsFile->getTokens();
         $returnTokenIndex = $stackPtr;
 
-        $scope = array_slice($tokens, $returnTokenIndex);
+        $scope = array_slice($tokens, $returnTokenIndex, null, true);
         $semicolons = array_filter($scope, function ($token) {
             return $token['type'] === 'T_SEMICOLON';
         });
 
-        $returnValueToken = $scope[key($semicolons) - 1];
+        $returnValueIndex = key($semicolons) - 1;
 
-        if ($returnValueToken['type'] === 'T_NULL') {
+        if ($scope[$returnValueIndex]['type'] === 'T_NULL') {
             $error = "Return null value found.";
-            $phpcsFile->addError($error, $stackPtr);
+            $phpcsFile->addError($error, $returnValueIndex);
         }
     }
 }
