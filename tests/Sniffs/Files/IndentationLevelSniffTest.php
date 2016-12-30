@@ -258,4 +258,20 @@ class IndentationLevelSniffTest extends BaseTestCase
         $this->assertEquals(0, $results->getErrorCount());
         $this->assertEquals(0, $results->getWarningCount());
     }
+
+    /** @test */
+    public function a_try_catch_with_two_indentations_should_produce_an_error()
+    {
+        $results = $this->runner->sniff('TryWithTwoIndentations.inc');
+        $this->assertEquals(1, $results->getErrorCount());
+        $this->assertEquals(0, $results->getWarningCount());
+    }
+
+    /** @test */
+    public function two_indentation_outside_try_catch_should_produce_an_error()
+    {
+        $results = $this->runner->sniff('TwoIndentationsAfterTry.inc');
+        $this->assertEquals(1, $results->getErrorCount());
+        $this->assertEquals(0, $results->getWarningCount());
+    }
 }
