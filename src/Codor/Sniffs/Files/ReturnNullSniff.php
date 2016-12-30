@@ -19,7 +19,6 @@ class ReturnNullSniff implements PHP_CodeSniffer_Sniff
 
     /**
      * Processes the tokens that this sniff is interested in.
-     * @codingStandardsIgnoreStart
      * @param PHP_CodeSniffer_File $phpcsFile The file where the token was found.
      * @param integer              $stackPtr  The position in the stack where
      *                                    the token was found.
@@ -30,16 +29,12 @@ class ReturnNullSniff implements PHP_CodeSniffer_Sniff
         $tokens = $phpcsFile->getTokens();
         $returnTokenIndex = $stackPtr;
 
-        $returnValueToken = '';
-        $numberOfTokens = count($tokens);
+        $scope = array_slice($tokens, $returnTokenIndex);
+        $semicolons = array_filter($scope, function ($token) {
+            return $token['type'] === 'T_SEMICOLON';
+        });
 
-        for ($index = $returnTokenIndex; $index < $numberOfTokens; $index++) {
-            if ($tokens[$index]['type'] === 'T_SEMICOLON') {
-                $returnValueToken = $tokens[$index - 1];
-                break;
-            }
-        }
-        // @codingStandardsIgnoreEnd
+        $returnValueToken = $scope[key($semicolons) - 1];
 
         if ($returnValueToken['type'] === 'T_NULL') {
             $error = "Return null value found.";
