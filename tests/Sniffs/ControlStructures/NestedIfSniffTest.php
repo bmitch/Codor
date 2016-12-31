@@ -24,6 +24,5 @@ class NestedIfSniffTest extends BaseTestCase
         $errorMessages = $results->getAllErrorMessages();
         $this->assertCount(6, $errorMessages);
         $this->assertAllEqual('Nested if statement found.', $errorMessages);
-
     }
 }

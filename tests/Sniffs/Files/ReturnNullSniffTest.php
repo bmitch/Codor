@@ -30,5 +30,4 @@ class ReturnNullSniffTest extends BaseTestCase
         $this->assertCount(2, $errorMessages);
         $this->assertAllEqual('Return null value found.', $errorMessages);
     }
-
 }
