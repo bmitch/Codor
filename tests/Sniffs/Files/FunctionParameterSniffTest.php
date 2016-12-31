@@ -15,7 +15,7 @@ class FunctionParameterSniffTest extends BaseTestCase
         $this->runner->setSniff('Codor.Files.FunctionParameter')->setFolder(__DIR__.'/Assets/FunctionParameterSniff/');
     }
 
-	/** @test */
+    /** @test */
     public function it_produces_an_error_when_a_function_has_4_or_more_parameters()
     {
         $results = $this->runner->sniff('FunctionsWithFourOrMoreParameters.inc');
@@ -37,7 +37,6 @@ class FunctionParameterSniffTest extends BaseTestCase
         $warningMessages = $results->getAllWarningMessages();
         $this->assertCount(2, $warningMessages);
         $this->assertAllEqual('Function has 3 parameters.', $warningMessages);
-
     }
 
     /** @test */
@@ -67,6 +66,5 @@ class FunctionParameterSniffTest extends BaseTestCase
         $warningMessages = $results->getAllWarningMessages();
         $this->assertCount(1, $warningMessages);
         $this->assertAllEqual('Function has 3 parameters.', $warningMessages);
-
     }
 }

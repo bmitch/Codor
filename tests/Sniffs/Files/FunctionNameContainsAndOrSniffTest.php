@@ -32,6 +32,5 @@ class FunctionNameContainsAndOrSniffTest extends BaseTestCase
             "Your function contains 'and' or 'or' which indicates it might be doing more than one thing.",
             $errorMessages
         );
-
     }
 }
