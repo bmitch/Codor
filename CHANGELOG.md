@@ -1,5 +1,21 @@
 # Change Log
 
+## [Unreleased](https://github.com/bmitch/Codor/tree/HEAD)
+
+[Full Changelog](https://github.com/bmitch/Codor/compare/0.0.9...HEAD)
+
+**Implemented enhancements:**
+
+- Remove any levels of indentation \> 1 [\#40](https://github.com/bmitch/Codor/issues/40)
+
+## [0.0.9](https://github.com/bmitch/Codor/tree/0.0.9) (2016-12-30)
+[Full Changelog](https://github.com/bmitch/Codor/compare/0.0.8...0.0.9)
+
+**Merged pull requests:**
+
+- :art: Refactor to remove codingStandardsIgnore annotation [\#56](https://github.com/bmitch/Codor/pull/56) ([winkbrace](https://github.com/winkbrace))
+- Updated changelog [\#55](https://github.com/bmitch/Codor/pull/55) ([bmitch](https://github.com/bmitch))
+
 ## [0.0.8](https://github.com/bmitch/Codor/tree/0.0.8) (2016-12-29)
 [Full Changelog](https://github.com/bmitch/Codor/compare/0.0.7...0.0.8)
 
