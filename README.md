@@ -57,6 +57,10 @@ Or you can also specify which sniffs to specifically run:
 vendor/bin/phpcs --standard=codor.xml --sniffs=Codor.ControlStructures.NoElse src
 ```
 
+### Suppressing the sniffs on specific pieces of code
+Please see the PHPCS documentation:
+https://github.com/squizlabs/PHP_CodeSniffer/wiki/Advanced-Usage#ignoring-files-and-folders
+
 ## Sniffs Included ##
 ### Codor.ControlStructures.NoElse ###
 Does not allow for any `else` or `elseif` statements.
