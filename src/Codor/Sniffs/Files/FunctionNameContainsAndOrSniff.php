@@ -36,8 +36,12 @@ class FunctionNameContainsAndOrSniff implements PHP_CodeSniffer_Sniff
         $tokens = $phpcsFile->getTokens();
         $functionNameToken = $tokens[$stackPtr + 2];
         $functionName = $functionNameToken['content'];
-        
+
         if (! $this->containsKeywords($functionName)) {
+            return;
+        }
+
+        if (! $this->ensuingDelimiter($functionName)) {
             return;
         }
 
@@ -58,6 +62,33 @@ class FunctionNameContainsAndOrSniff implements PHP_CodeSniffer_Sniff
         }
 
         return $contains;
+    }
+
+    /**
+     * Determines if the matched keyword has an ensuing
+     * CamelCased or snake_cased delimiter.
+     * @param string $string The string to check.
+     * @return boolean
+     */
+    protected function ensuingDelimiter($string)
+    {
+        foreach ($this->keywords as $keyword) {
+            if (! $this->contains($keyword, $string)) {
+                continue;
+            }
+
+            $remaining = substr(strstr($string, $keyword), strlen($keyword));
+            $leadChar = substr($remaining, 0, 1);
+
+            // Base case
+            if (ctype_upper($leadChar) || $leadChar == '_') {
+                return true;
+            }
+
+            return $this->ensuingDelimiter($remaining);
+        }
+
+        return false;
     }
 
     /**
