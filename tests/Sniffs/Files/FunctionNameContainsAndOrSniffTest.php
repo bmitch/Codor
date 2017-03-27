@@ -23,11 +23,11 @@ class FunctionNameContainsAndOrSniffTest extends BaseTestCase
     public function it_detects_functions_that_are_over_the_max_allowed()
     {
         $results = $this->runner->sniff('FunctionNameContainsAndOrSniff.inc');
-        $this->assertSame(6, $results->getErrorCount());
+        $this->assertSame(10, $results->getErrorCount());
         $this->assertSame(0, $results->getWarningCOunt());
 
         $errorMessages = $results->getAllErrorMessages();
-        $this->assertCount(6, $errorMessages);
+        $this->assertCount(10, $errorMessages);
         $this->assertAllEqual(
             "Your function contains 'and' or 'or' which indicates it might be doing more than one thing.",
             $errorMessages
