@@ -13,7 +13,7 @@ script:
  - vendor/bin/phpcs --standard=psr2 src
  - if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.6" ]]; then vendor/bin/phpcs --standard=phpcs.xml src; fi
  - if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.6" ]]; then vendor/bin/phpcs --standard=phpcs.xml tests --ignore=tests/Sniffs; fi
- - vendor/bin/phpcs --standard=src/Codor/ruleset.xml src
+ - vendor/bin/phpcs --standard=codor.xml src
  - vendor/bin/phpunit --debug --coverage-clover=coverage.xml
  - vendor/bin/phpmd src text codesize,unusedcode,naming
  - vendor/bin/phploc src --progress
