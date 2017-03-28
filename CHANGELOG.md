@@ -2,11 +2,39 @@
 
 ## [Unreleased](https://github.com/bmitch/Codor/tree/HEAD)
 
-[Full Changelog](https://github.com/bmitch/Codor/compare/0.0.9...HEAD)
+[Full Changelog](https://github.com/bmitch/Codor/compare/0.0.10...HEAD)
+
+**Fixed bugs:**
+
+- Doesn't work with Atom Linter-PHPCS? [\#44](https://github.com/bmitch/Codor/issues/44)
+
+**Closed issues:**
+
+- Add info on how to supress for sections of code in README [\#43](https://github.com/bmitch/Codor/issues/43)
+- Sniff for when constructor has too many interfaces passed in. [\#27](https://github.com/bmitch/Codor/issues/27)
+
+**Merged pull requests:**
+
+- Fixes \#43 [\#62](https://github.com/bmitch/Codor/pull/62) ([bmitch](https://github.com/bmitch))
+
+## [0.0.10](https://github.com/bmitch/Codor/tree/0.0.10) (2017-03-27)
+[Full Changelog](https://github.com/bmitch/Codor/compare/0.0.9...0.0.10)
 
 **Implemented enhancements:**
 
 - Remove any levels of indentation \> 1 [\#40](https://github.com/bmitch/Codor/issues/40)
+
+**Closed issues:**
+
+- Fix breaking build [\#60](https://github.com/bmitch/Codor/issues/60)
+- Functions containing forbidden words fail when it is part of a whole word [\#58](https://github.com/bmitch/Codor/issues/58)
+- Fix tab indention on test cases to spaces [\#46](https://github.com/bmitch/Codor/issues/46)
+
+**Merged pull requests:**
+
+- Loosening the belt here, fixes \#60 [\#61](https://github.com/bmitch/Codor/pull/61) ([bmitch](https://github.com/bmitch))
+- :bug: Fix parsing disallowed words in function names [\#59](https://github.com/bmitch/Codor/pull/59) ([darcyrush](https://github.com/darcyrush))
+- Fixes \#46 [\#57](https://github.com/bmitch/Codor/pull/57) ([bmitch](https://github.com/bmitch))
 
 ## [0.0.9](https://github.com/bmitch/Codor/tree/0.0.9) (2016-12-30)
 [Full Changelog](https://github.com/bmitch/Codor/compare/0.0.8...0.0.9)
