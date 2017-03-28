@@ -1,8 +1,7 @@
 # Change Log
 
-## [Unreleased](https://github.com/bmitch/Codor/tree/HEAD)
-
-[Full Changelog](https://github.com/bmitch/Codor/compare/0.0.10...HEAD)
+## [0.0.11](https://github.com/bmitch/Codor/tree/0.0.11) (2017-03-28)
+[Full Changelog](https://github.com/bmitch/Codor/compare/0.0.10...0.0.11)
 
 **Fixed bugs:**
 
@@ -11,10 +10,12 @@
 **Closed issues:**
 
 - Add info on how to supress for sections of code in README [\#43](https://github.com/bmitch/Codor/issues/43)
+- Sniff for method flag parameters [\#28](https://github.com/bmitch/Codor/issues/28)
 - Sniff for when constructor has too many interfaces passed in. [\#27](https://github.com/bmitch/Codor/issues/27)
 
 **Merged pull requests:**
 
+- Fixes \#28 [\#64](https://github.com/bmitch/Codor/pull/64) ([bmitch](https://github.com/bmitch))
 - Fixes \#43 [\#62](https://github.com/bmitch/Codor/pull/62) ([bmitch](https://github.com/bmitch))
 
 ## [0.0.10](https://github.com/bmitch/Codor/tree/0.0.10) (2017-03-27)
