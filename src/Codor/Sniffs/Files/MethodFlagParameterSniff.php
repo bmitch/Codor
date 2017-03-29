@@ -8,6 +8,10 @@ use PHP_CodeSniffer_File;
 class MethodFlagParameterSniff implements PHP_CodeSniffer_Sniff
 {
 
+    /**
+     * The two token types we're looking for.
+     * @var array
+     */
     protected $booleans = ['T_FALSE', 'T_TRUE'];
 
     /**
