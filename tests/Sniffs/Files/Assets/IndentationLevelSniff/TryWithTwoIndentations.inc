@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 class TryWithTwoIndentations
 {
@@ -12,7 +12,7 @@ class TryWithTwoIndentations
             }
 
             $this->fire($event);
-        } catch (\Exception $e) {
+        } catch (\Throwable $e) {
             $this->log($e);
         }
     }

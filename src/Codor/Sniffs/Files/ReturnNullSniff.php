@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Codor\Sniffs\Files;
 
@@ -12,7 +12,7 @@ class ReturnNullSniff implements PHP_CodeSniffer_Sniff
      * Returns the token types that this sniff is interested in.
      * @return array
      */
-    public function register()
+    public function register(): array
     {
         return [T_RETURN];
     }

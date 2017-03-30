@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Codor\Sniffs\Files;
 
@@ -30,7 +30,7 @@ class IndentationLevelSniff implements PHP_CodeSniffer_Sniff
      * Returns the token types that this sniff is interested in.
      * @return array
      */
-    public function register()
+    public function register(): array
     {
         return [T_FUNCTION, T_CLOSURE, T_SWITCH];
     }
@@ -91,7 +91,7 @@ class IndentationLevelSniff implements PHP_CodeSniffer_Sniff
      * @param  integer $level The base level of the relative scopes.
      * @return void
      */
-    protected function setRelativeScopeLevels(array $scope, $level)
+    protected function setRelativeScopeLevels(array $scope, int $level)
     {
         // first set the base level for all tokens
         foreach (array_keys($scope) as $i) {
@@ -114,7 +114,7 @@ class IndentationLevelSniff implements PHP_CodeSniffer_Sniff
      * @param  string $type  The type of token to remove from the scope.
      * @return array  $scope The tokens scope without the removed tokens.
      */
-    protected function removeTokenScopes(array $scope, $type)
+    protected function removeTokenScopes(array $scope, string $type): array
     {
         return array_diff_key($scope, $this->findNestedTokens($scope, $type));
     }
@@ -125,7 +125,7 @@ class IndentationLevelSniff implements PHP_CodeSniffer_Sniff
      * @param  string $type  The type of token to find in the scope.
      * @return array  $scope The nested tokens.
      */
-    protected function findNestedTokens(array $scope, $type)
+    protected function findNestedTokens(array $scope, string $type): array
     {
         $typeTokens = array_filter($scope, function ($token) use ($type) {
             return $token['type'] == $type;
@@ -144,7 +144,7 @@ class IndentationLevelSniff implements PHP_CodeSniffer_Sniff
      * Produce the error message.
      * @return string
      */
-    protected function getErrorMessage()
+    protected function getErrorMessage(): string
     {
         // Hack to fix the output numbers for the
         // indentation levels found and the

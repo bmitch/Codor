@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Codor\Sniffs\ControlStructures;
 
@@ -12,7 +12,7 @@ class NestedIfSniff implements PHP_CodeSniffer_Sniff
      * Returns the token types that this sniff is interested in.
      * @return array
      */
-    public function register()
+    public function register(): array
     {
         return [T_IF];
     }
@@ -45,7 +45,7 @@ class NestedIfSniff implements PHP_CodeSniffer_Sniff
      * @param  integer $stackPtr The position in the stack where the token was found.
      * @return void
      */
-    protected function checkForNestedIf(array $token, $stackPtr)
+    protected function checkForNestedIf(array $token, int $stackPtr)
     {
         if (! $this->isIfStatement($token)) {
             return;
@@ -65,7 +65,7 @@ class NestedIfSniff implements PHP_CodeSniffer_Sniff
      * @param  integer $stackPtr The position in the stack where the token was found.
      * @return boolean
      */
-    protected function errorAlreadyAdded($stackPtr)
+    protected function errorAlreadyAdded(int $stackPtr): bool
     {
         if (in_array($stackPtr, $this->errorStack)) {
             return true;
@@ -79,7 +79,7 @@ class NestedIfSniff implements PHP_CodeSniffer_Sniff
      * @param  array $token Token data.
      * @return boolean
      */
-    protected function isIfStatement(array $token)
+    protected function isIfStatement(array $token): bool
     {
         if ($token['type'] === 'T_IF') {
             return true;

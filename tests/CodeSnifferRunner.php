@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Codor\Tests;
 
@@ -45,7 +45,7 @@ class CodeSnifferRunner
      * @param string $sniff The sniff to test.
      * @return CodeSnifferRunner
      */
-    public function setSniff($sniff)
+    public function setSniff(string $sniff): CodeSnifferRunner
     {
         $this->sniff = $sniff;
 
@@ -57,7 +57,7 @@ class CodeSnifferRunner
      * @param string $path Path to sample files.
      * @return void
      */
-    public function setFolder($path)
+    public function setFolder(string $path)
     {
         $this->path = $path;
     }
@@ -68,7 +68,7 @@ class CodeSnifferRunner
      * @param  string $file Filename.
      * @return ResultsWrapper Sniffer Results.
      */
-    public function sniff($file)
+    public function sniff(string $file): ResultsWrapper
     {
         $this->filePath = $this->path . $file;
 
@@ -79,7 +79,7 @@ class CodeSnifferRunner
      * Runs the actual sniffer on the file.
      * @return ResultsWrapper Sniffer Results.
      */
-    protected function run()
+    protected function run(): ResultsWrapper
     {
         $this->codeSniffer->initStandard(__DIR__.'/../src/Codor', [$this->sniff]);
 

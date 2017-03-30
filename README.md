@@ -6,6 +6,7 @@ Custom PHP Code Sniffer sniffs to help find Code Smells (Odor).
 _Inspired by: https://github.com/object-calisthenics/phpcs-calisthenics-rules_
 
 * [What Is it?](#what-is-it)
+* [Compatiblity](#compatibility)
 * [How to Install?](#how-to-install)
 * [How to Use?](#how-to-use)
  * [Omitting Sniffs](#omitting-sniffs)
@@ -13,11 +14,16 @@ _Inspired by: https://github.com/object-calisthenics/phpcs-calisthenics-rules_
 * [Sniffs Included](#sniffs-included)
 * [Customizing Sniffs](#customizing-sniffs)
  * [Customizations Available](#customizations-available)
+* [Similar Packages](#similar-packages)
 * [Contributing](#contributing)
 * [License](#license)
 
 ## What is it? ##
 This package is a set of custom Sniffs for the [PHP Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer) that you can use in your CI build to ensure the ingegrity of your code base.
+
+## Compatiblity ##
+* PHP 7+ please use v1.0.0 and above.
+* PHP 5.6 and below please use any version below v1.0.0.
 
 ## How to Install? ##
 
@@ -28,7 +34,7 @@ composer require bmitch/codor --dev
 
 ## How to Use? ##
 Create a PHPCS ruleset XML (`codor.xml` or whatever filename you want) file in the root of your project.
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <ruleset name="Project">
     <description>Project Coding Standard</description>
@@ -58,7 +64,7 @@ vendor/bin/phpcs --standard=codor.xml --sniffs=Codor.ControlStructures.NoElse sr
 ```
 
 ### Suppressing the sniffs on specific pieces of code
-Please see the PHPCS documentation:
+Please see the PHPCS documentation:  
 https://github.com/squizlabs/PHP_CodeSniffer/wiki/Advanced-Usage#ignoring-files-and-folders
 
 ## Sniffs Included ##
@@ -91,7 +97,7 @@ Nested if statements are not allowed.
 
 ## Customizing Sniffs ##
 Some of the sniff rules can be customized to your liking. For example, if you'd want the `Codor.Files.FunctionLength` to make sure your functions are no more than 30 lines instead of 20, you can do that. Here's an example of a `codor.xml` file with that customization:
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <ruleset name="Project">
     <description>Project Coding Standard</description>
@@ -114,6 +120,10 @@ Some of the sniff rules can be customized to your liking. For example, if you'd 
  * `maxLength`: The maximum number of lines a Class can be (default = 20).
 * `Codor.Files.IndentationLevel`
  * `indentationLimit`: Cannot have more than or equal to this number of indentations (default = 2).
+
+## Similar Packages
+* https://github.com/object-calisthenics/phpcs-calisthenics-rules
+* https://github.com/slevomat/coding-standard
 
 ## Contributing ##
 Please see [CONTRIBUTING.md](CONTRIBUTING.md)

@@ -2,7 +2,8 @@
     "name": "bmitch/codor",
     "description": "Custom PHPCS sniffs to find Code Smells.",
     "require": {
-        "squizlabs/php_codesniffer": "^2.7"
+        "php": ">=7.0.0",
+        "squizlabs/php_codesniffer": "^2.8.1"
     },
     "license": "MIT",
     "authors": [
@@ -25,6 +26,21 @@
         "phpmd/phpmd": "^2.5",
         "phploc/phploc": "^3.0",
         "sebastian/phpcpd": "^2.0",
-        "sensiolabs/security-checker": "^4.0"
+        "sensiolabs/security-checker": "^4.0",
+        "slevomat/coding-standard": "^2.0",
+        "jakub-onderka/php-console-highlighter": "^0.3.2",
+        "jakub-onderka/php-parallel-lint": "^0.9.2"
+    },
+    "scripts": {
+        "test": [
+            "vendor/bin/parallel-lint src tests",
+            "vendor/bin/phpcs --standard=psr2 src -sp",
+            "vendor/bin/phpcs --standard=phpcs.xml src tests --ignore=tests/Sniffs -sp",
+            "vendor/bin/phpcs --standard=codor.xml src -sp",
+            "vendor/bin/phpunit --debug --coverage-clover=coverage.xml",
+            "vendor/bin/phpmd src text codesize,unusedcode,naming",
+            "vendor/bin/phploc src --progress",
+            "vendor/bin/phpcpd src"
+        ]
     }
 }

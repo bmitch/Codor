@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 class TryCatchWithIfInTry
 {
@@ -10,7 +10,7 @@ class TryCatchWithIfInTry
             }
 
             $this->fire($event);
-        } catch (\Exception $e) {
+        } catch (\Throwable $e) {
             $this->log($e);
         }
     }

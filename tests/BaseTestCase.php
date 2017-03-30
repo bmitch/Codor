@@ -1,8 +1,7 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Codor\Tests;
 
-use Codor\Tests\CodeSnifferRunner;
 use PHPUnit\Framework\TestCase;
 
 class BaseTestCase extends TestCase

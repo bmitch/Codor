@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Codor\Sniffs\Files;
 
@@ -18,7 +18,7 @@ class FunctionNameContainsAndOrSniff implements PHP_CodeSniffer_Sniff
      * Returns the token types that this sniff is interested in.
      * @return array
      */
-    public function register()
+    public function register(): array
     {
         return [T_FUNCTION];
     }
@@ -54,7 +54,7 @@ class FunctionNameContainsAndOrSniff implements PHP_CodeSniffer_Sniff
      * @param  string $string The string to check.
      * @return boolean
      */
-    protected function containsKeywords($string)
+    protected function containsKeywords(string $string): bool
     {
         $contains = false;
         foreach ($this->keywords as $keyword) {
@@ -70,7 +70,7 @@ class FunctionNameContainsAndOrSniff implements PHP_CodeSniffer_Sniff
      * @param string $string The string to check.
      * @return boolean
      */
-    protected function ensuingDelimiter($string)
+    protected function ensuingDelimiter(string $string): bool
     {
         foreach ($this->keywords as $keyword) {
             if (! $this->contains($keyword, $string)) {
@@ -97,7 +97,7 @@ class FunctionNameContainsAndOrSniff implements PHP_CodeSniffer_Sniff
      * @param  string $haystack Haystack string.
      * @return boolean
      */
-    protected function contains($needle, $haystack)
+    protected function contains(string $needle, string $haystack): bool
     {
         return strpos($haystack, $needle) !== false;
     }
@@ -106,7 +106,7 @@ class FunctionNameContainsAndOrSniff implements PHP_CodeSniffer_Sniff
      * Gets the error message for this sniff.
      * @return string
      */
-    protected function getErrorMessage()
+    protected function getErrorMessage(): string
     {
         return "Your function contains 'and' or 'or' which indicates it might be doing more than one thing.";
     }
