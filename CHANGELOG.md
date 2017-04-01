@@ -1,5 +1,16 @@
 # Change Log
 
+## [1.0.1](https://github.com/bmitch/Codor/tree/1.0.1) (2017-04-01)
+[Full Changelog](https://github.com/bmitch/Codor/compare/1.0.0...1.0.1)
+
+**Closed issues:**
+
+- \[PHP7\] Null Coalesce Operator check [\#63](https://github.com/bmitch/Codor/issues/63)
+
+**Merged pull requests:**
+
+- Fixes \#63 [\#70](https://github.com/bmitch/Codor/pull/70) ([bmitch](https://github.com/bmitch))
+
 ## [1.0.0](https://github.com/bmitch/Codor/tree/1.0.0) (2017-04-01)
 [Full Changelog](https://github.com/bmitch/Codor/compare/0.0.11...1.0.0)
 
