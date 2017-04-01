@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Codor\Sniffs\Classes;
 
@@ -19,7 +19,7 @@ class ClassLengthSniff implements PHP_CodeSniffer_Sniff
      * Returns the token types that this sniff is interested in.
      * @return array
      */
-    public function register()
+    public function register(): array
     {
         return [T_CLASS];
     }
@@ -28,8 +28,8 @@ class ClassLengthSniff implements PHP_CodeSniffer_Sniff
      * Processes the tokens that this sniff is interested in.
      *
      * @param PHP_CodeSniffer_File $phpcsFile The file where the token was found.
-     * @param integer              $stackPtr  The position in the stack where
-     *                                    the token was found.
+     * @param int                  $stackPtr  The position in the stack where
+     *                                        the token was found.
      * @return void
      */
     public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)

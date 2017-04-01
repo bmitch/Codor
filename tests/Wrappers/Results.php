@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Codor\Tests\Wrappers;
 
@@ -25,7 +25,7 @@ class Results
      * Gets all the error messages produced by the sniff.
      * @return array
      */
-    public function getAllErrorMessages()
+    public function getAllErrorMessages(): array
     {
         $allErrorMessages = [];
         $errors = $this->wrappedClass->getErrors();
@@ -40,7 +40,7 @@ class Results
      * Gets all the warning messages produced by the sniff.
      * @return array
      */
-    public function getAllWarningMessages()
+    public function getAllWarningMessages(): array
     {
         $getAllWarningMessages = [];
         $warnings = $this->wrappedClass->getWarnings();
@@ -55,7 +55,7 @@ class Results
      * Gets the number of errors produced by the sniff.
      * @return integer
      */
-    public function getErrorCount()
+    public function getErrorCount(): int
     {
         return $this->wrappedClass->getErrorCount();
     }
@@ -64,7 +64,7 @@ class Results
      * Gets the number of warnings produced by the sniff.
      * @return integer
      */
-    public function getWarningCount()
+    public function getWarningCount(): int
     {
         return $this->wrappedClass->getWarningCount();
     }
