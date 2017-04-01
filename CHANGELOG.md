@@ -1,5 +1,18 @@
 # Change Log
 
+## [1.0.0](https://github.com/bmitch/Codor/tree/1.0.0) (2017-04-01)
+[Full Changelog](https://github.com/bmitch/Codor/compare/0.0.11...1.0.0)
+
+**Closed issues:**
+
+- Make a PHP7 version [\#68](https://github.com/bmitch/Codor/issues/68)
+- Remote security checker until it is back working again. [\#65](https://github.com/bmitch/Codor/issues/65)
+
+**Merged pull requests:**
+
+- Fixes \#68 [\#69](https://github.com/bmitch/Codor/pull/69) ([bmitch](https://github.com/bmitch))
+- Fixes \#65 [\#66](https://github.com/bmitch/Codor/pull/66) ([bmitch](https://github.com/bmitch))
+
 ## [0.0.11](https://github.com/bmitch/Codor/tree/0.0.11) (2017-03-28)
 [Full Changelog](https://github.com/bmitch/Codor/compare/0.0.10...0.0.11)
 
