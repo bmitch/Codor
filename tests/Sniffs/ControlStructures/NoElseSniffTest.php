@@ -12,12 +12,12 @@ class NoElseSniffTest extends BaseTestCase
     {
         parent::setup();
 
-        $this->runner->setSniff('Codor.ControlStructures.NoElse')->setFolder(__DIR__.'/');
+        $this->runner->setSniff('Codor.ControlStructures.NoElse')->setFolder(__DIR__.'/Assets/NoElseSniff/');
     }
 
     public function testSniff()
     {
-        $results = $this->runner->sniff('NoElseSniffTest.inc');
+        $results = $this->runner->sniff('NoElseSniff.inc');
         $this->assertSame(5, $results->getErrorCount());
         $this->assertSame(0, $results->getWarningCount());
 

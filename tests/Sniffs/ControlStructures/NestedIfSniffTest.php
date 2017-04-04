@@ -12,12 +12,12 @@ class NestedIfSniffTest extends BaseTestCase
     {
         parent::setup();
 
-        $this->runner->setSniff('Codor.ControlStructures.NestedIf')->setFolder(__DIR__.'/');
+        $this->runner->setSniff('Codor.ControlStructures.NestedIf')->setFolder(__DIR__.'/Assets/NestedIfSniff/');
     }
 
     public function testSniff()
     {
-        $results = $this->runner->sniff('NestedIfSniffTest.inc');
+        $results = $this->runner->sniff('NestedIfSniff.inc');
         $this->assertSame(6, $results->getErrorCount());
         $this->assertSame(0, $results->getWarningCount());
 
