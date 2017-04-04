@@ -12,7 +12,7 @@ class ClassLengthSniffTest extends BaseTestCase
     {
         parent::setup();
 
-        $this->runner->setSniff('Codor.Classes.ClassLength')->setFolder(__DIR__.'/');
+        $this->runner->setSniff('Codor.Classes.ClassLength')->setFolder(__DIR__.'/Assets/ClassLengthSniff/');
     }
 
     public function testSniff()
