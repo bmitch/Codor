@@ -41,4 +41,15 @@ class LinesAfterMethodSniffTest extends BaseTestCase
         $errorMessages = $results->getAllErrorMessages();
         $this->assertCount(0, $errorMessages);
     }
+
+    /** @test */
+    public function it_works_with_interfaces()
+    {
+        $results = $this->runner->sniff('Interface.inc');
+        $this->assertEquals(0, $results->getErrorCount());
+        $this->assertEquals(0, $results->getWarningCount());
+
+        $errorMessages = $results->getAllErrorMessages();
+        $this->assertCount(0, $errorMessages);
+    }
 }

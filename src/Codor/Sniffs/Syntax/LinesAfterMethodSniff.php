@@ -26,21 +26,21 @@ class LinesAfterMethodSniff implements PHP_CodeSniffer_Sniff
      */
     public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
     {
-        $tokens           = $phpcsFile->getTokens();
-        $endOfMethodIndex = $tokens[$stackPtr]['scope_closer'];
-        $endOfMethodLine  = $tokens[$endOfMethodIndex]['line'];
-
-        $nextCodeLine = 0;
-        for ($index=$endOfMethodIndex + 1; $index <= count($tokens); $index++) {
-            $currentToken = $tokens[$index];
-            if ($currentToken['type'] == 'T_WHITESPACE') {
-                continue;
-            }
-            $nextCodeLine = $currentToken['line'];
-            break;
+        $tokens = $phpcsFile->getTokens();
+        if (! isset($tokens[$stackPtr]['scope_closer'])) {
+            return;
         }
 
-        $linesBetween = $nextCodeLine - $endOfMethodLine - 1;
+        $endOfMethodIndex = $tokens[$stackPtr]['scope_closer'];
+
+        for ($index=$endOfMethodIndex + 1; $index <= count($tokens); $index++) {
+            if ($tokens[$index]['type'] !== 'T_WHITESPACE') {
+                $nextCodeLine = $tokens[$index]['line'];
+                break;
+            }
+        }
+
+        $linesBetween = $nextCodeLine - $tokens[$endOfMethodIndex]['line'] - 1;
 
         if ($linesBetween > 1) {
             $phpcsFile->addError("No more than 1 line after a method/function is allowed.", $stackPtr);
