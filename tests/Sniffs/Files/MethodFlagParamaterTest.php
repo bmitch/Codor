@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace Codor\Tests\Sniffs\ControlStructures;
+namespace Codor\Tests\Sniffs\Files;
 
 use Codor\Tests\BaseTestCase;
 
