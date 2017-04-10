@@ -99,6 +99,10 @@ Nested if statements are not allowed.
 PHP 7+ only.  
 Produces an error if a line contains a ternary operator that could be converted to a Null Coalescing operator.
 
+### Codor.Syntax.LinesAfterMethod ###
+Only allows for 1 line between functions/methods. Any more than 1 will produce an error.
+
+
 ## Customizing Sniffs ##
 Some of the sniff rules can be customized to your liking. For example, if you'd want the `Codor.Files.FunctionLength` to make sure your functions are no more than 30 lines instead of 20, you can do that. Here's an example of a `codor.xml` file with that customization:
 ```xml
