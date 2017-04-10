@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace Codor\Tests\Sniffs\ControlStructures;
+namespace Codor\Tests\Sniffs\Classes;
 
 use Codor\Tests\BaseTestCase;
 
@@ -15,6 +15,7 @@ class ClassLengthSniffTest extends BaseTestCase
         $this->runner->setSniff('Codor.Classes.ClassLength')->setFolder(__DIR__.'/Assets/ClassLengthSniff/');
     }
 
+    /** @test */
     public function testSniff()
     {
         $results = $this->runner->sniff('ClassLengthSniff.inc');

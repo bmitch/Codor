@@ -15,6 +15,7 @@ class NestedIfSniffTest extends BaseTestCase
         $this->runner->setSniff('Codor.ControlStructures.NestedIf')->setFolder(__DIR__.'/Assets/NestedIfSniff/');
     }
 
+    /** @test */
     public function testSniff()
     {
         $results = $this->runner->sniff('NestedIfSniff.inc');
