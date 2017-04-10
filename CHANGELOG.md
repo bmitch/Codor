@@ -1,5 +1,21 @@
 # Change Log
 
+## [1.0.2](https://github.com/bmitch/Codor/tree/1.0.2) (2017-04-10)
+[Full Changelog](https://github.com/bmitch/Codor/compare/1.0.1...1.0.2)
+
+**Closed issues:**
+
+- Codor.Syntax.LinesAfterMethod breaks on interfaces [\#80](https://github.com/bmitch/Codor/issues/80)
+- Fix namespaces [\#77](https://github.com/bmitch/Codor/issues/77)
+- Sniff to restrict number of lines between end of function and next function. [\#76](https://github.com/bmitch/Codor/issues/76)
+
+**Merged pull requests:**
+
+- Fixes \#80 [\#81](https://github.com/bmitch/Codor/pull/81) ([bmitch](https://github.com/bmitch))
+- Fixes \#76 [\#79](https://github.com/bmitch/Codor/pull/79) ([bmitch](https://github.com/bmitch))
+- Fixes \#77 [\#78](https://github.com/bmitch/Codor/pull/78) ([bmitch](https://github.com/bmitch))
+- Standardizing folder structure [\#72](https://github.com/bmitch/Codor/pull/72) ([bmitch](https://github.com/bmitch))
+
 ## [1.0.1](https://github.com/bmitch/Codor/tree/1.0.1) (2017-04-01)
 [Full Changelog](https://github.com/bmitch/Codor/compare/1.0.0...1.0.1)
 
