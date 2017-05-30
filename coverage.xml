@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1496185624">
+  <project timestamp="1496185624">
+    <package name="Codor\Sniffs\Classes">
+      <file name="/home/bmitch/Code/Codor/src/Codor/Sniffs/Classes/ClassLengthSniff.php">
+        <class name="ClassLengthSniff" namespace="Codor\Sniffs\Classes">
+          <metrics complexity="3" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="11" coveredelements="11"/>
+        </class>
+        <line num="22" type="method" name="register" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="24" type="stmt" count="1"/>
+        <line num="35" type="method" name="process" visibility="public" complexity="2" crap="2" count="1"/>
+        <line num="37" type="stmt" count="1"/>
+        <line num="38" type="stmt" count="1"/>
+        <line num="40" type="stmt" count="1"/>
+        <line num="41" type="stmt" count="1"/>
+        <line num="43" type="stmt" count="1"/>
+        <line num="45" type="stmt" count="1"/>
+        <line num="46" type="stmt" count="1"/>
+        <line num="48" type="stmt" count="1"/>
+        <metrics loc="49" ncloc="32" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="11" coveredelements="11"/>
+      </file>
+      <file name="/home/bmitch/Code/Codor/src/Codor/Sniffs/Classes/ConstructorLoopSniff.php">
+        <class name="ConstructorLoopSniff" namespace="Codor\Sniffs\Classes">
+          <metrics complexity="5" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="13" elements="16" coveredelements="14"/>
+        </class>
+        <line num="21" type="method" name="register" visibility="public" complexity="1" crap="1" count="5"/>
+        <line num="23" type="stmt" count="5"/>
+        <line num="34" type="method" name="process" visibility="public" complexity="4" crap="4.01" count="5"/>
+        <line num="36" type="stmt" count="5"/>
+        <line num="37" type="stmt" count="5"/>
+        <line num="38" type="stmt" count="5"/>
+        <line num="39" type="stmt" count="5"/>
+        <line num="40" type="stmt" count="5"/>
+        <line num="41" type="stmt" count="0"/>
+        <line num="44" type="stmt" count="5"/>
+        <line num="45" type="stmt" count="5"/>
+        <line num="47" type="stmt" count="5"/>
+        <line num="48" type="stmt" count="5"/>
+        <line num="49" type="stmt" count="4"/>
+        <line num="50" type="stmt" count="4"/>
+        <line num="53" type="stmt" count="5"/>
+        <metrics loc="54" ncloc="38" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="13" elements="16" coveredelements="14"/>
+      </file>
+    </package>
+    <package name="Codor\Sniffs\ControlStructures">
+      <file name="/home/bmitch/Code/Codor/src/Codor/Sniffs/ControlStructures/NestedIfSniff.php">
+        <class name="NestedIfSniff" namespace="Codor\Sniffs\ControlStructures">
+          <metrics complexity="10" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="23" coveredstatements="23" elements="28" coveredelements="28"/>
+        </class>
+        <line num="15" type="method" name="register" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="17" type="stmt" count="1"/>
+        <line num="28" type="method" name="process" visibility="public" complexity="2" crap="2" count="1"/>
+        <line num="30" type="stmt" count="1"/>
+        <line num="31" type="stmt" count="1"/>
+        <line num="32" type="stmt" count="1"/>
+        <line num="33" type="stmt" count="1"/>
+        <line num="34" type="stmt" count="1"/>
+        <line num="36" type="stmt" count="1"/>
+        <line num="37" type="stmt" count="1"/>
+        <line num="38" type="stmt" count="1"/>
+        <line num="40" type="stmt" count="1"/>
+        <line num="48" type="method" name="checkForNestedIf" visibility="protected" complexity="3" crap="3" count="1"/>
+        <line num="50" type="stmt" count="1"/>
+        <line num="51" type="stmt" count="1"/>
+        <line num="54" type="stmt" count="1"/>
+        <line num="55" type="stmt" count="1"/>
+        <line num="58" type="stmt" count="1"/>
+        <line num="59" type="stmt" count="1"/>
+        <line num="60" type="stmt" count="1"/>
+        <line num="68" type="method" name="errorAlreadyAdded" visibility="protected" complexity="2" crap="2" count="1"/>
+        <line num="70" type="stmt" count="1"/>
+        <line num="71" type="stmt" count="1"/>
+        <line num="74" type="stmt" count="1"/>
+        <line num="82" type="method" name="isIfStatement" visibility="protected" complexity="2" crap="2" count="1"/>
+        <line num="84" type="stmt" count="1"/>
+        <line num="85" type="stmt" count="1"/>
+        <line num="88" type="stmt" count="1"/>
+        <metrics loc="90" ncloc="61" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="23" coveredstatements="23" elements="28" coveredelements="28"/>
+      </file>
+      <file name="/home/bmitch/Code/Codor/src/Codor/Sniffs/ControlStructures/NoElseSniff.php">
+        <class name="NoElseSniff" namespace="Codor\Sniffs\ControlStructures">
+          <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
+        </class>
+        <line num="18" type="method" name="register" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="20" type="stmt" count="1"/>
+        <line num="31" type="method" name="process" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="33" type="stmt" count="1"/>
+        <line num="34" type="stmt" count="1"/>
+        <metrics loc="35" ncloc="20" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
+      </file>
+    </package>
+    <package name="Codor\Sniffs\Files">
+      <file name="/home/bmitch/Code/Codor/src/Codor/Sniffs/Files/FunctionLengthSniff.php">
+        <class name="FunctionLengthSniff" namespace="Codor\Sniffs\Files">
+          <metrics complexity="4" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="15" coveredelements="15"/>
+        </class>
+        <line num="22" type="method" name="register" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="24" type="stmt" count="1"/>
+        <line num="35" type="method" name="process" visibility="public" complexity="3" crap="3" count="1"/>
+        <line num="37" type="stmt" count="1"/>
+        <line num="38" type="stmt" count="1"/>
+        <line num="41" type="stmt" count="1"/>
+        <line num="42" type="stmt" count="1"/>
+        <line num="45" type="stmt" count="1"/>
+        <line num="46" type="stmt" count="1"/>
+        <line num="47" type="stmt" count="1"/>
+        <line num="49" type="stmt" count="1"/>
+        <line num="50" type="stmt" count="1"/>
+        <line num="51" type="stmt" count="1"/>
+        <line num="52" type="stmt" count="1"/>
+        <line num="54" type="stmt" count="1"/>
+        <metrics loc="55" ncloc="36" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="15" coveredelements="15"/>
+      </file>
+      <file name="/home/bmitch/Code/Codor/src/Codor/Sniffs/Files/FunctionNameContainsAndOrSniff.php">
+        <class name="FunctionNameContainsAndOrSniff" namespace="Codor\Sniffs\Files">
+          <metrics complexity="14" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="25" coveredstatements="25" elements="31" coveredelements="31"/>
+        </class>
+        <line num="21" type="method" name="register" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="23" type="stmt" count="1"/>
+        <line num="34" type="method" name="process" visibility="public" complexity="3" crap="3" count="1"/>
+        <line num="36" type="stmt" count="1"/>
+        <line num="37" type="stmt" count="1"/>
+        <line num="38" type="stmt" count="1"/>
+        <line num="40" type="stmt" count="1"/>
+        <line num="41" type="stmt" count="1"/>
+        <line num="44" type="stmt" count="1"/>
+        <line num="45" type="stmt" count="1"/>
+        <line num="48" type="stmt" count="1"/>
+        <line num="49" type="stmt" count="1"/>
+        <line num="57" type="method" name="containsKeywords" visibility="protected" complexity="3" crap="3" count="1"/>
+        <line num="59" type="stmt" count="1"/>
+        <line num="60" type="stmt" count="1"/>
+        <line num="61" type="stmt" count="1"/>
+        <line num="64" type="stmt" count="1"/>
+        <line num="73" type="method" name="ensuingDelimiter" visibility="protected" complexity="5" crap="5" count="1"/>
+        <line num="75" type="stmt" count="1"/>
+        <line num="76" type="stmt" count="1"/>
+        <line num="77" type="stmt" count="1"/>
+        <line num="80" type="stmt" count="1"/>
+        <line num="81" type="stmt" count="1"/>
+        <line num="84" type="stmt" count="1"/>
+        <line num="85" type="stmt" count="1"/>
+        <line num="88" type="stmt" count="1"/>
+        <line num="91" type="stmt" count="1"/>
+        <line num="100" type="method" name="contains" visibility="protected" complexity="1" crap="1" count="1"/>
+        <line num="102" type="stmt" count="1"/>
+        <line num="109" type="method" name="getErrorMessage" visibility="protected" complexity="1" crap="1" count="1"/>
+        <line num="111" type="stmt" count="1"/>
+        <metrics loc="113" ncloc="73" classes="1" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="25" coveredstatements="25" elements="31" coveredelements="31"/>
+      </file>
+      <file name="/home/bmitch/Code/Codor/src/Codor/Sniffs/Files/FunctionParameterSniff.php">
+        <class name="FunctionParameterSniff" namespace="Codor\Sniffs\Files">
+          <metrics complexity="6" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="15" coveredelements="15"/>
+        </class>
+        <line num="21" type="method" name="register" visibility="public" complexity="1" crap="1" count="5"/>
+        <line num="23" type="stmt" count="5"/>
+        <line num="34" type="method" name="process" visibility="public" complexity="5" crap="5" count="5"/>
+        <line num="36" type="stmt" count="5"/>
+        <line num="37" type="stmt" count="5"/>
+        <line num="38" type="stmt" count="5"/>
+        <line num="39" type="stmt" count="5"/>
+        <line num="41" type="stmt" count="5"/>
+        <line num="42" type="stmt" count="5"/>
+        <line num="43" type="stmt" count="5"/>
+        <line num="46" type="stmt" count="5"/>
+        <line num="47" type="stmt" count="3"/>
+        <line num="50" type="stmt" count="5"/>
+        <line num="51" type="stmt" count="3"/>
+        <line num="53" type="stmt" count="5"/>
+        <metrics loc="54" ncloc="38" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="15" coveredelements="15"/>
+      </file>
+      <file name="/home/bmitch/Code/Codor/src/Codor/Sniffs/Files/IndentationLevelSniff.php">
+        <class name="IndentationLevelSniff" namespace="Codor\Sniffs\Files">
+          <metrics complexity="15" methods="7" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="33" coveredstatements="32" elements="40" coveredelements="38"/>
+        </class>
+        <line num="33" type="method" name="register" visibility="public" complexity="1" crap="1" count="30"/>
+        <line num="35" type="stmt" count="30"/>
+        <line num="46" type="method" name="process" visibility="public" complexity="3" crap="3.01" count="30"/>
+        <line num="48" type="stmt" count="30"/>
+        <line num="49" type="stmt" count="30"/>
+        <line num="50" type="stmt" count="30"/>
+        <line num="53" type="stmt" count="30"/>
+        <line num="54" type="stmt" count="0"/>
+        <line num="57" type="stmt" count="30"/>
+        <line num="59" type="stmt" count="30"/>
+        <line num="60" type="stmt" count="24"/>
+        <line num="63" type="stmt" count="9"/>
+        <line num="64" type="stmt" count="9"/>
+        <line num="72" type="method" name="inspectScope" visibility="protected" complexity="2" crap="2" count="30"/>
+        <line num="74" type="stmt" count="30"/>
+        <line num="75" type="stmt" count="30"/>
+        <line num="77" type="stmt" count="30"/>
+        <line num="78" type="stmt" count="30"/>
+        <line num="80" type="stmt" count="30"/>
+        <line num="82" type="stmt" count="30"/>
+        <line num="83" type="stmt" count="30"/>
+        <line num="85" type="stmt" count="30"/>
+        <line num="94" type="method" name="setRelativeScopeLevels" visibility="protected" complexity="4" crap="4" count="30"/>
+        <line num="97" type="stmt" count="30"/>
+        <line num="98" type="stmt" count="30"/>
+        <line num="102" type="stmt" count="30"/>
+        <line num="103" type="stmt" count="4"/>
+        <line num="106" type="stmt" count="30"/>
+        <line num="107" type="stmt" count="4"/>
+        <line num="109" type="stmt" count="30"/>
+        <line num="117" type="method" name="removeTokenScopes" visibility="protected" complexity="1" crap="1" count="30"/>
+        <line num="119" type="stmt" count="30"/>
+        <line num="130" type="method" name="anonymous function" complexity="1" crap="1" count="30"/>
+        <line num="131" type="stmt" count="30"/>
+        <line num="132" type="stmt" count="30"/>
+        <line num="134" type="stmt" count="30"/>
+        <line num="135" type="stmt" count="30"/>
+        <line num="136" type="stmt" count="12"/>
+        <line num="137" type="stmt" count="12"/>
+        <line num="140" type="stmt" count="30"/>
+        <line num="147" type="method" name="getErrorMessage" visibility="protected" complexity="1" crap="1" count="9"/>
+        <line num="152" type="stmt" count="9"/>
+        <line num="153" type="stmt" count="9"/>
+        <line num="154" type="stmt" count="9"/>
+        <line num="155" type="stmt" count="9"/>
+        <metrics loc="157" ncloc="91" classes="1" methods="7" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="38" coveredstatements="37" elements="45" coveredelements="43"/>
+      </file>
+      <file name="/home/bmitch/Code/Codor/src/Codor/Sniffs/Files/MethodFlagParameterSniff.php">
+        <class name="MethodFlagParameterSniff" namespace="Codor\Sniffs\Files">
+          <metrics complexity="4" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="12" coveredelements="12"/>
+        </class>
+        <line num="21" type="method" name="register" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="23" type="stmt" count="1"/>
+        <line num="34" type="method" name="process" visibility="public" complexity="3" crap="3" count="1"/>
+        <line num="36" type="stmt" count="1"/>
+        <line num="38" type="stmt" count="1"/>
+        <line num="39" type="stmt" count="1"/>
+        <line num="40" type="stmt" count="1"/>
+        <line num="42" type="stmt" count="1"/>
+        <line num="43" type="stmt" count="1"/>
+        <line num="44" type="stmt" count="1"/>
+        <line num="45" type="stmt" count="1"/>
+        <line num="48" type="stmt" count="1"/>
+        <metrics loc="49" ncloc="33" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="12" coveredelements="12"/>
+      </file>
+      <file name="/home/bmitch/Code/Codor/src/Codor/Sniffs/Files/ReturnNullSniff.php">
+        <class name="ReturnNullSniff" namespace="Codor\Sniffs\Files">
+          <metrics complexity="4" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="9" coveredelements="9"/>
+        </class>
+        <line num="15" type="method" name="register" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="17" type="stmt" count="1"/>
+        <line num="27" type="method" name="process" visibility="public" complexity="2" crap="2" count="1"/>
+        <line num="29" type="stmt" count="1"/>
+        <line num="30" type="stmt" count="1"/>
+        <line num="32" type="stmt" count="1"/>
+        <line num="33" type="method" name="anonymous function" complexity="1" crap="1" count="1"/>
+        <line num="34" type="stmt" count="1"/>
+        <line num="35" type="stmt" count="1"/>
+        <line num="37" type="stmt" count="1"/>
+        <line num="39" type="stmt" count="1"/>
+        <line num="40" type="stmt" count="1"/>
+        <line num="41" type="stmt" count="1"/>
+        <line num="43" type="stmt" count="1"/>
+        <metrics loc="44" ncloc="33" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="11" elements="14" coveredelements="14"/>
+      </file>
+    </package>
+    <package name="Codor\Sniffs\Syntax">
+      <file name="/home/bmitch/Code/Codor/src/Codor/Sniffs/Syntax/LinesAfterMethodSniff.php">
+        <class name="LinesAfterMethodSniff" namespace="Codor\Sniffs\Syntax">
+          <metrics complexity="6" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="15" coveredelements="15"/>
+        </class>
+        <line num="15" type="method" name="register" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="17" type="stmt" count="3"/>
+        <line num="27" type="method" name="process" visibility="public" complexity="5" crap="5" count="3"/>
+        <line num="29" type="stmt" count="3"/>
+        <line num="30" type="stmt" count="3"/>
+        <line num="31" type="stmt" count="1"/>
+        <line num="34" type="stmt" count="2"/>
+        <line num="36" type="stmt" count="2"/>
+        <line num="37" type="stmt" count="2"/>
+        <line num="38" type="stmt" count="2"/>
+        <line num="39" type="stmt" count="2"/>
+        <line num="43" type="stmt" count="2"/>
+        <line num="45" type="stmt" count="2"/>
+        <line num="46" type="stmt" count="1"/>
+        <line num="48" type="stmt" count="2"/>
+        <metrics loc="49" ncloc="38" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="15" coveredelements="15"/>
+      </file>
+      <file name="/home/bmitch/Code/Codor/src/Codor/Sniffs/Syntax/NullCoalescingSniff.php">
+        <class name="NullCoalescingSniff" namespace="Codor\Sniffs\Syntax">
+          <metrics complexity="9" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="18" elements="21" coveredelements="21"/>
+        </class>
+        <line num="15" type="method" name="register" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="17" type="stmt" count="2"/>
+        <line num="27" type="method" name="process" visibility="public" complexity="2" crap="2" count="2"/>
+        <line num="29" type="stmt" count="2"/>
+        <line num="30" type="stmt" count="2"/>
+        <line num="31" type="stmt" count="2"/>
+        <line num="33" type="stmt" count="2"/>
+        <line num="34" type="stmt" count="1"/>
+        <line num="36" type="stmt" count="2"/>
+        <line num="46" type="method" name="couldBeNullCoalescing" visibility="protected" complexity="6" crap="6" count="2"/>
+        <line num="48" type="stmt" count="2"/>
+        <line num="49" type="stmt" count="2"/>
+        <line num="51" type="stmt" count="2"/>
+        <line num="52" type="stmt" count="2"/>
+        <line num="53" type="stmt" count="2"/>
+        <line num="56" type="stmt" count="2"/>
+        <line num="57" type="stmt" count="1"/>
+        <line num="60" type="stmt" count="2"/>
+        <line num="61" type="stmt" count="1"/>
+        <line num="63" type="stmt" count="2"/>
+        <line num="66" type="stmt" count="2"/>
+        <metrics loc="68" ncloc="49" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="18" elements="21" coveredelements="21"/>
+      </file>
+    </package>
+    <metrics files="12" loc="817" ncloc="542" classes="12" methods="38" coveredmethods="36" conditionals="0" coveredconditionals="0" statements="190" coveredstatements="188" elements="228" coveredelements="224"/>
+  </project>
+</coverage>

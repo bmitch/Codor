@@ -86,6 +86,9 @@ Functions/methods cannot have parameters that default to a boolean.
 ### Codor.Classes.ClassLength ###
 Classes must be no more than 200 lines.
 
+### Codor.Classes.ConstructorLoop ###
+Class constructors must not contain any loops.
+
 ### Codor.Files.FunctionNameContainsAndOr ###
 Functions/methods cannot contain "And" or "Or". This could be a sign of a function that does more than one thing.
 
