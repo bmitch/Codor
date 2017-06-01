@@ -12,7 +12,7 @@ before_script:
 script:
  - vendor/bin/phpcs --standard=psr2 src
  - if [[ ${TRAVIS_PHP_VERSION:0:3} == "7.0" ]]; then vendor/bin/phpcs --standard=phpcs.xml src tests --ignore=tests/Sniffs; fi
- - vendor/bin/phpcs --standard=codor.xml src
+ - vendor/bin/phpcs --standard=codor.xml src -spn
  - vendor/bin/phpunit --debug --coverage-clover=coverage.xml
  - vendor/bin/phpmd src text codesize,unusedcode,naming
  - vendor/bin/phploc src --progress

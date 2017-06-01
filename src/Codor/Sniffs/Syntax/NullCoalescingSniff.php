@@ -18,6 +18,12 @@ class NullCoalescingSniff implements PHP_CodeSniffer_Sniff
     }
 
     /**
+     * The PHP Code Sniffer file.
+     * @var PHP_CodeSniffer_File
+     */
+    protected $phpcsFile;
+
+    /**
      * Processes the tokens that this sniff is interested in.
      * @param PHP_CodeSniffer_File $phpcsFile The file where the token was found.
      * @param integer              $stackPtr  The position in the stack where

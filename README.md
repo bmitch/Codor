@@ -89,6 +89,9 @@ Classes must be no more than 200 lines.
 ### Codor.Classes.ConstructorLoop ###
 Class constructors must not contain any loops.
 
+### Codor.Classes.PropertyDeclaration ###
+Produces an error if your class uses undeclared member variables. Only warns if class extends another class. 
+
 ### Codor.Files.FunctionNameContainsAndOr ###
 Functions/methods cannot contain "And" or "Or". This could be a sign of a function that does more than one thing.
 
