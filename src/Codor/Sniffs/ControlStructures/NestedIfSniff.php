@@ -18,6 +18,18 @@ class NestedIfSniff implements PHP_CodeSniffer_Sniff
     }
 
     /**
+     * The PHP Code Sniffer file.
+     * @var PHP_CodeSniffer_File
+     */
+    protected $phpcsFile;
+
+    /**
+     * The list of errors encountered;
+     * @var array
+     */
+    protected $errorStack;
+
+    /**
      * Processes the tokens that this sniff is interested in.
      *
      * @param PHP_CodeSniffer_File $phpcsFile The file where the token was found.
