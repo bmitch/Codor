@@ -70,4 +70,12 @@ class ConstructorLoopSniffTest extends BaseTestCase
         $this->assertCount(1, $errorMessages);
         $this->assertAllEqual('Class constructor cannot contain a loop.', $errorMessages);
     }
+
+    /** @test */
+    public function it_does_not_error_out_when_sniffing_an_interface()
+    {
+        $results = $this->runner->sniff('Interface.inc');
+        $this->assertSame(0, $results->getErrorCount());
+        $this->assertSame(0, $results->getWarningCount());
+    }
 }

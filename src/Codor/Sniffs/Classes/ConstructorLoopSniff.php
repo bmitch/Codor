@@ -37,14 +37,16 @@ class ConstructorLoopSniff implements PHP_CodeSniffer_Sniff
         $token             = $tokens[$stackPtr];
         $functionNameToken = $tokens[$stackPtr + 2];
         $functionName      = $functionNameToken['content'];
+
         if ($functionName !== '__construct') {
             return;
         }
+        // If this is an interface we don't check it.
+        if (! isset($token['scope_opener'])) {
+            return;
+        }
 
-        $startIndex   = $token['scope_opener'];
-        $endIndex = $token['scope_closer'];
-
-        for ($index=$startIndex; $index <= $endIndex; $index++) {
+        for ($index=$token['scope_opener']; $index <= $token['scope_closer']; $index++) {
             if (in_array($tokens[$index]['type'], $this->loops)) {
                 $phpcsFile->addError("Class constructor cannot contain a loop.", $stackPtr);
                 continue;
