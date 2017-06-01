@@ -1,4 +1,4 @@
-#Code Odor Sniffer
+# Code Odor Sniffer
 :nose: :poop: Custom PHP Code Sniffer sniffs to help find Code Smells (Odor).
 
 [![Build Status](https://travis-ci.org/bmitch/Codor.svg?branch=master)](https://travis-ci.org/bmitch/Codor) [![codecov](https://codecov.io/gh/bmitch/Codor/branch/master/graph/badge.svg)](https://codecov.io/gh/bmitch/Codor) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bmitch/Codor/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/bmitch/Codor/?branch=master) [![Code Climate](https://codeclimate.com/github/bmitch/Codor/badges/gpa.svg)](https://codeclimate.com/github/bmitch/Codor) [![Packagist](https://img.shields.io/packagist/v/bmitch/codor.svg)]() [![Packagist](https://img.shields.io/packagist/l/bmitch/codor.svg)]()
