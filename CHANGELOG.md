@@ -1,5 +1,18 @@
 # Change Log
 
+## [1.0.3](https://github.com/bmitch/Codor/tree/1.0.3) (2017-06-01)
+[Full Changelog](https://github.com/bmitch/Codor/compare/1.0.2...1.0.3)
+
+**Closed issues:**
+
+- Sniff to prevent undeclared member variables. [\#84](https://github.com/bmitch/Codor/issues/84)
+- Sniff to look for conditionals or loops within a constructor. [\#71](https://github.com/bmitch/Codor/issues/71)
+
+**Merged pull requests:**
+
+- Fixes \#84 [\#85](https://github.com/bmitch/Codor/pull/85) ([bmitch](https://github.com/bmitch))
+- Fixes \#71 [\#83](https://github.com/bmitch/Codor/pull/83) ([bmitch](https://github.com/bmitch))
+
 ## [1.0.2](https://github.com/bmitch/Codor/tree/1.0.2) (2017-04-10)
 [Full Changelog](https://github.com/bmitch/Codor/compare/1.0.1...1.0.2)
 
