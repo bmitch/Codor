@@ -1,5 +1,16 @@
 # Change Log
 
+## [1.0.4](https://github.com/bmitch/Codor/tree/1.0.4) (2017-06-01)
+[Full Changelog](https://github.com/bmitch/Codor/compare/1.0.3...1.0.4)
+
+**Fixed bugs:**
+
+- ConstructorLoopSniff breaks on interfaces with constructors [\#86](https://github.com/bmitch/Codor/issues/86)
+
+**Merged pull requests:**
+
+- Fixes \#86 [\#87](https://github.com/bmitch/Codor/pull/87) ([bmitch](https://github.com/bmitch))
+
 ## [1.0.3](https://github.com/bmitch/Codor/tree/1.0.3) (2017-06-01)
 [Full Changelog](https://github.com/bmitch/Codor/compare/1.0.2...1.0.3)
 
