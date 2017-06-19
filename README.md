@@ -6,7 +6,7 @@
 _Inspired by: https://github.com/object-calisthenics/phpcs-calisthenics-rules_
 
 * [What Is it?](#what-is-it)
-* [Compatiblity](#compatibility)
+* [Compatibility](#compatibility)
 * [How to Install?](#how-to-install)
 * [How to Use?](#how-to-use)
  * [Omitting Sniffs](#omitting-sniffs)
@@ -21,7 +21,7 @@ _Inspired by: https://github.com/object-calisthenics/phpcs-calisthenics-rules_
 ## What is it? ##
 This package is a set of custom Sniffs for the [PHP Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer) that you can use in your CI build to ensure the ingegrity of your code base.
 
-## Compatiblity ##
+## Compatibility ##
 * PHP 7+ please use v1.0.0 and above.
 * PHP 5.6 and below please use any version below v1.0.0.
 
