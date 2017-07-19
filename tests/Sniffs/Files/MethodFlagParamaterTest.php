@@ -27,7 +27,7 @@ class MethodFlagParamaterTest extends BaseTestCase
         $this->assertSame(0, $results->getWarningCount());
 
         $errorMessages = $results->getAllErrorMessages();
-        $this->assertCount(10, $errorMessages);
+        $this->assertCount(12, $errorMessages);
         $this->assertAllEqual('Function/method contains a flag parameter.', $errorMessages);
     }
 }
