@@ -42,6 +42,11 @@
             "vendor/bin/phpmd src text codesize,unusedcode,naming",
             "vendor/bin/phploc src --progress",
             "vendor/bin/phpcpd src"
+        ],
+        "fix": [
+            "vendor/bin/phpcbf -n --standard=phpcs.xml src/",
+            "vendor/bin/phpcbf --standard=codor.xml src -spn",
+            "vendor/bin/phpcbf --standard=psr2 src -sp"
         ]
     }
 }

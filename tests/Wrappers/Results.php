@@ -27,12 +27,14 @@ class Results
      */
     public function getAllErrorMessages(): array
     {
+
         $allErrorMessages = [];
         $errors = $this->wrappedClass->getErrors();
-        foreach ($errors as $error) {
-            $allErrorMessages[] = reset($error)[0]['message'];
-        }
-
+        array_walk_recursive($errors, function (&$item, $key) use (&$allErrorMessages) {
+            if ($key == 'message') {
+                $allErrorMessages[] = $item;
+            }
+        });
         return $allErrorMessages;
     }
 
