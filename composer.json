@@ -3,7 +3,8 @@
     "description": "Custom PHPCS sniffs to find Code Smells.",
     "require": {
         "php": ">=7.0.0",
-        "squizlabs/php_codesniffer": "^2.8.1"
+        "squizlabs/php_codesniffer": "^2.8.1",
+        "roave/security-advisories": "dev-master"
     },
     "license": "MIT",
     "authors": [
