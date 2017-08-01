@@ -89,6 +89,9 @@ Classes must be no more than 200 lines.
 ### Codor.Classes.ConstructorLoop ###
 Class constructors must not contain any loops.
 
+### Codor.Classes.Extends ###
+Warns if a class extends another class. Goal is to promote composition over inheritance.
+
 ### Codor.Classes.FinalPrivate ###
 Final classes should not contain protected methods or variables. Should use private instead.
 
