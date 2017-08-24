@@ -4,7 +4,8 @@
     "require": {
         "php": ">=7.0.0",
         "squizlabs/php_codesniffer": "^2.8.1",
-        "roave/security-advisories": "dev-master"
+        "roave/security-advisories": "dev-master",
+        "bmitch/churn-php": "^0.0.6"
     },
     "license": "MIT",
     "authors": [
@@ -42,7 +43,8 @@
             "vendor/bin/phpunit --debug --coverage-clover=coverage.xml",
             "vendor/bin/phpmd src text codesize,unusedcode,naming",
             "vendor/bin/phploc src --progress",
-            "vendor/bin/phpcpd src"
+            "vendor/bin/phpcpd src",
+            "vendor/bin/churn run src"
         ],
         "fix": [
             "vendor/bin/phpcbf -n --standard=phpcs.xml src/",
