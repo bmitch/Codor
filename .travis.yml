@@ -18,6 +18,7 @@ script:
  - vendor/bin/phpmd src text codesize,unusedcode,naming
  - vendor/bin/phploc src --progress
  - vendor/bin/phpcpd src
+ - vendor/bin/churn run src
 
 
 after_success:
