@@ -10,7 +10,7 @@
 <!-- Forbid some functions -->
 <rule ref="Generic.PHP.ForbiddenFunctions">
   <properties>
-    <property name="forbiddenFunctions" type="array" value="mysql_fetch_assoc=>null,mysql_query=>null,mysql_connect=>null,dd=>null,die=>null,var_dump=>null,sizeof=>count,delete=>unset,create_function=>null"/>
+    <property name="forbiddenFunctions" type="array" value="instanceof=>null,mysql_fetch_assoc=>null,mysql_query=>null,mysql_connect=>null,dd=>null,die=>null,var_dump=>null,sizeof=>count,delete=>unset,create_function=>null"/>
   </properties>
 </rule>
 
