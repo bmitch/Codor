@@ -1,5 +1,54 @@
 # Change Log
 
+## [Unreleased](https://github.com/bmitch/Codor/tree/HEAD)
+
+[Full Changelog](https://github.com/bmitch/Codor/compare/1.0.7...HEAD)
+
+**Closed issues:**
+
+- Add instanceof to list of forbidden functions [\#106](https://github.com/bmitch/Codor/issues/106)
+- Add churn-php [\#104](https://github.com/bmitch/Codor/issues/104)
+- Add Sniff to check for the use of instance of function [\#102](https://github.com/bmitch/Codor/issues/102)
+
+**Merged pull requests:**
+
+- Fixes \#106 - prevent instance from being used within source code [\#107](https://github.com/bmitch/Codor/pull/107) ([bmitch](https://github.com/bmitch))
+- Fixes \#104 - Added churn-php [\#105](https://github.com/bmitch/Codor/pull/105) ([bmitch](https://github.com/bmitch))
+- Update gitignore [\#103](https://github.com/bmitch/Codor/pull/103) ([bmitch](https://github.com/bmitch))
+
+## [1.0.7](https://github.com/bmitch/Codor/tree/1.0.7) (2017-08-19)
+[Full Changelog](https://github.com/bmitch/Codor/compare/1.0.6...1.0.7)
+
+**Merged pull requests:**
+
+- Add PHP 7.2 to Travis-CI build [\#101](https://github.com/bmitch/Codor/pull/101) ([bmitch](https://github.com/bmitch))
+
+## [1.0.6](https://github.com/bmitch/Codor/tree/1.0.6) (2017-08-01)
+[Full Changelog](https://github.com/bmitch/Codor/compare/1.0.5...1.0.6)
+
+**Closed issues:**
+
+- Sniff to warn when extending a class. [\#90](https://github.com/bmitch/Codor/issues/90)
+
+**Merged pull requests:**
+
+- Fixes \#90 [\#95](https://github.com/bmitch/Codor/pull/95) ([bmitch](https://github.com/bmitch))
+
+## [1.0.5](https://github.com/bmitch/Codor/tree/1.0.5) (2017-07-30)
+[Full Changelog](https://github.com/bmitch/Codor/compare/1.0.4...1.0.5)
+
+**Closed issues:**
+
+- Fix final class sniff [\#92](https://github.com/bmitch/Codor/issues/92)
+- Final classes - ensure no protected methods or members [\#89](https://github.com/bmitch/Codor/issues/89)
+- Add https://github.com/Roave/SecurityAdvisories [\#67](https://github.com/bmitch/Codor/issues/67)
+
+**Merged pull requests:**
+
+- Fixes \#67 [\#94](https://github.com/bmitch/Codor/pull/94) ([bmitch](https://github.com/bmitch))
+- Fixes \#92 [\#93](https://github.com/bmitch/Codor/pull/93) ([bmitch](https://github.com/bmitch))
+- Fixes \#89 [\#91](https://github.com/bmitch/Codor/pull/91) ([bmitch](https://github.com/bmitch))
+
 ## [1.0.4](https://github.com/bmitch/Codor/tree/1.0.4) (2017-06-01)
 [Full Changelog](https://github.com/bmitch/Codor/compare/1.0.3...1.0.4)
 
