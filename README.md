@@ -26,7 +26,6 @@ This package is a set of custom Sniffs for the [PHP Code Sniffer](https://github
 * PHP 5.6 and below please use any version below v1.0.0.
 
 ## How to Install? ##
-
 Install via Composer:
 ```
 composer require bmitch/codor --dev
@@ -84,7 +83,10 @@ Functions/methods must not return `null`.
 Functions/methods cannot have parameters that default to a boolean.
 
 ### Codor.Classes.ClassLength ###
-Classes must be no more than 200 lines.
+Classes must be no more than 200 lines. Counts number of lines between the opening `{` and closing `}` of a class.
+
+### Codor.Classes.GentleClassLength ###
+Similar to `Codor.Classes.ClassLength` but only counts logical lines of code. A bit more "gentle".
 
 ### Codor.Classes.ConstructorLoop ###
 Class constructors must not contain any loops.
@@ -133,11 +135,13 @@ Some of the sniff rules can be customized to your liking. For example, if you'd 
 
 ### Customizations Available
 * `Codor.Files.FunctionLength`
- * `maxLength`: The maximum number of lines a function/method can be (default = 200).
+ * `maxLength`: The maximum number of lines a function/method can be (default = 20).
 * `Codor.Files.FunctionParameter`
  * `maxParameters`: The maximum number of parameters a function/method can have (default = 3).
 * `Codor.Classes.ClassLength`
- * `maxLength`: The maximum number of lines a Class can be (default = 20).
+ * `maxLength`: The maximum number of lines a Class can have (default = 200).
+* `Codor.Classes.GentleClassLength`
+ * `maxLength`: The maximum number of logical lines of code a Class can have (default = 200).
 * `Codor.Files.IndentationLevel`
  * `indentationLimit`: Cannot have more than or equal to this number of indentations (default = 2).
 
@@ -149,5 +153,4 @@ Some of the sniff rules can be customized to your liking. For example, if you'd 
 Please see [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## License ##
-
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
