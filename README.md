@@ -26,7 +26,6 @@ This package is a set of custom Sniffs for the [PHP Code Sniffer](https://github
 * PHP 5.6 and below please use any version below v1.0.0.
 
 ## How to Install? ##
-
 Install via Composer:
 ```
 composer require bmitch/codor --dev
@@ -71,49 +70,375 @@ https://github.com/squizlabs/PHP_CodeSniffer/wiki/Advanced-Usage#ignoring-files-
 ### Codor.ControlStructures.NoElse ###
 Does not allow for any `else` or `elseif` statements.
 
+:x:
+```php
+if ($foo) {
+    return 'bar';
+} else {
+    return 'baz';
+}
+```
+
+:white_check_mark:
+```php
+if ($foo) {
+    return 'bar';
+}
+return 'baz';
+```
+
 ### Codor.Files.FunctionLength ###
 Functions/methods must be no more than 20 lines.
 
+:x:
+```php
+public function foo()
+{
+    // more than 20 lines
+}
+```
+
+:white_check_mark:
+```php
+public function foo()
+{
+    // no more than 20 lines
+}
+```
 ### Codor.Files.FunctionParameter ###
 Functions/methods must have no more than 3 parameters.
 
+:x:
+```php
+public function foo($bar, $baz, $bop, $portugal)
+{
+    // 
+}
+```
+
+:white_check_mark:
+```php
+public function foo($bar, $baz, $bop)
+{
+    // 
+}
+```
 ### Codor.Files.ReturnNull ###
 Functions/methods must not return `null`.
 
+:x:
+```php
+public function getAdapter($bar)
+{
+    if ($bar === 'baz') {
+        return new BazAdapter;
+    }
+    return null;
+}
+```
+
+:white_check_mark:
+```php
+public function getAdapter($bar)
+{
+    if ($bar === 'baz') {
+        return new BazAdapter;
+    }
+    return NullAdapter;
+}
+```
 ### Codor.Files.MethodFlagParameter ###
 Functions/methods cannot have parameters that default to a boolean.
 
+:x:
+```php
+public function getCustomers($active = true)
+{
+    if ($active) {
+        // Code to get customers from who are active
+    }
+    
+    // Code to get all customers
+}
+```
+
+:white_check_mark:
+```php
+public function getAllCustomers()
+{    
+    // Code to get all customers
+}
+
+public function getAllActiveCustomers()
+{    
+    // Code to get customers from who are active
+}
+```
 ### Codor.Classes.ClassLength ###
 Classes must be no more than 200 lines.
 
+:x:
+```php
+class ClassTooLong
+{
+    // More than 200 lines
+}
+```
+
+:white_check_mark:
+```php
+class ClassNotTooLong
+{
+    // No more than 200 lines
+}
+```
 ### Codor.Classes.ConstructorLoop ###
 Class constructors must not contain any loops.
 
-### Codor.Classes.Extends ###
-Warns if a class extends another class. Goal is to promote composition over inheritance.
+:x:
+```php
+public function __construct()
+{
+    for($index = 1; $index < 100; $index++) {
+        // foo
+    }
+}
+```
 
+:white_check_mark:
+```php
+public function __construct()
+{
+    $this->someMethod();
+}
+
+private function someMethod()
+{
+    for($index = 1; $index < 100; $index++) {
+        // foo
+    }
+}
+
+```
+### Codor.Classes.Extends ###
+Warns if a class extends another class. Goal is to promote composition over inheritance (https://en.wikipedia.org/wiki/Composition_over_inheritance).
+
+:x:
+```php
+class GasolineCar extends Vehicle
+{
+    //
+}
+
+class GasolineVehicle extends Vehicle
+{
+    //
+}
+```
+
+:white_check_mark:
+```php
+class Vehicle
+{
+    private $fuel;
+    
+    public function __construct(FuelInterface $fuel)
+    {
+        $this->fuel;    
+    }
+}
+
+class Gasoline implements FuelInterface
+{
+
+}
+
+$gasolineCar = new Vehicle($gasoline);
+```
 ### Codor.Classes.FinalPrivate ###
 Final classes should not contain protected methods or variables. Should use private instead.
 
+:x:
+```php
+final class Foo 
+{
+    protected $baz;
+
+    protected function bar()
+    {
+        //
+    }
+}
+```
+
+:white_check_mark:
+```php
+final class Foo 
+{
+    private $baz;
+
+    private function bar()
+    {
+        //
+    }
+}
+```
 ### Codor.Classes.PropertyDeclaration ###
 Produces an error if your class uses undeclared member variables. Only warns if class extends another class. 
 
+:x:
+```php
+class Foo 
+{
+    private function bar()
+    {
+        $this->baz = 13;
+    }
+}
+```
+
+:white_check_mark:
+```php
+final class Foo 
+{
+    private $baz;
+    
+    private function bar()
+    {
+        $this->baz = 13;
+    }
+}
+```
 ### Codor.Files.FunctionNameContainsAndOr ###
 Functions/methods cannot contain "And" or "Or". This could be a sign of a function that does more than one thing.
 
-### Codor.Files.IndentationLevel ###
-Functions/methods cannot have more than 1 level of indentation.
+:x:
+```php
+public function validateStringAndUpdateDatabase()
+{
+    // code to validate string
+    // code to update database
+}
+```
 
+:white_check_mark:
+```php
+public function validateString()
+{
+    // code to validate string
+}
+
+public function updateDatabase()
+{
+    // code to update database
+}
+```
+### Codor.Files.IndentationLevel ###
+Functions/methods cannot have more than 2 level of indentation.
+
+:x:
+```php
+public function foo($collection)
+{
+    foreach ($collection as $bar) {
+        foreach ($bar as $baz) {
+            //
+        }
+    }
+}
+```
+
+:white_check_mark:
+```php
+```php
+public function foo($collection)
+{
+    foreach ($collection as $bar) {
+        $this->process($bar);
+    }
+}
+
+private function process($bar)
+{
+    foreach ($bar as $baz) {
+        //
+    }
+}
+```
 ### Codor.ControlStructures.NestedIf ###
 Nested if statements are not allowed.
 
+:x:
+```php
+public function allowedToDrink($person)
+{
+    if ($person->age === 19) {
+        if ($person->hasValidId()) {
+            return true;
+        }
+    }
+    
+    return false;
+}
+```
+
+:white_check_mark:
+```php
+public function allowedToDrink($person)
+{
+    if ($person->age !== 19) {
+        return false;
+    }
+       
+    if (! $person->hasValidId()) {
+        return false;
+    }
+    
+    return true;
+}
+```
 ### Codor.Syntax.NullCoalescing ###
-PHP 7+ only.  
 Produces an error if a line contains a ternary operator that could be converted to a Null Coalescing operator.
+
+:x:
+```php
+$username = isset($customer['name']) ? $customer['name'] : 'nobody';
+```
+
+:white_check_mark:
+```php
+$username = $customer['name'] ?? 'nobody';
+```
 
 ### Codor.Syntax.LinesAfterMethod ###
 Only allows for 1 line between functions/methods. Any more than 1 will produce an error.
 
+:x:
+```php
+public function foo()
+{
+    //
+}
+
+
+public function bar()
+{
+    //
+}
+```
+
+:white_check_mark:
+```php
+public function foo()
+{
+    //
+}
+
+public function bar()
+{
+    //
+}
+```
 
 ## Customizing Sniffs ##
 Some of the sniff rules can be customized to your liking. For example, if you'd want the `Codor.Files.FunctionLength` to make sure your functions are no more than 30 lines instead of 20, you can do that. Here's an example of a `codor.xml` file with that customization:
@@ -133,11 +458,11 @@ Some of the sniff rules can be customized to your liking. For example, if you'd 
 
 ### Customizations Available
 * `Codor.Files.FunctionLength`
- * `maxLength`: The maximum number of lines a function/method can be (default = 200).
+ * `maxLength`: The maximum number of lines a function/method can have (default = 20).
 * `Codor.Files.FunctionParameter`
  * `maxParameters`: The maximum number of parameters a function/method can have (default = 3).
 * `Codor.Classes.ClassLength`
- * `maxLength`: The maximum number of lines a Class can be (default = 20).
+ * `maxLength`: The maximum number of lines a Class can have (default = 200).
 * `Codor.Files.IndentationLevel`
  * `indentationLimit`: Cannot have more than or equal to this number of indentations (default = 2).
 
