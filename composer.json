@@ -35,7 +35,7 @@
         "larapack/dd": "^1.1"
     },
     "scripts": {
-        "test": [
+        "code-standards": [
             "vendor/bin/parallel-lint src tests",
             "vendor/bin/phpcs --standard=psr2 src -sp",
             "vendor/bin/phpcs --standard=phpcs.xml src tests --ignore=tests/Sniffs -sp",
