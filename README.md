@@ -299,7 +299,7 @@ class Foo
 
 :white_check_mark:
 ```php
-final class Foo 
+class Foo 
 {
     private $baz;
     
@@ -349,7 +349,6 @@ public function foo($collection)
 ```
 
 :white_check_mark:
-```php
 ```php
 public function foo($collection)
 {
