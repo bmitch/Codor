@@ -46,8 +46,6 @@ class MixedReturnTypeSniff implements PHP_CodeSniffer_Sniff
      * @param PHP_CodeSniffer_File $phpcsFile    The file being scanned.
      *                                           in the stack passed in $tokens.
      * @param int                  $commentStart The position in the stack where the comment started.
-     *
-     * @throws \PHP_CodeSniffer_Exception
      */
     protected function processReturn(PHP_CodeSniffer_File $phpcsFile, $commentStart): void
     {
