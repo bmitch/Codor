@@ -26,7 +26,7 @@ class BaseTestCase extends TestCase
     /**
      * Asserts all the elements within $array are
      * equal to $value.
-     * @param  mixed $value Value to compapre.
+     * @param  mixed $value Value to compare.
      * @param  array $array Array to compare.
      * @return void
      */
