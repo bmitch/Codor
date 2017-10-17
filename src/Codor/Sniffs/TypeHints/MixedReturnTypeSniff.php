@@ -76,7 +76,7 @@ class MixedReturnTypeSniff implements PHP_CodeSniffer_Sniff
      * Finds the (first) return tag, if any, in the comment
      *
      * @param array $tokens Token stack
-     * @param int $commentStart Pointer to start of comment
+     * @param int   $commentStart Pointer to start of comment
      *
      * @return int|null
      */
@@ -88,8 +88,8 @@ class MixedReturnTypeSniff implements PHP_CodeSniffer_Sniff
     }
 
     /**
-     * @param array $tokens Token stack
-     * @param int $returnPosition Pointer to return tag
+     * @param array $tokens         Token stack
+     * @param int   $returnPosition Pointer to return tag
      *
      * @return string|null
      */
