@@ -16,9 +16,9 @@ class BaseTestCase extends TestCase
      * Sets up the test class.
      * @return void
      */
-    public function setup()
+    public function setUp()
     {
-        parent::setup();
+        parent::setUp();
 
         $this->runner = new CodeSnifferRunner();
     }
