@@ -2,7 +2,7 @@
 
 interface someInterface
 {
-	public funciton one($one);
+	public function one($one);
 
 	public function two($one, $two);
 
