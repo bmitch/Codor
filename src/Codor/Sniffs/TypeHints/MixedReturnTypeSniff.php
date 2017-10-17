@@ -29,23 +29,11 @@ class MixedReturnTypeSniff implements PHP_CodeSniffer_Sniff
      *
      * @return void
      */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr): void
     {
         $tokens = $phpcsFile->getTokens();
-        $find   = PHP_CodeSniffer_Tokens::$methodPrefixes;
-        $find[] = T_WHITESPACE;
 
-        $commentEnd = $phpcsFile->findPrevious($find, $stackPtr - 1, null, true);
-        if ($tokens[$commentEnd]['code'] === T_COMMENT) {
-            // Inline comments might just be closing comments for
-            // control structures or functions instead of function comments
-            // using the wrong comment type. If there is other code on the line,
-            // assume they relate to that code.
-            $prev = $phpcsFile->findPrevious($find, $commentEnd - 1, null, true);
-            if ($prev !== false && $tokens[$prev]['line'] === $tokens[$commentEnd]['line']) {
-                $commentEnd = $prev;
-            }
-        }
+        $commentEnd = $this->findCommentEnd($phpcsFile, $stackPtr, $tokens);
 
         $commentStart = $tokens[$commentEnd]['comment_opener'];
 
@@ -114,5 +102,34 @@ class MixedReturnTypeSniff implements PHP_CodeSniffer_Sniff
         preg_match('`^((?:\|?(?:array\([^\)]*\)|[\\\\a-z0-9\[\]]+))*)( .*)?`i', $content, $returnParts);
 
         return $returnParts[1] ?? null;
+    }
+
+    /**
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token
+     *                                        in the stack passed in $tokens.
+     * @param array                $tokens    Token stack
+     *
+     * @return bool|int
+     */
+    private function findCommentEnd(PHP_CodeSniffer_File $phpcsFile, $stackPtr, array $tokens)
+    {
+        $find = PHP_CodeSniffer_Tokens::$methodPrefixes + T_WHITESPACE;
+
+        $commentEnd = $phpcsFile->findPrevious($find, $stackPtr - 1, null, true);
+        if ($tokens[$commentEnd]['code'] !== T_COMMENT) {
+            return $commentEnd;
+        }
+
+        // Inline comments might just be closing comments for
+        // control structures or functions instead of function comments
+        // using the wrong comment type. If there is other code on the line,
+        // assume they relate to that code.
+        $prev = $phpcsFile->findPrevious($find, $commentEnd - 1, null, true);
+        if ($prev !== false && $tokens[$prev]['line'] === $tokens[$commentEnd]['line']) {
+            $commentEnd = $prev;
+        }
+
+        return $commentEnd;
     }
 }
