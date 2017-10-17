@@ -37,7 +37,7 @@ class CodeSnifferRunner
     public function __construct()
     {
         $this->codeSniffer = new PHP_CodeSniffer();
-        $this->codeSniffer->setConfigData('report_format', 'full');
+        $this->codeSniffer::setConfigData('report_format', 'full');
     }
 
     /**
