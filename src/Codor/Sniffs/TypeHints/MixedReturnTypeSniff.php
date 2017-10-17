@@ -112,7 +112,7 @@ class MixedReturnTypeSniff implements PHP_CodeSniffer_Sniff
      */
     private function findCommentEnd(PHP_CodeSniffer_File $phpcsFile, $stackPtr, array $tokens)
     {
-        $find = PHP_CodeSniffer_Tokens::$methodPrefixes + T_WHITESPACE;
+        $find = PHP_CodeSniffer_Tokens::$methodPrefixes + [T_WHITESPACE];
 
         $commentEnd = $phpcsFile->findPrevious($find, $stackPtr - 1, null, true);
         if ($tokens[$commentEnd]['code'] !== T_COMMENT) {
