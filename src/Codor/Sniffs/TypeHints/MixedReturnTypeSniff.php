@@ -55,12 +55,12 @@ class MixedReturnTypeSniff implements PHP_CodeSniffer_Sniff
         $tokens = $phpcsFile->getTokens();
 
         $return = $this->findReturnTag($tokens, $commentStart);
-        if ($return === null) {
+        if ($return === false) {
             return;
         }
 
         $returnType = $this->parseTagForReturnType($tokens, $return);
-        if ($returnType === null) {
+        if ($returnType === false) {
             return;
         }
 
@@ -78,28 +78,28 @@ class MixedReturnTypeSniff implements PHP_CodeSniffer_Sniff
      * @param array $tokens       Token stack.
      * @param int   $commentStart Pointer to start of comment.
      *
-     * @return integer|null
+     * @return integer|false
      */
-    private function findReturnTag(array $tokens, int $commentStart): ?int
+    private function findReturnTag(array $tokens, int $commentStart)
     {
         return array_reduce($tokens[$commentStart]['comment_tags'], function ($carry, $tag) use ($tokens) {
-            return $carry || ($tokens[$tag]['content'] === self::RETURN_TAG_NAME) ? $tag : null;
-        }, null);
+            return $carry || ($tokens[$tag]['content'] === self::RETURN_TAG_NAME) ? $tag : false;
+        }, false);
     }
 
     /**
      * @param array $tokens         Token stack.
      * @param int   $returnPosition Pointer to return tag.
      *
-     * @return string|null
+     * @return string|false
      */
-    private function parseTagForReturnType(array $tokens, int $returnPosition): ?string
+    private function parseTagForReturnType(array $tokens, int $returnPosition)
     {
         $content = $tokens[$returnPosition + 2]['content'];
         // Support both a return type and a description.
         preg_match('`^((?:\|?(?:array\([^\)]*\)|[\\\\a-z0-9\[\]]+))*)( .*)?`i', $content, $returnParts);
 
-        return $returnParts[1] ?? null;
+        return isset($returnParts[1]) ? $returnParts[1] : false;
     }
 
     /**
