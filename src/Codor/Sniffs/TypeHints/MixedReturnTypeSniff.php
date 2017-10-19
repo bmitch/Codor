@@ -8,11 +8,12 @@ use PHP_CodeSniffer_Tokens;
 
 class MixedReturnTypeSniff implements PHP_CodeSniffer_Sniff
 {
-    private const RETURN_TAG_NAME = '@return';
-    private const MIXED_TYPE = 'mixed';
+    const RETURN_TAG_NAME = '@return';
+    const MIXED_TYPE = 'mixed';
 
     /**
      * Returns the token types that this sniff is interested in.
+     *
      * @return array
      */
     public function register(): array
@@ -46,13 +47,14 @@ class MixedReturnTypeSniff implements PHP_CodeSniffer_Sniff
      * @param PHP_CodeSniffer_File $phpcsFile    The file being scanned.
      *                                           in the stack passed in $tokens.
      * @param int                  $commentStart The position in the stack where the comment started.
+     *
+     * @return void
      */
     protected function processReturn(PHP_CodeSniffer_File $phpcsFile, $commentStart): void
     {
         $tokens = $phpcsFile->getTokens();
 
         $return = $this->findReturnTag($tokens, $commentStart);
-
         if ($return === null) {
             return;
         }
@@ -63,9 +65,7 @@ class MixedReturnTypeSniff implements PHP_CodeSniffer_Sniff
         }
 
         // Check return type (can be multiple, separated by '|').
-        $typeNames = explode('|', $returnType);
-
-        foreach ($typeNames as $typeName) {
+        foreach (explode('|', $returnType) as $typeName) {
             if ($typeName === self::MIXED_TYPE) {
                 $phpcsFile->addError('Function return type contains mixed', $commentStart);
             }
@@ -75,10 +75,10 @@ class MixedReturnTypeSniff implements PHP_CodeSniffer_Sniff
     /**
      * Finds the (first) return tag, if any, in the comment
      *
-     * @param array $tokens Token stack
-     * @param int   $commentStart Pointer to start of comment
+     * @param array $tokens       Token stack.
+     * @param int   $commentStart Pointer to start of comment.
      *
-     * @return int|null
+     * @return integer|null
      */
     private function findReturnTag(array $tokens, int $commentStart): ?int
     {
@@ -88,8 +88,8 @@ class MixedReturnTypeSniff implements PHP_CodeSniffer_Sniff
     }
 
     /**
-     * @param array $tokens         Token stack
-     * @param int   $returnPosition Pointer to return tag
+     * @param array $tokens         Token stack.
+     * @param int   $returnPosition Pointer to return tag.
      *
      * @return string|null
      */
@@ -106,9 +106,9 @@ class MixedReturnTypeSniff implements PHP_CodeSniffer_Sniff
      * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
      * @param int                  $stackPtr  The position of the current token
      *                                        in the stack passed in $tokens.
-     * @param array                $tokens    Token stack
+     * @param array                $tokens    Token stack.
      *
-     * @return bool|int
+     * @return boolean|integer
      */
     private function findCommentEnd(PHP_CodeSniffer_File $phpcsFile, $stackPtr, array $tokens)
     {
