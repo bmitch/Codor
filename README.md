@@ -445,6 +445,31 @@ public function bar()
 }
 ```
 
+### Codor.TypeHints.MixedReturnType ###
+Prevents you from having a `mixed` type returned in a doc block.
+
+:x:
+```php
+/**
+ * @return mixed
+ */
+public function foo()
+{
+    //
+}
+```
+
+:white_check_mark:
+```php
+/**
+ * @return string
+ */
+public function foo()
+{
+    //
+}
+```
+
 ## Customizing Sniffs ##
 Some of the sniff rules can be customized to your liking. For example, if you'd want the `Codor.Files.FunctionLength` to make sure your functions are no more than 30 lines instead of 20, you can do that. Here's an example of a `codor.xml` file with that customization:
 ```xml
