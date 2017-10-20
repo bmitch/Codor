@@ -30,7 +30,7 @@ class MixedReturnTypeSniff implements PHP_CodeSniffer_Sniff
      *
      * @return void
      */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr): void
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
     {
         $tokens = $phpcsFile->getTokens();
 
@@ -50,7 +50,7 @@ class MixedReturnTypeSniff implements PHP_CodeSniffer_Sniff
      *
      * @return void
      */
-    protected function processReturn(PHP_CodeSniffer_File $phpcsFile, $commentStart): void
+    protected function processReturn(PHP_CodeSniffer_File $phpcsFile, $commentStart)
     {
         $tokens = $phpcsFile->getTokens();
 
@@ -99,7 +99,7 @@ class MixedReturnTypeSniff implements PHP_CodeSniffer_Sniff
         // Support both a return type and a description.
         preg_match('`^((?:\|?(?:array\([^\)]*\)|[\\\\a-z0-9\[\]]+))*)( .*)?`i', $content, $returnParts);
 
-        return isset($returnParts[1]) ? $returnParts[1] : false;
+        return $returnParts[1] ?? false;
     }
 
     /**
