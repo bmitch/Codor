@@ -36,6 +36,10 @@ class MixedReturnTypeSniff implements PHP_CodeSniffer_Sniff
 
         $commentEnd = $this->findCommentEnd($phpcsFile, $stackPtr, $tokens);
 
+        if (empty($tokens[$commentEnd]['comment_opener'])) {
+            return;
+        }
+
         $commentStart = $tokens[$commentEnd]['comment_opener'];
 
         $this->processReturn($phpcsFile, $commentStart);
