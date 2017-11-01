@@ -2,16 +2,35 @@
 
 ## [Unreleased](https://github.com/bmitch/Codor/tree/HEAD)
 
-[Full Changelog](https://github.com/bmitch/Codor/compare/1.0.7...HEAD)
+[Full Changelog](https://github.com/bmitch/Codor/compare/1.1.0...HEAD)
 
 **Closed issues:**
 
+- MixedReturnTypeSniff - Check for `comment\_opener` index before assuming it is there. [\#123](https://github.com/bmitch/Codor/issues/123)
+
+**Merged pull requests:**
+
+- Fixes \#123 - MixedReturnTypeSniff - check for `comment\_opener` index … [\#124](https://github.com/bmitch/Codor/pull/124) ([bmitch](https://github.com/bmitch))
+
+## [1.1.0](https://github.com/bmitch/Codor/tree/1.1.0) (2017-10-20)
+[Full Changelog](https://github.com/bmitch/Codor/compare/1.0.7...1.1.0)
+
+**Closed issues:**
+
+- Add a "downloads" badge [\#117](https://github.com/bmitch/Codor/issues/117)
+- Sniff to prevent `mixed` type hints and return types? [\#110](https://github.com/bmitch/Codor/issues/110)
 - Add instanceof to list of forbidden functions [\#106](https://github.com/bmitch/Codor/issues/106)
 - Add churn-php [\#104](https://github.com/bmitch/Codor/issues/104)
 - Add Sniff to check for the use of instance of function [\#102](https://github.com/bmitch/Codor/issues/102)
 
 **Merged pull requests:**
 
+- Clean up code [\#122](https://github.com/bmitch/Codor/pull/122) ([bmitch](https://github.com/bmitch))
+- Add mixed return sniff [\#120](https://github.com/bmitch/Codor/pull/120) ([fentie](https://github.com/fentie))
+- added download button [\#118](https://github.com/bmitch/Codor/pull/118) ([d35k](https://github.com/d35k))
+- Readme fix [\#115](https://github.com/bmitch/Codor/pull/115) ([bmitch](https://github.com/bmitch))
+- readme update [\#113](https://github.com/bmitch/Codor/pull/113) ([bmitch](https://github.com/bmitch))
+- Updated changelog [\#109](https://github.com/bmitch/Codor/pull/109) ([bmitch](https://github.com/bmitch))
 - Fixes \#106 - prevent instance from being used within source code [\#107](https://github.com/bmitch/Codor/pull/107) ([bmitch](https://github.com/bmitch))
 - Fixes \#104 - Added churn-php [\#105](https://github.com/bmitch/Codor/pull/105) ([bmitch](https://github.com/bmitch))
 - Update gitignore [\#103](https://github.com/bmitch/Codor/pull/103) ([bmitch](https://github.com/bmitch))
