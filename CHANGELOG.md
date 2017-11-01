@@ -1,8 +1,7 @@
 # Change Log
 
-## [Unreleased](https://github.com/bmitch/Codor/tree/HEAD)
-
-[Full Changelog](https://github.com/bmitch/Codor/compare/1.1.0...HEAD)
+## [1.1.1](https://github.com/bmitch/Codor/tree/1.1.1) (2017-11-01)
+[Full Changelog](https://github.com/bmitch/Codor/compare/1.1.0...1.1.1)
 
 **Closed issues:**
 
@@ -10,6 +9,7 @@
 
 **Merged pull requests:**
 
+- update changelog [\#125](https://github.com/bmitch/Codor/pull/125) ([bmitch](https://github.com/bmitch))
 - Fixes \#123 - MixedReturnTypeSniff - check for `comment\_opener` index … [\#124](https://github.com/bmitch/Codor/pull/124) ([bmitch](https://github.com/bmitch))
 
 ## [1.1.0](https://github.com/bmitch/Codor/tree/1.1.0) (2017-10-20)
