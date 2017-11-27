@@ -2,10 +2,10 @@
 
 namespace Codor\Sniffs\ControlStructures;
 
-use PHP_CodeSniffer_Sniff;
-use PHP_CodeSniffer_File;
+use PHP_CodeSniffer\Files\File as PHP_CodeSniffer_File;
+use PHP_CodeSniffer\Sniffs\Sniff;
 
-class NestedIfSniff implements PHP_CodeSniffer_Sniff
+class NestedIfSniff implements Sniff
 {
 
     /**
@@ -67,7 +67,7 @@ class NestedIfSniff implements PHP_CodeSniffer_Sniff
             return;
         }
 
-        $this->phpcsFile->addError('Nested if statement found.', $stackPtr);
+        $this->phpcsFile->addError('Nested if statement found.', $stackPtr, __CLASS__);
         $this->errorStack[] = $stackPtr;
     }
 

@@ -2,8 +2,8 @@
 
 namespace Codor\Sniffs\Files;
 
-use PHP_CodeSniffer_Sniff;
-use PHP_CodeSniffer_File;
+use PHP_CodeSniffer\Sniffs\Sniff as PHP_CodeSniffer_Sniff;
+use PHP_CodeSniffer\Files\File as PHP_CodeSniffer_File;
 
 class IndentationLevelSniff implements PHP_CodeSniffer_Sniff
 {
@@ -60,7 +60,7 @@ class IndentationLevelSniff implements PHP_CodeSniffer_Sniff
             return;
         }
 
-        $phpcsFile->addError($this->getErrorMessage(), $stackPtr);
+        $phpcsFile->addError($this->getErrorMessage(), $stackPtr, __CLASS__);
     }
 
     /**

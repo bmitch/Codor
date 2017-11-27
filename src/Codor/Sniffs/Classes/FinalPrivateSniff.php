@@ -2,8 +2,8 @@
 
 namespace Codor\Sniffs\Classes;
 
-use PHP_CodeSniffer_Sniff;
-use PHP_CodeSniffer_File;
+use PHP_CodeSniffer\Sniffs\Sniff as PHP_CodeSniffer_Sniff;
+use PHP_CodeSniffer\Files\File as PHP_CodeSniffer_File;
 
 /**
  * @SuppressWarnings(PHPMD.LongVariable)
@@ -133,7 +133,7 @@ class FinalPrivateSniff implements PHP_CodeSniffer_Sniff
     {
         $methodName = $token['content'];
         $line = $token['line'];
-        $phpcsFile->addError("Final Class contains a protected method {$methodName} - should be private.", $line);
+        $phpcsFile->addError("Final Class contains a protected method {$methodName} - should be private.", $line, __CLASS__);
     }
 
     /**
@@ -146,6 +146,6 @@ class FinalPrivateSniff implements PHP_CodeSniffer_Sniff
     {
         $variableName = $token['content'];
         $line = $token['line'];
-        $phpcsFile->addError("Final Class contains a protected variable {$variableName} - should be private.", $line);
+        $phpcsFile->addError("Final Class contains a protected variable {$variableName} - should be private.", $line, __CLASS__);
     }
 }

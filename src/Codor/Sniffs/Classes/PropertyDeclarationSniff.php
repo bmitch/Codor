@@ -2,8 +2,8 @@
 
 namespace Codor\Sniffs\Classes;
 
-use PHP_CodeSniffer_Sniff;
-use PHP_CodeSniffer_File;
+use PHP_CodeSniffer\Sniffs\Sniff as PHP_CodeSniffer_Sniff;
+use PHP_CodeSniffer\Files\File as PHP_CodeSniffer_File;
 
 class PropertyDeclarationSniff implements PHP_CodeSniffer_Sniff
 {
@@ -152,9 +152,9 @@ class PropertyDeclarationSniff implements PHP_CodeSniffer_Sniff
     protected function handleError($undeclaredVariable, $phpcsFile, $index)
     {
         if ($this->isExtendedClass) {
-            $phpcsFile->addWarning("Class contains undeclared property {$undeclaredVariable}.", $index);
+            $phpcsFile->addWarning("Class contains undeclared property {$undeclaredVariable}.", $index, __CLASS__);
             return;
         }
-        $phpcsFile->addError("Class contains undeclared property {$undeclaredVariable}.", $index);
+        $phpcsFile->addError("Class contains undeclared property {$undeclaredVariable}.", $index, __CLASS__);
     }
 }

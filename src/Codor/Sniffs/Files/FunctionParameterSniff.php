@@ -2,8 +2,8 @@
 
 namespace Codor\Sniffs\Files;
 
-use PHP_CodeSniffer_Sniff;
-use PHP_CodeSniffer_File;
+use PHP_CodeSniffer\Sniffs\Sniff as PHP_CodeSniffer_Sniff;
+use PHP_CodeSniffer\Files\File as PHP_CodeSniffer_File;
 
 class FunctionParameterSniff implements PHP_CodeSniffer_Sniff
 {
@@ -44,11 +44,11 @@ class FunctionParameterSniff implements PHP_CodeSniffer_Sniff
         }
 
         if ($numberOfParameters > $this->maxParameters) {
-            $phpcsFile->addError("Function has more than {$this->maxParameters} parameters. Please reduce.", $stackPtr);
+            $phpcsFile->addError("Function has more than {$this->maxParameters} parameters. Please reduce.", $stackPtr, __CLASS__ . 'MoreThan');
         }
 
         if ($numberOfParameters == $this->maxParameters) {
-            $phpcsFile->addWarning("Function has {$this->maxParameters} parameters.", $stackPtr);
+            $phpcsFile->addWarning("Function has {$this->maxParameters} parameters.", $stackPtr, __CLASS__ . 'hasMax');
         }
     }
 }

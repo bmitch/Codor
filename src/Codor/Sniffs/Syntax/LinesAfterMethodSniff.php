@@ -2,8 +2,8 @@
 
 namespace Codor\Sniffs\Syntax;
 
-use PHP_CodeSniffer_Sniff;
-use PHP_CodeSniffer_File;
+use PHP_CodeSniffer\Sniffs\Sniff as PHP_CodeSniffer_Sniff;
+use PHP_CodeSniffer\Files\File as PHP_CodeSniffer_File;
 
 class LinesAfterMethodSniff implements PHP_CodeSniffer_Sniff
 {
@@ -43,7 +43,7 @@ class LinesAfterMethodSniff implements PHP_CodeSniffer_Sniff
         $linesBetween = $nextCodeLine - $tokens[$endOfMethodIndex]['line'] - 1;
 
         if ($linesBetween > 1) {
-            $phpcsFile->addError("No more than 1 line after a method/function is allowed.", $stackPtr);
+            $phpcsFile->addError("No more than 1 line after a method/function is allowed.", $stackPtr, __CLASS__);
         }
     }
 }

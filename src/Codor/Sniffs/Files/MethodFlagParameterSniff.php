@@ -2,8 +2,8 @@
 
 namespace Codor\Sniffs\Files;
 
-use PHP_CodeSniffer_Sniff;
-use PHP_CodeSniffer_File;
+use PHP_CodeSniffer\Sniffs\Sniff as PHP_CodeSniffer_Sniff;
+use PHP_CodeSniffer\Files\File as PHP_CodeSniffer_File;
 
 class MethodFlagParameterSniff implements PHP_CodeSniffer_Sniff
 {
@@ -41,7 +41,7 @@ class MethodFlagParameterSniff implements PHP_CodeSniffer_Sniff
 
         for ($index=$openParenIndex+1; $index <= $closedParenIndex; $index++) {
             if (in_array($tokens[$index]['type'], $this->booleans)) {
-                $phpcsFile->addError("Function/method contains a flag parameter.", $stackPtr);
+                $phpcsFile->addError("Function/method contains a flag parameter.", $stackPtr, __CLASS__);
                 continue;
             }
         }

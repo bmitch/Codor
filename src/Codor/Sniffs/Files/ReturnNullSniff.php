@@ -2,8 +2,8 @@
 
 namespace Codor\Sniffs\Files;
 
-use PHP_CodeSniffer_Sniff;
-use PHP_CodeSniffer_File;
+use PHP_CodeSniffer\Sniffs\Sniff as PHP_CodeSniffer_Sniff;
+use PHP_CodeSniffer\Files\File as PHP_CodeSniffer_File;
 
 class ReturnNullSniff implements PHP_CodeSniffer_Sniff
 {
@@ -38,7 +38,7 @@ class ReturnNullSniff implements PHP_CodeSniffer_Sniff
 
         if ($scope[$returnValueIndex]['type'] === 'T_NULL') {
             $error = "Return null value found.";
-            $phpcsFile->addError($error, $returnValueIndex);
+            $phpcsFile->addError($error, $returnValueIndex, __CLASS__);
         }
     }
 }
