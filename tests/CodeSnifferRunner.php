@@ -3,7 +3,11 @@
 namespace Codor\Tests;
 
 use Codor\Tests\Wrappers\Results as ResultsWrapper;
-use PHP_CodeSniffer;
+use PHP_CodeSniffer\Config;
+use PHP_CodeSniffer\Files\File;
+use PHP_CodeSniffer\Reporter;
+use PHP_CodeSniffer\Ruleset;
+use PHP_CodeSniffer\Runner as  PHP_CodeSniffer;
 
 class CodeSnifferRunner
 {
@@ -36,8 +40,15 @@ class CodeSnifferRunner
      */
     public function __construct()
     {
-        $this->codeSniffer = new PHP_CodeSniffer();
-        $this->codeSniffer::setConfigData('report_format', 'full');
+	    Config::setConfigData('report_format', 'full');
+
+	    $this->codeSniffer = new PHP_CodeSniffer();
+	    $this->codeSniffer->config = new Config();
+	    //$this->codeSniffer->config->verbosity = 1;
+
+	    $this->codeSniffer->reporter = new Reporter($this->codeSniffer->config);
+
+	    $this->codeSniffer->init(); // Eventually constants not defined properly
     }
 
     /**
@@ -75,14 +86,22 @@ class CodeSnifferRunner
         return $this->run();
     }
 
-    /**
-     * Runs the actual sniffer on the file.
-     * @return ResultsWrapper Sniffer Results.
-     */
-    protected function run(): ResultsWrapper
-    {
-        $this->codeSniffer->initStandard(__DIR__.'/../src/Codor', [$this->sniff]);
+	/**
+	 * Runs the actual sniffer on the file.
+	 * @return ResultsWrapper Sniffer Results.
+	 */
+	protected function run(): ResultsWrapper
+	{
+		$Config             = new Config();
+		$Config->standards  = [__DIR__ . '/../src/Codor'];
+		$Config->sniffs     = [$this->sniff];
 
-        return new ResultsWrapper($this->codeSniffer->processFile($this->filePath));
-    }
+		$Ruleset = new Ruleset($Config);
+
+		$File = new File($this->filePath, $Ruleset, $Config);
+		$File->setContent(file_get_contents($this->filePath)); // file set @ constructor but content didn't get (sic!)
+		$this->codeSniffer->processFile($File);
+
+		return new ResultsWrapper($File);
+	}
 }
