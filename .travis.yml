@@ -1,7 +1,6 @@
 language: php
 
 php:
- - 7.0
  - 7.1
  - 7.2
  - nightly
@@ -11,12 +10,11 @@ before_script:
   - travis_retry composer install --no-interaction --prefer-source --dev
 
 script:
- - vendor/bin/phpcs --standard=psr2 src
- - if [[ ${TRAVIS_PHP_VERSION:0:3} == "7.0" ]]; then vendor/bin/phpcs --standard=phpcs.xml src tests --ignore=tests/Sniffs; fi
+ - vendor/bin/phpcs --standard=psr2 src -spn
  - vendor/bin/phpcs --standard=codor.xml src -spn
- - vendor/bin/phpunit --debug --coverage-clover=coverage.xml
+ - vendor/bin/phpunit
  - vendor/bin/phpmd src text codesize,unusedcode,naming
- - vendor/bin/phploc src --progress
+ - vendor/bin/phploc src
  - vendor/bin/phpcpd src
  - vendor/bin/churn run src
 
