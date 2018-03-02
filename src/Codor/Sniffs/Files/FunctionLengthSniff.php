@@ -2,8 +2,8 @@
 
 namespace Codor\Sniffs\Files;
 
-use PHP_CodeSniffer_Sniff;
-use PHP_CodeSniffer_File;
+use PHP_CodeSniffer\Sniffs\Sniff as PHP_CodeSniffer_Sniff;
+use PHP_CodeSniffer\Files\File as PHP_CodeSniffer_File;
 
 class FunctionLengthSniff implements PHP_CodeSniffer_Sniff
 {

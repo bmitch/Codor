@@ -2,8 +2,8 @@
 
 namespace Codor\Sniffs\ControlStructures;
 
-use PHP_CodeSniffer_Sniff;
-use PHP_CodeSniffer_File;
+use PHP_CodeSniffer\Sniffs\Sniff as PHP_CodeSniffer_Sniff;
+use PHP_CodeSniffer\Files\File as PHP_CodeSniffer_File;
 
 /**
  * Do not use "else" or "elseif".
@@ -30,6 +30,6 @@ class NoElseSniff implements PHP_CodeSniffer_Sniff
      */
     public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
     {
-        $phpcsFile->addError('Do not use "else" or "elseif"', $stackPtr);
+        $phpcsFile->addError('Do not use "else" or "elseif"', $stackPtr,  __CLASS__);
     }
 }

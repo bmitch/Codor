@@ -2,8 +2,8 @@
 
 namespace Codor\Sniffs\Syntax;
 
-use PHP_CodeSniffer_Sniff;
-use PHP_CodeSniffer_File;
+use PHP_CodeSniffer\Sniffs\Sniff as PHP_CodeSniffer_Sniff;
+use PHP_CodeSniffer\Files\File as PHP_CodeSniffer_File;
 
 class NullCoalescingSniff implements PHP_CodeSniffer_Sniff
 {
@@ -37,7 +37,7 @@ class NullCoalescingSniff implements PHP_CodeSniffer_Sniff
         $index           = $stackPtr;
 
         if ($this->couldBeNullCoalescing($tokens, $index)) {
-            $phpcsFile->addError("Ternery found where Null Coalescing operator will work.", $stackPtr);
+            $phpcsFile->addError("Ternery found where Null Coalescing operator will work.", $stackPtr, __CLASS__);
         }
     }
 

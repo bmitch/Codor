@@ -2,8 +2,8 @@
 
 namespace Codor\Sniffs\Classes;
 
-use PHP_CodeSniffer_Sniff;
-use PHP_CodeSniffer_File;
+use PHP_CodeSniffer\Sniffs\Sniff as PHP_CodeSniffer_Sniff;
+use PHP_CodeSniffer\Files\File as PHP_CodeSniffer_File;
 
 class ClassLengthSniff implements PHP_CodeSniffer_Sniff
 {
@@ -43,7 +43,7 @@ class ClassLengthSniff implements PHP_CodeSniffer_Sniff
         $length = $closedParenthesis['line'] - $openParenthesis['line'];
 
         if ($length > $this->maxLength) {
-            $phpcsFile->addError("Class is {$length} lines. Must be {$this->maxLength} lines or fewer.", $stackPtr);
+            $phpcsFile->addError("Class is {$length} lines. Must be {$this->maxLength} lines or fewer.", $stackPtr, __CLASS__);
         }
     }
 }

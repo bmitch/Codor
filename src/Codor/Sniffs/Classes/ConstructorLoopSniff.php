@@ -2,8 +2,8 @@
 
 namespace Codor\Sniffs\Classes;
 
-use PHP_CodeSniffer_Sniff;
-use PHP_CodeSniffer_File;
+use PHP_CodeSniffer\Sniffs\Sniff as PHP_CodeSniffer_Sniff;
+use PHP_CodeSniffer\Files\File as PHP_CodeSniffer_File;
 
 class ConstructorLoopSniff implements PHP_CodeSniffer_Sniff
 {
@@ -48,7 +48,7 @@ class ConstructorLoopSniff implements PHP_CodeSniffer_Sniff
 
         for ($index=$token['scope_opener']; $index <= $token['scope_closer']; $index++) {
             if (in_array($tokens[$index]['type'], $this->loops)) {
-                $phpcsFile->addError("Class constructor cannot contain a loop.", $stackPtr);
+                $phpcsFile->addError("Class constructor cannot contain a loop.", $stackPtr, __CLASS__);
                 continue;
             }
         }

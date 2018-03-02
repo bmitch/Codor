@@ -2,8 +2,8 @@
 
 namespace Codor\Sniffs\Classes;
 
-use PHP_CodeSniffer_Sniff;
-use PHP_CodeSniffer_File;
+use PHP_CodeSniffer\Sniffs\Sniff as PHP_CodeSniffer_Sniff;
+use PHP_CodeSniffer\Files\File as PHP_CodeSniffer_File;
 
 class ExtendsSniff implements PHP_CodeSniffer_Sniff
 {
@@ -50,6 +50,6 @@ class ExtendsSniff implements PHP_CodeSniffer_Sniff
             return;
         }
         $warning = "Class extends another class - consider composition over inheritance.";
-        $this->phpcsFile->addWarning($warning, $token['line']);
+        $this->phpcsFile->addWarning($warning, $token['line'], __CLASS__);
     }
 }

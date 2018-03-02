@@ -2,21 +2,21 @@
 
 namespace Codor\Tests\Wrappers;
 
-use PHP_CodeSniffer_File;
+use PHP_CodeSniffer\Files\File;
 
 class Results
 {
     /**
      * This is the class that we're wrapping up.
-     * @var PHP_CodeSniffer_File
+     * @var File
      */
     protected $wrappedClass;
 
     /**
      * Class constructor.
-     * @param PHP_CodeSniffer_File $wrappedClass Class we're wrapping up.
+     * @param File $wrappedClass Class we're wrapping up.
      */
-    public function __construct(PHP_CodeSniffer_File $wrappedClass)
+    public function __construct(File $wrappedClass)
     {
         $this->wrappedClass = $wrappedClass;
     }

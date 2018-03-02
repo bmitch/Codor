@@ -8,9 +8,9 @@ use Codor\Tests\BaseTestCase;
 class NoElseSniffTest extends BaseTestCase
 {
 
-    public function setup()
+    public function setUp()
     {
-        parent::setup();
+        parent::setUp();
 
         $this->runner->setSniff('Codor.ControlStructures.NoElse')->setFolder(__DIR__.'/Assets/NoElseSniff/');
     }
@@ -18,7 +18,8 @@ class NoElseSniffTest extends BaseTestCase
     public function testSniff()
     {
         $results = $this->runner->sniff('NoElseSniff.inc');
-        $this->assertSame(5, $results->getErrorCount());
+
+	    $this->assertSame(5, $results->getErrorCount());
         $this->assertSame(0, $results->getWarningCount());
 
         $errorMessages = $results->getAllErrorMessages();
