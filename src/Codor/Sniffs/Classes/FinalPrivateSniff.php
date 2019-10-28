@@ -119,7 +119,7 @@ class FinalPrivateSniff implements PHP_CodeSniffer_Sniff
         }
 
         foreach ($this->protectedVariableTokens as $protectedVariableToken) {
-            $this->handleProtectedVariableToken($protectedVariableToken, $phpcsFile, $stackPtr);
+            $this->handleProtectedVariableToken($protectedVariableToken, $phpcsFile);
         }
     }
 
