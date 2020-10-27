@@ -6,8 +6,8 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bmitch/Codor/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/bmitch/Codor/?branch=master) 
 [![Code Climate](https://codeclimate.com/github/bmitch/Codor/badges/gpa.svg)](https://codeclimate.com/github/bmitch/Codor) 
 [![Packagist](https://img.shields.io/packagist/v/bmitch/codor.svg)](https://packagist.org/packages/bmitch/codor) 
-[![Packagist](https://img.shields.io/packagist/dt/bmitch/codor.svg)](https://packagist.org/packages/bmitch/codor)
-[![Packagist](https://img.shields.io/packagist/l/bmitch/codor.svg)]()
+[![Packagist](https://img.shields.io/packagist/dt/bmitch/codor.svg)](https://packagist.org/packages/bmitch/codor/stats)
+[![License](https://img.shields.io/packagist/l/bmitch/codor.svg)](LICENSE.md)
 ----------
 _Inspired by: https://github.com/object-calisthenics/phpcs-calisthenics-rules_
 
