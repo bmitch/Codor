@@ -58,7 +58,7 @@ class FinalPrivateSniff implements PHP_CodeSniffer_Sniff
             $this->handleToken($tokens, $index);
         }
 
-        $this->handleErrors($phpcsFile, $stackPtr);
+        $this->handleErrors($phpcsFile);
     }
 
     /**
