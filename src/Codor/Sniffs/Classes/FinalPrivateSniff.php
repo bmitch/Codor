@@ -44,7 +44,8 @@ class FinalPrivateSniff implements PHP_CodeSniffer_Sniff
      * @param int                  $stackPtr  The position in the stack where
      *                                        the token was found.
      * @return void
-     * @SuppressWarnings(PHPMD.UnusedLocalVariable)
+     * @SuppressWarnings(PHPMD.UnusedLocalVariable,)
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
     public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
     {
@@ -58,7 +59,7 @@ class FinalPrivateSniff implements PHP_CodeSniffer_Sniff
             $this->handleToken($tokens, $index);
         }
 
-        $this->handleErrors($phpcsFile, $stackPtr);
+        $this->handleErrors($phpcsFile);
     }
 
     /**
@@ -109,17 +110,16 @@ class FinalPrivateSniff implements PHP_CodeSniffer_Sniff
     /**
      * Handle any errors.
      * @param PHP_CodeSniffer_File $phpcsFile The file where the token was found.
-     * @param int                  $stackPtr  The position in the stack where.
      * @return void
      */
-    protected function handleErrors($phpcsFile, $stackPtr)
+    protected function handleErrors($phpcsFile)
     {
         foreach ($this->protectedMethodTokens as $protectedMethodToken) {
             $this->handleProtectedMethodToken($protectedMethodToken, $phpcsFile);
         }
 
         foreach ($this->protectedVariableTokens as $protectedVariableToken) {
-            $this->handleProtectedVariableToken($protectedVariableToken, $phpcsFile, $stackPtr);
+            $this->handleProtectedVariableToken($protectedVariableToken, $phpcsFile);
         }
     }
 
