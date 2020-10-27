@@ -109,10 +109,9 @@ class FinalPrivateSniff implements PHP_CodeSniffer_Sniff
     /**
      * Handle any errors.
      * @param PHP_CodeSniffer_File $phpcsFile The file where the token was found.
-     * @param int                  $stackPtr  The position in the stack where.
      * @return void
      */
-    protected function handleErrors($phpcsFile, $stackPtr)
+    protected function handleErrors($phpcsFile)
     {
         foreach ($this->protectedMethodTokens as $protectedMethodToken) {
             $this->handleProtectedMethodToken($protectedMethodToken, $phpcsFile);
