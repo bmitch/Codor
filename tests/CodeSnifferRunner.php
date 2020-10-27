@@ -40,15 +40,15 @@ class CodeSnifferRunner
      */
     public function __construct()
     {
-	    Config::setConfigData('report_format', 'full');
+        Config::setConfigData('report_format', 'full');
 
-	    $this->codeSniffer = new PHP_CodeSniffer();
-	    $this->codeSniffer->config = new Config();
-	    //$this->codeSniffer->config->verbosity = 1;
+        $_SERVER['argv'] = ['-v']; // fix to avoid an Undefined constant error from the Config object (could be improved)
+        $this->codeSniffer = new PHP_CodeSniffer();
+        $this->codeSniffer->config = new Config();
 
-	    $this->codeSniffer->reporter = new Reporter($this->codeSniffer->config);
+        $this->codeSniffer->reporter = new Reporter($this->codeSniffer->config);
 
-	    $this->codeSniffer->init(); // Eventually constants not defined properly
+        $this->codeSniffer->init(); // Eventually constants not defined properly
     }
 
     /**

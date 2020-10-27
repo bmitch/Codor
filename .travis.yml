@@ -10,14 +10,7 @@ before_script:
   - travis_retry composer install --no-interaction --prefer-source --dev
 
 script:
- - vendor/bin/phpcs --standard=psr2 src -spn
- - vendor/bin/phpcs --standard=codor.xml src -spn
- - vendor/bin/phpunit
- - vendor/bin/phpmd src text codesize,unusedcode,naming
- - vendor/bin/phploc src
- - vendor/bin/phpcpd src
- - vendor/bin/churn run src
-
+ - composer test
 
 after_success:
  - bash <(curl -s https://codecov.io/bash)
