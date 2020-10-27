@@ -36,7 +36,7 @@
         "slevomat/coding-standard": "^4.4.8"
     },
     "scripts": {
-        "test": [
+        "code-standards": [
             "vendor/bin/parallel-lint src tests",
             "vendor/bin/phpcs --standard=psr2 src -spn",
             "vendor/bin/phpcs --standard=phpcs.xml src tests --ignore=tests/Sniffs -sp",
