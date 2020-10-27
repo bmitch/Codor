@@ -28,7 +28,7 @@ class NullCoalescingSniffTest extends BaseTestCase
 
         $errorMessages = $results->getAllErrorMessages();
         $this->assertCount(1, $errorMessages);
-        $this->assertAllEqual('Ternery found where Null Coalescing operator will work.', $errorMessages);
+        $this->assertAllEqual('Ternary found where Null Coalescing operator will work.', $errorMessages);
     }
 
     /** @test */

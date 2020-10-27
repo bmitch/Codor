@@ -37,7 +37,7 @@ class NullCoalescingSniff implements PHP_CodeSniffer_Sniff
         $index           = $stackPtr;
 
         if ($this->couldBeNullCoalescing($tokens, $index)) {
-            $phpcsFile->addError("Ternery found where Null Coalescing operator will work.", $stackPtr, __CLASS__);
+            $phpcsFile->addError("Ternary found where Null Coalescing operator will work.", $stackPtr, __CLASS__);
         }
     }
 
