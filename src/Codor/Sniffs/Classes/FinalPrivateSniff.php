@@ -44,7 +44,8 @@ class FinalPrivateSniff implements PHP_CodeSniffer_Sniff
      * @param int                  $stackPtr  The position in the stack where
      *                                        the token was found.
      * @return void
-     * @SuppressWarnings(PHPMD.UnusedLocalVariable)
+     * @SuppressWarnings(PHPMD.UnusedLocalVariable,)
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
     public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
     {
