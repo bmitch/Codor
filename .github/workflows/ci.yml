@@ -20,6 +20,7 @@ jobs:
           - "7.2"
           - "7.3"
           - "7.4"
+          - "8.0"
         os:
           - ubuntu-latest
           - windows-latest
@@ -38,7 +39,12 @@ jobs:
           tools: composer:${{ matrix.composer }}
 
       - name: "Install dependencies"
-        run: "composer install --no-interaction --no-progress --prefer-dist"
+        if: "matrix.php-version != '8.0'"
+        run: "composer update --no-interaction --no-progress --prefer-dist"
+
+      - name: "Install dependencies ignoring PHP requirement"
+        if: "matrix.php-version == '8.0'"
+        run: "composer update --no-interaction --no-progress --prefer-dist --ignore-platform-req=php"
 
       - name: "Run tests"
         run: "php vendor/bin/simple-phpunit --colors=always --testdox"
