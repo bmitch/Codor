@@ -1,6 +1,35 @@
-# Change Log
+# Changelog
+
+## [Unreleased](https://github.com/bmitch/Codor/tree/HEAD)
+
+[Full Changelog](https://github.com/bmitch/Codor/compare/1.2.0...HEAD)
+
+## [1.2.0](https://github.com/bmitch/Codor/tree/1.2.0) (2020-10-29)
+
+[Full Changelog](https://github.com/bmitch/Codor/compare/1.1.1...1.2.0)
+
+**Closed issues:**
+
+- composer.json is not strictly valid [\#136](https://github.com/bmitch/Codor/issues/136)
+- Typo `ternery` should be `ternary` [\#131](https://github.com/bmitch/Codor/issues/131)
+- Update `code\_sniffer` version up to ^3.\* [\#127](https://github.com/bmitch/Codor/issues/127)
+
+**Merged pull requests:**
+
+- Add support for PHP 8 [\#141](https://github.com/bmitch/Codor/pull/141) ([villfa](https://github.com/villfa))
+- Enable Github actions [\#140](https://github.com/bmitch/Codor/pull/140) ([villfa](https://github.com/villfa))
+- Fix and normalize composer.json [\#139](https://github.com/bmitch/Codor/pull/139) ([villfa](https://github.com/villfa))
+- Create .gitattributes [\#138](https://github.com/bmitch/Codor/pull/138) ([villfa](https://github.com/villfa))
+- Use PHPUnit bridge [\#137](https://github.com/bmitch/Codor/pull/137) ([villfa](https://github.com/villfa))
+- Fix typo [\#135](https://github.com/bmitch/Codor/pull/135) ([villfa](https://github.com/villfa))
+- Update dependencies [\#134](https://github.com/bmitch/Codor/pull/134) ([villfa](https://github.com/villfa))
+- handleProtectedVariableToken needs 2 parameters [\#133](https://github.com/bmitch/Codor/pull/133) ([szepeviktor](https://github.com/szepeviktor))
+- Update dependencies [\#129](https://github.com/bmitch/Codor/pull/129) ([bmitch](https://github.com/bmitch))
+- Update version of phpcs up to ^3.0 [\#128](https://github.com/bmitch/Codor/pull/128) ([brutto](https://github.com/brutto))
+- update changelog [\#126](https://github.com/bmitch/Codor/pull/126) ([bmitch](https://github.com/bmitch))
 
 ## [1.1.1](https://github.com/bmitch/Codor/tree/1.1.1) (2017-11-01)
+
 [Full Changelog](https://github.com/bmitch/Codor/compare/1.1.0...1.1.1)
 
 **Closed issues:**
@@ -13,6 +42,7 @@
 - Fixes \#123 - MixedReturnTypeSniff - check for `comment\_opener` index … [\#124](https://github.com/bmitch/Codor/pull/124) ([bmitch](https://github.com/bmitch))
 
 ## [1.1.0](https://github.com/bmitch/Codor/tree/1.1.0) (2017-10-20)
+
 [Full Changelog](https://github.com/bmitch/Codor/compare/1.0.7...1.1.0)
 
 **Closed issues:**
@@ -36,6 +66,7 @@
 - Update gitignore [\#103](https://github.com/bmitch/Codor/pull/103) ([bmitch](https://github.com/bmitch))
 
 ## [1.0.7](https://github.com/bmitch/Codor/tree/1.0.7) (2017-08-19)
+
 [Full Changelog](https://github.com/bmitch/Codor/compare/1.0.6...1.0.7)
 
 **Merged pull requests:**
@@ -43,22 +74,21 @@
 - Add PHP 7.2 to Travis-CI build [\#101](https://github.com/bmitch/Codor/pull/101) ([bmitch](https://github.com/bmitch))
 
 ## [1.0.6](https://github.com/bmitch/Codor/tree/1.0.6) (2017-08-01)
+
 [Full Changelog](https://github.com/bmitch/Codor/compare/1.0.5...1.0.6)
-
-**Closed issues:**
-
-- Sniff to warn when extending a class. [\#90](https://github.com/bmitch/Codor/issues/90)
 
 **Merged pull requests:**
 
 - Fixes \#90 [\#95](https://github.com/bmitch/Codor/pull/95) ([bmitch](https://github.com/bmitch))
 
 ## [1.0.5](https://github.com/bmitch/Codor/tree/1.0.5) (2017-07-30)
+
 [Full Changelog](https://github.com/bmitch/Codor/compare/1.0.4...1.0.5)
 
 **Closed issues:**
 
 - Fix final class sniff [\#92](https://github.com/bmitch/Codor/issues/92)
+- Sniff to warn when extending a class. [\#90](https://github.com/bmitch/Codor/issues/90)
 - Final classes - ensure no protected methods or members [\#89](https://github.com/bmitch/Codor/issues/89)
 - Add https://github.com/Roave/SecurityAdvisories [\#67](https://github.com/bmitch/Codor/issues/67)
 
@@ -69,6 +99,7 @@
 - Fixes \#89 [\#91](https://github.com/bmitch/Codor/pull/91) ([bmitch](https://github.com/bmitch))
 
 ## [1.0.4](https://github.com/bmitch/Codor/tree/1.0.4) (2017-06-01)
+
 [Full Changelog](https://github.com/bmitch/Codor/compare/1.0.3...1.0.4)
 
 **Fixed bugs:**
@@ -80,11 +111,11 @@
 - Fixes \#86 [\#87](https://github.com/bmitch/Codor/pull/87) ([bmitch](https://github.com/bmitch))
 
 ## [1.0.3](https://github.com/bmitch/Codor/tree/1.0.3) (2017-06-01)
+
 [Full Changelog](https://github.com/bmitch/Codor/compare/1.0.2...1.0.3)
 
 **Closed issues:**
 
-- Sniff to prevent undeclared member variables. [\#84](https://github.com/bmitch/Codor/issues/84)
 - Sniff to look for conditionals or loops within a constructor. [\#71](https://github.com/bmitch/Codor/issues/71)
 
 **Merged pull requests:**
@@ -93,6 +124,7 @@
 - Fixes \#71 [\#83](https://github.com/bmitch/Codor/pull/83) ([bmitch](https://github.com/bmitch))
 
 ## [1.0.2](https://github.com/bmitch/Codor/tree/1.0.2) (2017-04-10)
+
 [Full Changelog](https://github.com/bmitch/Codor/compare/1.0.1...1.0.2)
 
 **Closed issues:**
@@ -106,9 +138,9 @@
 - Fixes \#80 [\#81](https://github.com/bmitch/Codor/pull/81) ([bmitch](https://github.com/bmitch))
 - Fixes \#76 [\#79](https://github.com/bmitch/Codor/pull/79) ([bmitch](https://github.com/bmitch))
 - Fixes \#77 [\#78](https://github.com/bmitch/Codor/pull/78) ([bmitch](https://github.com/bmitch))
-- Standardizing folder structure [\#72](https://github.com/bmitch/Codor/pull/72) ([bmitch](https://github.com/bmitch))
 
 ## [1.0.1](https://github.com/bmitch/Codor/tree/1.0.1) (2017-04-01)
+
 [Full Changelog](https://github.com/bmitch/Codor/compare/1.0.0...1.0.1)
 
 **Closed issues:**
@@ -120,19 +152,23 @@
 - Fixes \#63 [\#70](https://github.com/bmitch/Codor/pull/70) ([bmitch](https://github.com/bmitch))
 
 ## [1.0.0](https://github.com/bmitch/Codor/tree/1.0.0) (2017-04-01)
+
 [Full Changelog](https://github.com/bmitch/Codor/compare/0.0.11...1.0.0)
 
 **Closed issues:**
 
+- Sniff to prevent undeclared member variables. [\#84](https://github.com/bmitch/Codor/issues/84)
 - Make a PHP7 version [\#68](https://github.com/bmitch/Codor/issues/68)
 - Remote security checker until it is back working again. [\#65](https://github.com/bmitch/Codor/issues/65)
 
 **Merged pull requests:**
 
+- Standardizing folder structure [\#72](https://github.com/bmitch/Codor/pull/72) ([bmitch](https://github.com/bmitch))
 - Fixes \#68 [\#69](https://github.com/bmitch/Codor/pull/69) ([bmitch](https://github.com/bmitch))
 - Fixes \#65 [\#66](https://github.com/bmitch/Codor/pull/66) ([bmitch](https://github.com/bmitch))
 
 ## [0.0.11](https://github.com/bmitch/Codor/tree/0.0.11) (2017-03-28)
+
 [Full Changelog](https://github.com/bmitch/Codor/compare/0.0.10...0.0.11)
 
 **Fixed bugs:**
@@ -151,6 +187,7 @@
 - Fixes \#43 [\#62](https://github.com/bmitch/Codor/pull/62) ([bmitch](https://github.com/bmitch))
 
 ## [0.0.10](https://github.com/bmitch/Codor/tree/0.0.10) (2017-03-27)
+
 [Full Changelog](https://github.com/bmitch/Codor/compare/0.0.9...0.0.10)
 
 **Implemented enhancements:**
@@ -170,6 +207,7 @@
 - Fixes \#46 [\#57](https://github.com/bmitch/Codor/pull/57) ([bmitch](https://github.com/bmitch))
 
 ## [0.0.9](https://github.com/bmitch/Codor/tree/0.0.9) (2016-12-30)
+
 [Full Changelog](https://github.com/bmitch/Codor/compare/0.0.8...0.0.9)
 
 **Merged pull requests:**
@@ -178,6 +216,7 @@
 - Updated changelog [\#55](https://github.com/bmitch/Codor/pull/55) ([bmitch](https://github.com/bmitch))
 
 ## [0.0.8](https://github.com/bmitch/Codor/tree/0.0.8) (2016-12-29)
+
 [Full Changelog](https://github.com/bmitch/Codor/compare/0.0.7...0.0.8)
 
 **Merged pull requests:**
@@ -186,6 +225,7 @@
 - Updated changelog [\#53](https://github.com/bmitch/Codor/pull/53) ([bmitch](https://github.com/bmitch))
 
 ## [0.0.7](https://github.com/bmitch/Codor/tree/0.0.7) (2016-12-29)
+
 [Full Changelog](https://github.com/bmitch/Codor/compare/0.0.6...0.0.7)
 
 **Merged pull requests:**
@@ -194,6 +234,7 @@
 - Updated changelog [\#51](https://github.com/bmitch/Codor/pull/51) ([bmitch](https://github.com/bmitch))
 
 ## [0.0.6](https://github.com/bmitch/Codor/tree/0.0.6) (2016-12-28)
+
 [Full Changelog](https://github.com/bmitch/Codor/compare/0.0.5...0.0.6)
 
 **Implemented enhancements:**
@@ -211,6 +252,7 @@
 - Fixes \#38 [\#47](https://github.com/bmitch/Codor/pull/47) ([bmitch](https://github.com/bmitch))
 
 ## [0.0.5](https://github.com/bmitch/Codor/tree/0.0.5) (2016-12-11)
+
 [Full Changelog](https://github.com/bmitch/Codor/compare/0.0.4...0.0.5)
 
 **Closed issues:**
@@ -222,6 +264,7 @@
 - Fixes \#23 [\#39](https://github.com/bmitch/Codor/pull/39) ([bmitch](https://github.com/bmitch))
 
 ## [0.0.4](https://github.com/bmitch/Codor/tree/0.0.4) (2016-12-10)
+
 [Full Changelog](https://github.com/bmitch/Codor/compare/0.0.3...0.0.4)
 
 **Closed issues:**
@@ -233,6 +276,7 @@
 - Fixes \#26 [\#36](https://github.com/bmitch/Codor/pull/36) ([bmitch](https://github.com/bmitch))
 
 ## [0.0.3](https://github.com/bmitch/Codor/tree/0.0.3) (2016-12-10)
+
 [Full Changelog](https://github.com/bmitch/Codor/compare/0.0.2...0.0.3)
 
 **Closed issues:**
@@ -244,6 +288,7 @@
 - Fixes \#17 [\#35](https://github.com/bmitch/Codor/pull/35) ([bmitch](https://github.com/bmitch))
 
 ## [0.0.2](https://github.com/bmitch/Codor/tree/0.0.2) (2016-12-09)
+
 [Full Changelog](https://github.com/bmitch/Codor/compare/0.0.1...0.0.2)
 
 **Closed issues:**
@@ -255,6 +300,9 @@
 - Fixes \#33 [\#34](https://github.com/bmitch/Codor/pull/34) ([bmitch](https://github.com/bmitch))
 
 ## [0.0.1](https://github.com/bmitch/Codor/tree/0.0.1) (2016-12-06)
+
+[Full Changelog](https://github.com/bmitch/Codor/compare/42921f82c9641fd1bb7d78895e888b3b8266103e...0.0.1)
+
 **Closed issues:**
 
 - Class length sniff [\#22](https://github.com/bmitch/Codor/issues/22)
@@ -287,4 +335,4 @@
 
 
 
-\* *This Change Log was automatically generated by [github_changelog_generator](https://github.com/skywinder/Github-Changelog-Generator)*
+\* *This Changelog was automatically generated by [github_changelog_generator](https://github.com/github-changelog-generator/github-changelog-generator)*
