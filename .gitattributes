@@ -1,6 +1,7 @@
 * text=auto eol=lf
 *.php diff=php
 
+.github/ export-ignore
 tests/ export-ignore
 .gitattributes export-ignore
 .gitignore export-ignore
