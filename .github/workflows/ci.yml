@@ -24,8 +24,6 @@ jobs:
         os:
           - ubuntu-latest
           - windows-latest
-        composer:
-          - "v2"
 
     steps:
       - name: "Checkout"
@@ -36,7 +34,7 @@ jobs:
         with:
           coverage: "none"
           php-version: "${{ matrix.php-version }}"
-          tools: composer:${{ matrix.composer }}
+          tools: composer:v2
 
       - name: "Install dependencies"
         if: "matrix.php-version != '8.0'"
@@ -48,3 +46,33 @@ jobs:
 
       - name: "Run tests"
         run: "php vendor/bin/simple-phpunit --colors=always --testdox"
+
+  analysis:
+    name: "Static Analysis"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v2"
+
+      - name: "Install PHP"
+        uses: "shivammathur/setup-php@v2"
+        with:
+          coverage: "pcov"
+          php-version: "7.4"
+          tools: composer:v2, composer-normalize
+
+      - name: "Install dependencies"
+        run: "composer update --no-interaction --no-progress --prefer-dist"
+
+      - name: "Run tests"
+        run: "composer test"
+
+      - name: "Normalize composer.json"
+        run: "composer-normalize --dry-run --no-check-lock --no-update-lock"
+
+      - uses: codecov/codecov-action@v1
+        with:
+          file: ./coverage.xml
+          fail_ci_if_error: true
+          verbose: true
