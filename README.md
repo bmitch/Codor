@@ -1,7 +1,7 @@
 # Code Odor Sniffer
 :nose: :poop: Custom PHP Code Sniffer sniffs to help find Code Smells (Odor).
 
-[![Build Status](https://travis-ci.org/bmitch/Codor.svg?branch=master)](https://travis-ci.org/bmitch/Codor) 
+[![Build Status](https://github.com/bmitch/Codor/workflows/Continuous%20Integration/badge.svg)](https://github.com/bmitch/Codor/actions)
 [![codecov](https://codecov.io/gh/bmitch/Codor/branch/master/graph/badge.svg)](https://codecov.io/gh/bmitch/Codor) 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bmitch/Codor/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/bmitch/Codor/?branch=master) 
 [![Code Climate](https://codeclimate.com/github/bmitch/Codor/badges/gpa.svg)](https://codeclimate.com/github/bmitch/Codor) 
@@ -28,7 +28,7 @@ _Inspired by: https://github.com/object-calisthenics/phpcs-calisthenics-rules_
 This package is a set of custom Sniffs for the [PHP Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer) that you can use in your CI build to ensure the ingegrity of your code base.
 
 ## Compatibility ##
-* PHP 7+ please use v1.0.0 and above.
+* PHP 7.1+ please use v1.0.0 and above.
 * PHP 5.6 and below please use any version below v1.0.0.
 
 ## How to Install? ##
