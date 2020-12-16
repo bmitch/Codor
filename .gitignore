@@ -1,4 +1,6 @@
 /vendor
+/vendor-bin/**/vendor
+/vendor-bin/**/composer.lock
 composer.lock
 coverage.xml
 .phpunit.result.cache
