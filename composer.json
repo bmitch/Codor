@@ -13,14 +13,8 @@
         "squizlabs/php_codesniffer": "^3.2.3"
     },
     "require-dev": {
-        "bmitch/churn-php": "^1.2",
-        "php-parallel-lint/php-console-highlighter": "^0.5",
-        "php-parallel-lint/php-parallel-lint": "^1.2",
-        "phploc/phploc": ">=4.0",
-        "phpmd/phpmd": "^2.6",
-        "sebastian/phpcpd": "^4.0",
-        "sensiolabs/security-checker": "^4.0",
-        "slevomat/coding-standard": "^4.4.8",
+        "bamarni/composer-bin-plugin": "^1.4",
+        "slevomat/coding-standard": "^6.4",
         "symfony/phpunit-bridge": "^5.1"
     },
     "config": {
@@ -40,21 +34,28 @@
         ]
     },
     "scripts": {
+        "post-install-cmd": [
+            "@composer bin all install --ansi"
+        ],
+        "post-update-cmd": [
+            "@composer bin all update --ansi"
+        ],
+        "bin": "echo 'bin not installed'",
         "fix": [
-            "vendor/bin/phpcbf -n --standard=phpcs.xml src/",
-            "vendor/bin/phpcbf --standard=codor.xml src -spn",
-            "vendor/bin/phpcbf --standard=psr2 src -sp"
+            "phpcbf -n --standard=phpcs.xml src/",
+            "phpcbf --standard=codor.xml src -spn",
+            "phpcbf --standard=psr2 src -sp"
         ],
         "test": [
             "@composer validate --strict",
-            "vendor/bin/parallel-lint src tests",
-            "vendor/bin/phpcs --standard=psr2 src -spn",
-            "vendor/bin/phpcs --standard=codor.xml src -spn",
-            "vendor/bin/simple-phpunit --debug --coverage-clover=coverage.xml",
-            "vendor/bin/phpmd src text codesize,unusedcode,naming",
-            "vendor/bin/phploc src",
-            "vendor/bin/phpcpd src",
-            "vendor/bin/churn run src"
+            "parallel-lint src tests",
+            "phpcs --standard=psr2 src -spn",
+            "phpcs --standard=codor.xml src -spn",
+            "simple-phpunit --debug --coverage-clover=coverage.xml",
+            "phpmd src text codesize,unusedcode,naming",
+            "phploc src",
+            "phpcpd src",
+            "churn run src"
         ]
     },
     "scripts-descriptions": {

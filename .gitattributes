@@ -13,3 +13,4 @@ README.md export-ignore
 codor.xml export-ignore
 phpcs.xml export-ignore
 phpunit.xml export-ignore
+vendor-bin/ export-ignore
