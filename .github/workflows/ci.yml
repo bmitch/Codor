@@ -36,6 +36,20 @@ jobs:
           php-version: "${{ matrix.php-version }}"
           tools: composer:v2
 
+      - name: Get composer cache directory
+        id: composercache
+        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - name: Cache composer dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.composercache.outputs.dir }}
+          key: composer-${{ runner.os }}-${{ matrix.php-version }}-${{ hashFiles('composer.*') }}
+          restore-keys: |
+            composer-${{ runner.os }}-${{ matrix.php-version }}-
+            composer-${{ runner.os }}-
+            composer-
+
       - name: "Install dependencies"
         run: "composer update --no-interaction --no-progress --prefer-dist"
 
@@ -59,6 +73,20 @@ jobs:
 
       - name: "Install dependencies"
         run: "composer update --no-interaction --no-progress --prefer-dist"
+
+      - name: Get composer cache directory
+        id: composercache
+        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - name: Cache composer dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.composercache.outputs.dir }}
+          key: composer-${{ runner.os }}-7.4-${{ hashFiles('composer.*') }}
+          restore-keys: |
+            composer-${{ runner.os }}-7.4-
+            composer-${{ runner.os }}-
+            composer-
 
       - name: "Run tests"
         run: "composer test"
