@@ -2,7 +2,23 @@
 
 ## [Unreleased](https://github.com/bmitch/Codor/tree/HEAD)
 
-[Full Changelog](https://github.com/bmitch/Codor/compare/1.2.0...HEAD)
+[Full Changelog](https://github.com/bmitch/Codor/compare/1.2.1...HEAD)
+
+## [1.2.1](https://github.com/bmitch/Codor/tree/1.2.1) (2021-02-13)
+
+[Full Changelog](https://github.com/bmitch/Codor/compare/1.2.0...1.2.1)
+
+**Fixed bugs:**
+
+- Undefined array index when a function is after a class [\#147](https://github.com/bmitch/Codor/issues/147)
+
+**Merged pull requests:**
+
+- Fix undefined array index [\#148](https://github.com/bmitch/Codor/pull/148) ([villfa](https://github.com/villfa))
+- Require CI tools only in dev mode [\#146](https://github.com/bmitch/Codor/pull/146) ([villfa](https://github.com/villfa))
+- Cache Composer artifacts [\#145](https://github.com/bmitch/Codor/pull/145) ([villfa](https://github.com/villfa))
+- Use composer-bin-plugin [\#144](https://github.com/bmitch/Codor/pull/144) ([villfa](https://github.com/villfa))
+- Move from Travis to GH-Actions [\#143](https://github.com/bmitch/Codor/pull/143) ([villfa](https://github.com/villfa))
 
 ## [1.2.0](https://github.com/bmitch/Codor/tree/1.2.0) (2020-10-29)
 
@@ -16,6 +32,7 @@
 
 **Merged pull requests:**
 
+- Prepare changelog for 1.2.0 [\#142](https://github.com/bmitch/Codor/pull/142) ([villfa](https://github.com/villfa))
 - Add support for PHP 8 [\#141](https://github.com/bmitch/Codor/pull/141) ([villfa](https://github.com/villfa))
 - Enable Github actions [\#140](https://github.com/bmitch/Codor/pull/140) ([villfa](https://github.com/villfa))
 - Fix and normalize composer.json [\#139](https://github.com/bmitch/Codor/pull/139) ([villfa](https://github.com/villfa))
