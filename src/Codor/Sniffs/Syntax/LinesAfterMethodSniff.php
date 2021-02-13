@@ -32,16 +32,16 @@ class LinesAfterMethodSniff implements PHP_CodeSniffer_Sniff
         }
 
         $endOfMethodIndex = $tokens[$stackPtr]['scope_closer'];
+        $nextCodeLine = 0;
 
         for ($index=$endOfMethodIndex + 1; $index <= count($tokens); $index++) {
-            if ($tokens[$index]['type'] !== 'T_WHITESPACE') {
+            if (isset($tokens[$index]) && $tokens[$index]['type'] !== 'T_WHITESPACE') {
                 $nextCodeLine = $tokens[$index]['line'];
                 break;
             }
         }
 
         $linesBetween = $nextCodeLine - $tokens[$endOfMethodIndex]['line'] - 1;
-
         if ($linesBetween > 1) {
             $phpcsFile->addError("No more than 1 line after a method/function is allowed.", $stackPtr, __CLASS__);
         }

@@ -52,4 +52,15 @@ class LinesAfterMethodSniffTest extends BaseTestCase
         $errorMessages = $results->getAllErrorMessages();
         $this->assertCount(0, $errorMessages);
     }
+
+    /** @test */
+    public function it_does_not_detect_any_errors_when_a_function_follows_a_class()
+    {
+        $results = $this->runner->sniff('ClassAndFunction.inc');
+        $this->assertEquals(0, $results->getErrorCount());
+        $this->assertEquals(0, $results->getWarningCount());
+
+        $errorMessages = $results->getAllErrorMessages();
+        $this->assertCount(0, $errorMessages);
+    }
 }
