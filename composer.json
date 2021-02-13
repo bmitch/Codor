@@ -55,7 +55,7 @@
             "phpmd src text codesize,unusedcode,naming",
             "phploc src",
             "phpcpd src",
-            "churn run src"
+            "churn run -p -vvv"
         ]
     },
     "scripts-descriptions": {
