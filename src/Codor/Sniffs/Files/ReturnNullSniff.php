@@ -35,10 +35,16 @@ class ReturnNullSniff implements PHP_CodeSniffer_Sniff
         });
 
         $returnValueIndex = key($semicolons) - 1;
+        $comparisonIndex = key($semicolons) - 3;
 
-        if ($scope[$returnValueIndex]['type'] === 'T_NULL') {
+        if ($scope[$returnValueIndex]['type'] === 'T_NULL' && $this->isComparisonType($scope[$comparisonIndex]['type']) === false) {
             $error = "Return null value found.";
             $phpcsFile->addError($error, $returnValueIndex, __CLASS__);
         }
+    }
+
+    private function isComparisonType(string $type) : bool
+    {
+        return in_array($type, ['T_IS_NOT_IDENTICAL', 'T_IS_IDENTICAL', 'T_IS_NOT_EQUAL', 'T_IS_EQUAL'], true);
     }
 }
