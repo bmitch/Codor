@@ -17,9 +17,6 @@
         "slevomat/coding-standard": "^6.4",
         "symfony/phpunit-bridge": "^5.1"
     },
-    "config": {
-        "sort-packages": true
-    },
     "autoload": {
         "psr-4": {
             "Codor\\": "src/Codor/"
@@ -32,6 +29,9 @@
         "classmap": [
             "vendor/squizlabs/php_codesniffer"
         ]
+    },
+    "config": {
+        "sort-packages": true
     },
     "scripts": {
         "post-install-cmd": [
