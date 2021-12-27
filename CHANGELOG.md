@@ -2,7 +2,21 @@
 
 ## [Unreleased](https://github.com/bmitch/Codor/tree/HEAD)
 
-[Full Changelog](https://github.com/bmitch/Codor/compare/1.2.1...HEAD)
+[Full Changelog](https://github.com/bmitch/Codor/compare/1.2.2...HEAD)
+
+## [1.2.2](https://github.com/bmitch/Codor/tree/1.2.2) (2021-12-27)
+
+[Full Changelog](https://github.com/bmitch/Codor/compare/1.2.1...1.2.2)
+
+**Closed issues:**
+
+- What issue choice for contribution? [\#151](https://github.com/bmitch/Codor/issues/151)
+- Available for php8 [\#149](https://github.com/bmitch/Codor/issues/149)
+
+**Merged pull requests:**
+
+- Thinks it is returning null when filtering out nulls in Laravel collection [\#152](https://github.com/bmitch/Codor/pull/152) ([kevin-schmitt](https://github.com/kevin-schmitt))
+- Test with PHP-8.1 [\#150](https://github.com/bmitch/Codor/pull/150) ([villfa](https://github.com/villfa))
 
 ## [1.2.1](https://github.com/bmitch/Codor/tree/1.2.1) (2021-02-13)
 
@@ -81,6 +95,7 @@
 - Fixes \#106 - prevent instance from being used within source code [\#107](https://github.com/bmitch/Codor/pull/107) ([bmitch](https://github.com/bmitch))
 - Fixes \#104 - Added churn-php [\#105](https://github.com/bmitch/Codor/pull/105) ([bmitch](https://github.com/bmitch))
 - Update gitignore [\#103](https://github.com/bmitch/Codor/pull/103) ([bmitch](https://github.com/bmitch))
+- Fixes \#92 [\#93](https://github.com/bmitch/Codor/pull/93) ([bmitch](https://github.com/bmitch))
 
 ## [1.0.7](https://github.com/bmitch/Codor/tree/1.0.7) (2017-08-19)
 
@@ -94,6 +109,10 @@
 
 [Full Changelog](https://github.com/bmitch/Codor/compare/1.0.5...1.0.6)
 
+**Closed issues:**
+
+- Sniff to warn when extending a class. [\#90](https://github.com/bmitch/Codor/issues/90)
+
 **Merged pull requests:**
 
 - Fixes \#90 [\#95](https://github.com/bmitch/Codor/pull/95) ([bmitch](https://github.com/bmitch))
@@ -105,14 +124,12 @@
 **Closed issues:**
 
 - Fix final class sniff [\#92](https://github.com/bmitch/Codor/issues/92)
-- Sniff to warn when extending a class. [\#90](https://github.com/bmitch/Codor/issues/90)
 - Final classes - ensure no protected methods or members [\#89](https://github.com/bmitch/Codor/issues/89)
 - Add https://github.com/Roave/SecurityAdvisories [\#67](https://github.com/bmitch/Codor/issues/67)
 
 **Merged pull requests:**
 
 - Fixes \#67 [\#94](https://github.com/bmitch/Codor/pull/94) ([bmitch](https://github.com/bmitch))
-- Fixes \#92 [\#93](https://github.com/bmitch/Codor/pull/93) ([bmitch](https://github.com/bmitch))
 - Fixes \#89 [\#91](https://github.com/bmitch/Codor/pull/91) ([bmitch](https://github.com/bmitch))
 
 ## [1.0.4](https://github.com/bmitch/Codor/tree/1.0.4) (2017-06-01)
@@ -133,6 +150,7 @@
 
 **Closed issues:**
 
+- Sniff to prevent undeclared member variables. [\#84](https://github.com/bmitch/Codor/issues/84)
 - Sniff to look for conditionals or loops within a constructor. [\#71](https://github.com/bmitch/Codor/issues/71)
 
 **Merged pull requests:**
@@ -155,6 +173,7 @@
 - Fixes \#80 [\#81](https://github.com/bmitch/Codor/pull/81) ([bmitch](https://github.com/bmitch))
 - Fixes \#76 [\#79](https://github.com/bmitch/Codor/pull/79) ([bmitch](https://github.com/bmitch))
 - Fixes \#77 [\#78](https://github.com/bmitch/Codor/pull/78) ([bmitch](https://github.com/bmitch))
+- Standardizing folder structure [\#72](https://github.com/bmitch/Codor/pull/72) ([bmitch](https://github.com/bmitch))
 
 ## [1.0.1](https://github.com/bmitch/Codor/tree/1.0.1) (2017-04-01)
 
@@ -174,13 +193,11 @@
 
 **Closed issues:**
 
-- Sniff to prevent undeclared member variables. [\#84](https://github.com/bmitch/Codor/issues/84)
 - Make a PHP7 version [\#68](https://github.com/bmitch/Codor/issues/68)
 - Remote security checker until it is back working again. [\#65](https://github.com/bmitch/Codor/issues/65)
 
 **Merged pull requests:**
 
-- Standardizing folder structure [\#72](https://github.com/bmitch/Codor/pull/72) ([bmitch](https://github.com/bmitch))
 - Fixes \#68 [\#69](https://github.com/bmitch/Codor/pull/69) ([bmitch](https://github.com/bmitch))
 - Fixes \#65 [\#66](https://github.com/bmitch/Codor/pull/66) ([bmitch](https://github.com/bmitch))
 
@@ -287,6 +304,7 @@
 **Closed issues:**
 
 - Make rules configurable? [\#26](https://github.com/bmitch/Codor/issues/26)
+- Class length sniff [\#22](https://github.com/bmitch/Codor/issues/22)
 
 **Merged pull requests:**
 
@@ -322,7 +340,6 @@
 
 **Closed issues:**
 
-- Class length sniff [\#22](https://github.com/bmitch/Codor/issues/22)
 - Parameter length sniff not picking up interfaces. [\#19](https://github.com/bmitch/Codor/issues/19)
 - Sniffer to prevent returning null [\#15](https://github.com/bmitch/Codor/issues/15)
 - Changes to CodeSniffRunner [\#14](https://github.com/bmitch/Codor/issues/14)
