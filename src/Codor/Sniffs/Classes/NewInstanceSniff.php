@@ -7,12 +7,6 @@ use PHP_CodeSniffer\Files\File as PHP_CodeSniffer_File;
 
 class NewInstanceSniff implements PHP_CodeSniffer_Sniff
 {
-  /**
-     * The forbidden strings this sniff looks for.
-     * @var array
-     */
-    protected $keywords = ['And', '_and', 'Or', '_or'];
-
     /**
      * Returns the token types that this sniff is interested in.
      * @return array
