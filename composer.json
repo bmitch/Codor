@@ -31,7 +31,11 @@
         ]
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "bamarni/composer-bin-plugin": true
+        }
     },
     "scripts": {
         "post-install-cmd": [

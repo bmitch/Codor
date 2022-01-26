@@ -3,9 +3,9 @@
 
 class NewInConstructor
 {
-    protected $myClass;
+    private MyClass $myClass;
 
-    public function __construct(MyClass $myClass)
+    public function __construct()
     {
         $this->myClass = new MyClass();
     }

@@ -289,6 +289,35 @@ final class Foo
     }
 }
 ```
+
+### Codor.Classes.NewInstance ###
+Classes should not contain new instance. Should use depency injection.
+
+:x:
+```php
+class NewInConstructor
+{
+    protected MyClass $myClass;
+
+    public function __construct()
+    {
+        $this->myClass = new MyClass();
+    }
+}
+```
+
+:white_check_mark:
+```php
+class NewInConstructor
+{
+    private MyClass $myClass;
+
+    public function __construct(MyClass $myClass)
+    {
+        $this->myClass = $myClass;
+    }
+}
+```
 ### Codor.Classes.PropertyDeclaration ###
 Produces an error if your class uses undeclared member variables. Only warns if class extends another class. 
 
