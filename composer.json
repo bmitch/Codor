@@ -30,9 +30,6 @@
             "vendor/squizlabs/php_codesniffer"
         ]
     },
-    "config": {
-        "sort-packages": true
-    },
     "scripts": {
         "post-install-cmd": [
             "@composer bin all install --ansi"
