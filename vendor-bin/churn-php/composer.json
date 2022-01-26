@@ -1,5 +1,10 @@
 {
     "require-dev": {
         "bmitch/churn-php": "^1.3"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true
+        }
     }
 }
