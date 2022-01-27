@@ -31,11 +31,11 @@
         ]
     },
     "config": {
-        "sort-packages": true,
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "bamarni/composer-bin-plugin": true
-        }
+        },
+        "sort-packages": true
     },
     "scripts": {
         "post-install-cmd": [
