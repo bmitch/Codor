@@ -28,16 +28,50 @@ class NewInstanceSniff implements PHP_CodeSniffer_Sniff
     {
         $tokens = $phpcsFile->getTokens();
         $functionName = $tokens[$stackPtr + 2]['content'];
-        $token = $tokens[$stackPtr];
-     
-        $start = $token['scope_opener'];
-        $end = $token['scope_closer'];
 
-        foreach (range($start, $end) as $index) {
+        $scopes = $this->getBracketsIndex($tokens, $stackPtr);
+        if (true === empty($scopes['open']) || true === empty($scopes['close'])) {
+            return;
+        }
+
+        for ($index=$scopes['open']; $index <= $scopes['close']; $index++) {
             if ($tokens[$index]['type'] === 'T_NEW') {
-                $phpcsFile->addWarning($this->getWarningMessage($functionName), $tokens[$index]['line'], __CLASS__);
+                $phpcsFile->addWarning($this->getWarningMessage($functionName), $tokens[$index]['column'], __CLASS__);
             }
         }
+    }
+
+    private function getBracketsIndex(array $tokens, int $stackPtr) : array
+    {
+        $token = $tokens[$stackPtr];
+        $open = $token['scope_opener'] ?? null;
+        $close = $token['scope_closer'] ?? null;
+
+        if (true === empty($open)) {
+            return $this->searchBrackets($tokens, $stackPtr);
+        }
+
+        return [
+            'open' => $open,
+            'close' => $close
+        ];
+    }
+
+    private function searchBrackets(array $tokens, int $stackPtr) : array
+    {
+        for ($i=$stackPtr; $i < count($tokens); $i++) {
+            if ($tokens[$i]['type'] === 'T_OPEN_CURLY_BRACKET') {
+                $open = $i;
+            }
+            if ($tokens[$i]['type'] === 'T_CLOSE_CURLY_BRACKET') {
+                $close = $i;
+            }
+        }
+
+        return [
+            'open' => $open,
+            'close' => $close
+        ];
     }
 
     /**
