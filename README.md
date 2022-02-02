@@ -291,7 +291,7 @@ final class Foo
 ```
 
 ### Codor.Classes.NewInstance ###
-Classes should not contain new instance. Should use depency injection.
+Classes should not instantiate objects. Should use dependency injection.
 
 :x:
 ```php
