@@ -63,4 +63,16 @@ class NewInstanceSniffTest extends BaseTestCase
         $warningMessages = $results->getAllWarningMessages();
         $this->assertCount(2, $warningMessages);
     }
+
+    /** @test */
+    public function a_new_in_contructor_parameter()
+    {
+        $results = $this->runner->sniff('NewInConstructorParameter.inc');
+
+        $this->assertSame(0, $results->getErrorCount());
+        $this->assertSame(0, $results->getWarningCount());
+
+        $warningMessages = $results->getAllWarningMessages();
+        $this->assertCount(0, $warningMessages);
+    }
 }
