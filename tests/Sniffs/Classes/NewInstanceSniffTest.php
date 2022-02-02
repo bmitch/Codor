@@ -75,4 +75,16 @@ class NewInstanceSniffTest extends BaseTestCase
         $warningMessages = $results->getAllWarningMessages();
         $this->assertCount(0, $warningMessages);
     }
+
+    /** @test */
+    public function a_ignore_if_no_body_in_function()
+    {
+        $results = $this->runner->sniff('NoBodyFunction.inc');
+
+        $this->assertSame(0, $results->getErrorCount());
+        $this->assertSame(0, $results->getWarningCount());
+
+        $warningMessages = $results->getAllWarningMessages();
+        $this->assertCount(0, $warningMessages);
+    }
 }

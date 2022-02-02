@@ -59,6 +59,7 @@ class NewInstanceSniff implements PHP_CodeSniffer_Sniff
 
     private function searchBrackets(array $tokens, int $stackPtr) : array
     {
+        $open = $close = null;
         for ($i=$stackPtr; $i < count($tokens); $i++) {
             if ($tokens[$i]['type'] === 'T_OPEN_CURLY_BRACKET') {
                 $open = $i;
