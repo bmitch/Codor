@@ -297,7 +297,7 @@ Classes should not contain new instance. Should use depency injection.
 ```php
 class NewInConstructor
 {
-    protected MyClass $myClass;
+    private MyClass $myClass;
 
     public function __construct()
     {
