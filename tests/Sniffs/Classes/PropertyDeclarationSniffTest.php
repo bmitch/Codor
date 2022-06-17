@@ -82,4 +82,12 @@ class PropertyDeclarationSniffTest extends BaseTestCase
         $this->assertCount(1, $warningMessages);
         $this->assertAllEqual('Class contains undeclared property baz.', $warningMessages);
     }
+
+    /** @test */
+    public function it_produces_no_errors_when_a_class_has_one_typed_property()
+    {
+        $results = $this->runner->sniff('ClassWithOneDeclaredTypedProperty.inc');
+        $this->assertSame(0, $results->getErrorCount());
+        $this->assertSame(0, $results->getWarningCount());
+    }
 }
