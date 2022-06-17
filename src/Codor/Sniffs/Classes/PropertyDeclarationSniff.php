@@ -111,11 +111,25 @@ class PropertyDeclarationSniff implements PHP_CodeSniffer_Sniff
      */
     protected function handleVisibilityToken($tokens, $index)
     {
-        $possibleVariable = $tokens[$index + 2];
-        if ($possibleVariable['type'] !== 'T_VARIABLE') {
+        $count = count($tokens);
+
+        for ($i = $index + 1; $i < $count; $i++) {
+            $possibleVariable = $tokens[$i];
+
+            if ($possibleVariable['type'] === 'T_CONST'
+                || $possibleVariable['type'] === 'T_FUNCTION'
+                || $possibleVariable['type'] === 'T_SEMICOLON'
+            ) {
+                return;
+            }
+
+            if ($possibleVariable['type'] !== 'T_VARIABLE') {
+                continue;
+            }
+
+            $this->memberVars[] = str_replace('$', '', $possibleVariable['content']);
             return;
         }
-        $this->memberVars[] = str_replace('$', '', $possibleVariable['content']);
     }
 
     /**
