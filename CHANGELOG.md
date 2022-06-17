@@ -2,7 +2,20 @@
 
 ## [Unreleased](https://github.com/bmitch/Codor/tree/HEAD)
 
-[Full Changelog](https://github.com/bmitch/Codor/compare/1.2.2...HEAD)
+[Full Changelog](https://github.com/bmitch/Codor/compare/1.2.3...HEAD)
+
+## [1.2.3](https://github.com/bmitch/Codor/tree/1.2.3) (2022-06-17)
+
+[Full Changelog](https://github.com/bmitch/Codor/compare/1.2.2...1.2.3)
+
+**Fixed bugs:**
+
+- PropertyDeclarationSniff bug? [\#108](https://github.com/bmitch/Codor/issues/108)
+
+**Merged pull requests:**
+
+- Improve the way to retrieve the properties name [\#154](https://github.com/bmitch/Codor/pull/154) ([villfa](https://github.com/villfa))
+- Sniff to limit the use of new in constructor [\#153](https://github.com/bmitch/Codor/pull/153) ([kevin-schmitt](https://github.com/kevin-schmitt))
 
 ## [1.2.2](https://github.com/bmitch/Codor/tree/1.2.2) (2021-12-27)
 
@@ -12,6 +25,7 @@
 
 - What issue choice for contribution? [\#151](https://github.com/bmitch/Codor/issues/151)
 - Available for php8 [\#149](https://github.com/bmitch/Codor/issues/149)
+- Thinks it is returning null when filtering out nulls in Laravel collection [\#130](https://github.com/bmitch/Codor/issues/130)
 
 **Merged pull requests:**
 
@@ -95,7 +109,6 @@
 - Fixes \#106 - prevent instance from being used within source code [\#107](https://github.com/bmitch/Codor/pull/107) ([bmitch](https://github.com/bmitch))
 - Fixes \#104 - Added churn-php [\#105](https://github.com/bmitch/Codor/pull/105) ([bmitch](https://github.com/bmitch))
 - Update gitignore [\#103](https://github.com/bmitch/Codor/pull/103) ([bmitch](https://github.com/bmitch))
-- Fixes \#92 [\#93](https://github.com/bmitch/Codor/pull/93) ([bmitch](https://github.com/bmitch))
 
 ## [1.0.7](https://github.com/bmitch/Codor/tree/1.0.7) (2017-08-19)
 
@@ -130,6 +143,7 @@
 **Merged pull requests:**
 
 - Fixes \#67 [\#94](https://github.com/bmitch/Codor/pull/94) ([bmitch](https://github.com/bmitch))
+- Fixes \#92 [\#93](https://github.com/bmitch/Codor/pull/93) ([bmitch](https://github.com/bmitch))
 - Fixes \#89 [\#91](https://github.com/bmitch/Codor/pull/91) ([bmitch](https://github.com/bmitch))
 
 ## [1.0.4](https://github.com/bmitch/Codor/tree/1.0.4) (2017-06-01)
@@ -205,10 +219,6 @@
 
 [Full Changelog](https://github.com/bmitch/Codor/compare/0.0.10...0.0.11)
 
-**Fixed bugs:**
-
-- Doesn't work with Atom Linter-PHPCS? [\#44](https://github.com/bmitch/Codor/issues/44)
-
 **Closed issues:**
 
 - Add info on how to supress for sections of code in README [\#43](https://github.com/bmitch/Codor/issues/43)
@@ -275,6 +285,10 @@
 
 - ignore try-catch block as indentation [\#45](https://github.com/bmitch/Codor/issues/45)
 
+**Fixed bugs:**
+
+- Doesn't work with Atom Linter-PHPCS? [\#44](https://github.com/bmitch/Codor/issues/44)
+
 **Closed issues:**
 
 - Sniff for nested if statements. [\#38](https://github.com/bmitch/Codor/issues/38)
@@ -304,7 +318,6 @@
 **Closed issues:**
 
 - Make rules configurable? [\#26](https://github.com/bmitch/Codor/issues/26)
-- Class length sniff [\#22](https://github.com/bmitch/Codor/issues/22)
 
 **Merged pull requests:**
 
@@ -340,6 +353,7 @@
 
 **Closed issues:**
 
+- Class length sniff [\#22](https://github.com/bmitch/Codor/issues/22)
 - Parameter length sniff not picking up interfaces. [\#19](https://github.com/bmitch/Codor/issues/19)
 - Sniffer to prevent returning null [\#15](https://github.com/bmitch/Codor/issues/15)
 - Changes to CodeSniffRunner [\#14](https://github.com/bmitch/Codor/issues/14)
