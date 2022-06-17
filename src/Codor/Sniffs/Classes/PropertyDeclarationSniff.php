@@ -128,7 +128,6 @@ class PropertyDeclarationSniff implements PHP_CodeSniffer_Sniff
             }
 
             $this->memberVars[] = str_replace('$', '', $possibleVariable['content']);
-
             return;
         }
     }
