@@ -116,8 +116,7 @@ class PropertyDeclarationSniff implements PHP_CodeSniffer_Sniff
         for ($i = $index + 1; $i < $count; $i++) {
             $possibleVariable = $tokens[$i];
 
-            if (
-                $possibleVariable['type'] === 'T_CONST'
+            if ($possibleVariable['type'] === 'T_CONST'
                 || $possibleVariable['type'] === 'T_FUNCTION'
                 || $possibleVariable['type'] === 'T_SEMICOLON'
             ) {
